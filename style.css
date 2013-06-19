@@ -1,0 +1,41 @@
+body {
+	font-family: coda_regular, arial, helvetica, sans-serif;
+	text-align:center;
+	color:#00C2FF;
+	background-color:#000000;
+}
+@font-face {
+  font-family: coda_regular;
+  src: url('./coda_regular.ttf');
+}
+/*Title*/
+#Title{
+	font-size:20;
+	letter-spacing: 3px;
+}
+/*Login Page*/
+form{
+	display: inline-block;
+	width:280px;
+}
+#line{
+	display:block;
+	height:30px;
+	padding:5px 0px 5px 0px;
+}
+input.button,
+input.field{
+	height:30px;
+	width:100%;
+	border: 1px solid #59FBEA;
+	background-color: #0B0C0D;
+	color: #DDD;
+	font-family: coda_regular, arial, helvetica, sans-serif;
+	font-size:16;
+}
+input.button{
+	background-color: #004F4A;
+	color: #59FBEA;
+	box-shadow: inset 0 0 6px rgba(255, 255, 255, 1);
+	-webkit-box-shadow: inset 0 0 6px rgba(255, 255, 255, 1);
+}
