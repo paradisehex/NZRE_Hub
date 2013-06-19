@@ -68,7 +68,12 @@
 				//Keys
 				echoLine($row['K1'] , 'K1' , "Keys" , "Portal Keys");
 
-
+				//AP
+				$UserQuery="SELECT * FROM AgentTable WHERE username = '".$_SESSION['name']."'";
+				$UserResult=mysqli_query($con,$UserQuery);
+				$User = mysqli_fetch_array($UserResult, MYSQL_ASSOC);
+				echoLine($User['AP'] , 'AP' , "AP" , "Action Points");
+				
 				?>
 				
 				<div id="lineTall"><input class="button" type="submit" value="Update"></div>

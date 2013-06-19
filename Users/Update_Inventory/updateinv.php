@@ -61,6 +61,14 @@
 
 		$sql = "UPDATE ItemTable SET ".$Res.$Xmp.$Vir.$She.$Mod.$Pow.$Key."day=".date('d',time()).",month='".date('M',time())."',year=".date('y',time())." WHERE username = '".$username."'";
 		mysqli_query($con,$sql);
+
+		$ap=stripslashes($_POST['AP']);
+		$maxAP = 20000*pow(2,($_SESSION['lvl']-1));
+		if($ap<$maxAP){
+			$sql = "UPDATE AgentTable SET AP = '".$ap."' WHERE username = '".$username."'";
+			mysqli_query($con,$sql);
+		}
+
 		header("location:/Ingress/Users");
 	}
 ?>
