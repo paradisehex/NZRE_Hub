@@ -22,7 +22,7 @@
 
 			<form class="e" action="save.php" method="post">
 				Update Description
-				<textarea name="message"><?php echo file_get_contents('/var/www/Ingress/Data/Enemies/'.$name.'.txt', FILE_USE_INCLUDE_PATH);?></textarea>
+				<textarea name="message"><?php echo file_get_contents('/var/www/Ingress/.data/Enemies/'.$name.'.txt', FILE_USE_INCLUDE_PATH);?></textarea>
 				<?php echo "<input type=\"hidden\" name=\"username\" value=\"".$name."\">";?>
 				<input class="buttone" type="submit" value="Save" >
 			</form>

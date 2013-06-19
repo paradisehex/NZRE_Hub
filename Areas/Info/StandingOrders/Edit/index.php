@@ -23,7 +23,7 @@
 			<br>
 			<div id="Line"><?php echo "Editing ".$name." Description"; ?></div>
 			<form  class="wide" action="save.php" method="post">
-				<textarea class="R" name="message" style="height:500px"><?php echo file_get_contents('/var/www/Ingress/Data/Areas/StandingOrders/'.$name.'.txt', FILE_USE_INCLUDE_PATH);?></textarea>
+				<textarea class="R" name="message" style="height:500px"><?php echo file_get_contents('/var/www/Ingress/.data/Areas/StandingOrders/'.$name.'.txt', FILE_USE_INCLUDE_PATH);?></textarea>
 				<?php echo "<input type=\"hidden\" name=\"Name\" value=\"".$name."\">";?>
 				<input class="button" type="submit" value="Save" >
 			</form>

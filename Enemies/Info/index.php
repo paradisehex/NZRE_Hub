@@ -29,7 +29,7 @@
 			</div>
 			<div id="Text">
 				<?php
-					echo file_get_contents('/var/www/Ingress/Data/Enemies/'.$name.'.txt', FILE_USE_INCLUDE_PATH);
+					echo file_get_contents('/var/www/Ingress/.data/Enemies/'.$name.'.txt', FILE_USE_INCLUDE_PATH);
 				?>
 			</div>
 			<p><form action="Edit/index.php" method="post">

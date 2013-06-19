@@ -22,7 +22,7 @@
 		<?php include "/var/www/Ingress/Tools/menu.php";?>
 		<p>
 			<?php
-				echo file_get_contents('/var/www/Ingress/Data/Portals/'.$name .'.html', FILE_USE_INCLUDE_PATH);
+				echo file_get_contents('/var/www/Ingress/.data/Portals/'.$name .'.html', FILE_USE_INCLUDE_PATH);
 			?>
 		</p>
 	</body>

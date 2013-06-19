@@ -23,7 +23,7 @@
 
 
 			echo "<div id=\"whiteSpaceWide\">";
-			$text  = file_get_contents('/var/www/Ingress/Data/Areas/StandingOrders/'.$name.'.txt', FILE_USE_INCLUDE_PATH);
+			$text  = file_get_contents('/var/www/Ingress/.data/Areas/StandingOrders/'.$name.'.txt', FILE_USE_INCLUDE_PATH);
 			$text  = format_comment($text);
 			echo $text;
 			echo "</div><br><br>";

@@ -10,7 +10,7 @@
 		$sql = "UPDATE EnemyTable SET day=".date('d',time()).",month='".date('M',time())."',year=".date('y',time())." WHERE username = '".$username."'";
 		mysqli_query($con,$sql);
 
-		$file = '/var/www/Ingress/Data/Enemies/'.$_POST['username'].'.txt';
+		$file = '/var/www/Ingress/.data/Enemies/'.$_POST['username'].'.txt';
 		$msg = strip_tags(stripslashes($_POST['message']));
 		file_put_contents($file,$msg)==false;
 		header("location:/Ingress/Enemies/Info/?Name=".$_POST['username']);

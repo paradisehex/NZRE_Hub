@@ -13,7 +13,7 @@
 		if($row['admin']!=$_SESSION['name']){
 			header("location:/Ingress");
 		}else{
-			$file = '/var/www/Ingress/Data/Areas/'.$name.'.txt';
+			$file = '/var/www/Ingress/.data/Areas/'.$name.'.txt';
 			$msg = strip_tags(stripslashes($_POST['message']));
 			file_put_contents($file,$msg)==false;
 			header("location:/Ingress/Areas/Info/?Name=".$name);

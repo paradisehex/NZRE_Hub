@@ -28,7 +28,7 @@
 
 			echo "<br>";
 			echo "<div id=\"whiteSpace\">";
-			$text = file_get_contents('/var/www/Ingress/Data/Areas/'.$name.'.txt', FILE_USE_INCLUDE_PATH);
+			$text = file_get_contents('/var/www/Ingress/.data/Areas/'.$name.'.txt', FILE_USE_INCLUDE_PATH);
 			$text  = format_comment($text);
 			echo $text;
 			
