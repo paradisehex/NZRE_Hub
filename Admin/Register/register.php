@@ -28,7 +28,7 @@ if(!$_SESSION['admin']){
 			if($level!=null){
 				//Add password and user to data base
 				mysqli_query($con,"insert into AgentTable values('$myusername','$mypassword',false,$level,0,0);");
-				mysqli_query($con,"insert into ItemTable values('$myusername',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'Never',0);");
+				mysqli_query($con,"insert into ItemTable values('$myusername',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'Never',0);");
 				//Go to tools page
 				LogText("User ".$_SESSION['name']." Registered ".$myusername);
 				header("location:/Ingress/Admin");

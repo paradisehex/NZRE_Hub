@@ -34,11 +34,23 @@
 		$S2 = stripslashes($_POST['S2']);
 		$S3 = stripslashes($_POST['S3']);
 		//Mods
-		$MA = stripslashes($_POST['MA']);
-		$MH = stripslashes($_POST['MH']);
-		$MM = stripslashes($_POST['MM']);
-		$MF = stripslashes($_POST['MF']);
-		$MT = stripslashes($_POST['MT']);
+		$CML = stripslashes($_POST['CML']);
+		$CMH = stripslashes($_POST['CMH']);
+		$CMM = stripslashes($_POST['CMM']);
+		$CMF = stripslashes($_POST['CMF']);
+		$CMT = stripslashes($_POST['CMT']);
+
+		$RML = stripslashes($_POST['RML']);
+		$RMH = stripslashes($_POST['RMH']);
+		$RMM = stripslashes($_POST['RMM']);
+		$RMF = stripslashes($_POST['RMF']);
+		$RMT = stripslashes($_POST['RMT']);
+
+		$VML = stripslashes($_POST['VML']);
+		$VMH = stripslashes($_POST['VMH']);
+		$VMM = stripslashes($_POST['VMM']);
+		$VMF = stripslashes($_POST['VMF']);
+		$VMT = stripslashes($_POST['VMT']);
 		//Power Cubes
 		$P1 = stripslashes($_POST['P1']);
 		$P2 = stripslashes($_POST['P2']);
@@ -55,7 +67,7 @@
 		$Xmp = "X1 = '".$X1."',X2 = '".$X2."',X3 = '".$X3."',X4 = '".$X4."',X5 = '".$X5."',X6 = '".$X6."',X7 = '".$X7."',X8 = '".$X8."',";
 		$Vir = "VA = '".$VA."',VJ = '".$VJ."',";
 		$She = "S1 = '".$S1."',S2 = '".$S2."',S3 = '".$S3."',";
-		$Mod = "MA = '".$MA."',MH = '".$MH."',MM = '".$MM."',MF = '".$MF."',MT = '".$MT."',";
+		$Mod = "CML = '".$CML."',RML = '".$RML."',VML = '".$VML."',CMH = '".$CMH."',RMH = '".$RMH."',VMH = '".$VMH."',CMM = '".$CMM."',RMM = '".$RMM."',VMM = '".$VMM."',CMF = '".$CMF."',RMF = '".$RMF."',VMF = '".$VMF."',CMT = '".$CMT."',RMT = '".$RMT."',VMT = '".$VMT."',";
 		$Pow = "P1 = '".$P1."',P2 = '".$P2."',P3 = '".$P3."',P4 = '".$P4."',P5 = '".$P5."',P6 = '".$P6."',P7 = '".$P7."',P8 = '".$P8."',";
 		$Key = "K1 = '".$K1."',";
 

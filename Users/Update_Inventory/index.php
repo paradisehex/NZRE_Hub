@@ -48,16 +48,29 @@
 
 
 				//Shields
-				echoLine($row['S1'] , 'S1' , "Com Shd" , "Common Shields");
-				echoLine($row['S2'] , 'S2' , "Rare Shd" , "Rare Shields");
-				echoLine($row['S3'] , 'S3' , "V. Rare Shd" , "Very Rare Shields");
+				echoLine($row['S1'] , 'S1' , "C Shield" , "Common Shields");
+				echoLine($row['S2'] , 'S2' , "R Shield" , "Rare Shields");
+				echoLine($row['S3'] , 'S3' , "VR Shield" , "Very Rare Shields");
 
-				echoLine($row['MA'] , 'MA' , "Link Amp" , "Link Amp");
-				echoLine($row['MH'] , 'MH' , "Heat Sink" , "Heat Sink");
-				echoLine($row['MM'] , 'MM' , "Multi-hack" , "Multi-hack");
-				echoLine($row['MF'] , 'MF' , "Force Amp" , "Force Amp");
-				echoLine($row['MT'] , 'MT' , "Turret" , "Turret");
+				echoLine($row['CML'] , 'CML' , "C Link Amp" , "Common Link Amp");
+				echoLine($row['RML'] , 'RML' , "R Link Amp" , "Link Amp");
+				echoLine($row['VML'] , 'VML' , "VR Link Amp" , "Link Amp");
 
+				echoLine($row['CMH'] , 'CMH' , "C Heat Sink" , "Common Heat Sink");
+				echoLine($row['RMH'] , 'RMH' , "R Heat Sink" , "Rare Heat Sink");
+				echoLine($row['VMH'] , 'VMH' , "VR Heat Sink" , "Very Rare Heat Sink");
+
+				echoLine($row['CMM'] , 'CMM' , "C Multi-hack" , "Common Multi-hack");
+				echoLine($row['RMM'] , 'RMM' , "R Multi-hack" , "Rare Multi-hack");
+				echoLine($row['VMM'] , 'VMM' , "VR Multi-hack" , "Very Rare Multi-hack");
+
+				echoLine($row['CMF'] , 'CMF' , "C Force Amp" , "Common Force Amp");
+				echoLine($row['RMF'] , 'RMF' , "R Force Amp" , "Rare Force Amp");
+				echoLine($row['VMF'] , 'VMF' , "VR Force Amp" , "Very Rare Force Amp");
+
+				echoLine($row['CMT'] , 'CMT' , "C Turret" , "Common Turret");
+				echoLine($row['RMT'] , 'RMT' , "R Turret" , "Rare Turret");
+				echoLine($row['VMT'] , 'VMT' , "VR Turret" , "Very Rare Turret");
 
 				//Power Cubes
 				for ($i = 1; $i <= 8; $i++) {
