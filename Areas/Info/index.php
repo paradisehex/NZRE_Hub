@@ -14,7 +14,7 @@
 		$sql="SELECT * FROM LocationTable WHERE name='".$name."'";
 		$row = mysqli_fetch_array(mysqli_query($con,$sql));
 		
-		$OfficerQuery="SELECT * FROM OfficerTable WHERE Location='".$row['ID']."'";
+		$OfficerQuery="SELECT * FROM OfficerTable WHERE Location='".$row['id']."'";
 		$AreaOfficers = mysqli_query($con,$OfficerQuery);
 	}
 ?>
