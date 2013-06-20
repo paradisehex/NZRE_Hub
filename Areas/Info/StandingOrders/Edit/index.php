@@ -9,11 +9,6 @@
 		$name = strip_tags(stripslashes($_POST['Name']));
 
 		$sql="SELECT * FROM LocationTable WHERE name = \"".$name."\"";
-
-		$result=mysqli_query($con,$sql);
-		$row = mysqli_fetch_array($result, MYSQL_ASSOC);
-		
-		if($row['admin']!=$_SESSION['name']){header("location:/Ingress");}
 	}
 ?>
 <html>

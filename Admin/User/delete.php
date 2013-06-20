@@ -11,6 +11,7 @@
 		//Delete them
 			mysqli_query($con,"delete from AgentTable where username = '".$username."'");
 			mysqli_query($con,"delete from ItemTable where username = '".$username."'");
+			mysqli_query($con,"delete from OfficerTable where username = '".$username."'");
 
 
 		//Go back to tools

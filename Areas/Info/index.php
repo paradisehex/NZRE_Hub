@@ -7,11 +7,15 @@
 	}else{
 		include "/var/www/Ingress/Tools/database.php";
 		include "/var/www/Ingress/Tools/bb.php";
+		include "/var/www/Ingress/Tools/permission.php";
 
 		$name = strip_tags(stripslashes($_GET['Name']));
 
 		$sql="SELECT * FROM LocationTable WHERE name='".$name."'";
 		$row = mysqli_fetch_array(mysqli_query($con,$sql));
+		
+		$OfficerQuery="SELECT * FROM OfficerTable WHERE Location='".$row['ID']."'";
+		$AreaOfficers = mysqli_query($con,$OfficerQuery);
 	}
 ?>
 <html>
@@ -23,7 +27,10 @@
 
 
 			if($row['admin']!=""){
-				echo "<div id=\"lineWide\"><div id=\"left\">Officer:</div><div id=\"right\">".$row['admin']."</div></div>";
+				echo "<div id=\"lineWide\"><div id=\"left\">Captain:</div><div id=\"right\">".$row['admin']."</div></div><br>";
+			}
+			while ($Officer = mysqli_fetch_array($AreaOfficers, MYSQL_ASSOC)) {
+				echo "<div id=\"lineWide\"><div id=\"left\">Officer:</div><div id=\"right\">".$Officer['username']."</div></div><br>";
 			}
 
 			echo "<br>";
@@ -35,7 +42,7 @@
 			echo "</div><br>";
 
 
-			if($row['admin']==$_SESSION['name']){
+			if(OfficerAndLocation($con,$_SESSION['name'],$name)){
 				//Edit decsription
 				echo "<form class=\"short\" action=\"Edit/\" method=\"post\">";
 				echo "<input type=\"hidden\" name=\"Name\" value=\"".$name."\">";
@@ -46,6 +53,13 @@
 				echo "<form  class=\"short\" action=\"Select/\" method=\"get\">";
 				echo "<input type=\"hidden\" name=\"Name\" value=\"".$name."\">";
 				echo "<input class=\"button\" type=\"submit\" value=\"Add or Remove Agents\" >";
+				echo "</form>";
+			}
+			if(CaptainAndLocation($con,$_SESSION['name'],$name)){
+				//Pick Officers
+				echo "<form  class=\"short\" action=\"Officers/\" method=\"get\">";
+				echo "<input type=\"hidden\" name=\"Name\" value=\"".$name."\">";
+				echo "<input class=\"button\" type=\"submit\" value=\"Select Officers\" >";
 				echo "</form>";
 			}
 

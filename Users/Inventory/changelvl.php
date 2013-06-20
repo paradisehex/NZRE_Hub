@@ -4,11 +4,9 @@
 		header("location:/Ingress");
 	}else{
 		include "/var/www/Ingress/Tools/database.php";
+		include "/var/www/Ingress/Tools/permission.php";
 
-		$sql="SELECT * FROM LocationTable WHERE admin='".$_SESSION['name']."'";
-		$count = mysqli_num_rows(mysqli_query($con,$sql));
-
-		if($count>0){
+		if($IsOfficer($con,$_SESSION['name'])){
 			$username=strip_tags(stripslashes($_POST['Name']));
 			$lvl=strip_tags(stripslashes($_POST['Level']));
 			$sql = "UPDATE AgentTable SET lvl = '".$lvl."' WHERE username = '".$username."'";

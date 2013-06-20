@@ -4,13 +4,11 @@
 		header("location:/Ingress");
 	}else{
 		include "/var/www/Ingress/Tools/database.php";
+		include "/var/www/Ingress/Tools/permission.php";
 
 		$name = strip_tags(stripslashes($_POST['Name']));
-		$sql="SELECT * FROM LocationTable WHERE name = \"".$name."\"";
-		$result=mysqli_query($con,$sql);
-		$row = mysqli_fetch_array($result, MYSQL_ASSOC);
 
-		if($row['admin']!=$_SESSION['name']){
+		if(!OfficerAndLocation($con,$_SESSION['name'],$name)){
 			header("location:/Ingress");
 		}else{
 			$file = '/var/www/Ingress/.data/Areas/'.$name.'.txt';

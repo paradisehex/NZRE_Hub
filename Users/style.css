@@ -47,7 +47,7 @@ input.fieldShort{width:220px;}
 input.fielde{border: 1px solid #28F428;background-color: #0B0C0D;}
 
 
-
+input.buttonOfficer,
 input.button,
 input.buttonE,
 a{
@@ -69,6 +69,7 @@ input.buttonE{background-color: #004F0D;color: #28F428;border: 1px solid #28F428
 
 select:hover,
 option:hover,
+input.buttonOfficer:hover,
 input.button:hover,
 input.buttonE:hover,
 a:hover{
@@ -89,7 +90,7 @@ option{
 	text-decoration:none;
 }
 select{width:200px;}
-
+input.buttonOfficer{color:#FF0000;}
 
 /*Menu*/
 #MenuL{

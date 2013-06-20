@@ -18,9 +18,6 @@
 		$lvl = $row2['lvl'];
 
 		$Location = mysqli_fetch_array(mysqli_query($con,"SELECT * FROM LocationTable WHERE id = ".$row2['Location']), MYSQL_ASSOC);
-
-		$sql="SELECT * FROM LocationTable WHERE admin='".$_SESSION['name']."'";
-		$count = mysqli_num_rows(mysqli_query($con,$sql));
 	}
 ?>
 <html>
@@ -44,7 +41,7 @@
 					}
 
 
-					if($count >0){
+					if(IsOfficer($con,$_SESSION['name'])){
 						$ChLvl =  "<form action=\"changelvl.php\" method=\"post\">";
 							$ChLvl .= "Change players level<br><input class=\"field\" type=\"text\" name=\"Level\" autocomplete=\"off\" placeholder=\"New Level\"><br>";
 							$ChLvl .= "<input type=\"hidden\" value=\"".$name."\" name=\"Name\">";

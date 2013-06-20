@@ -5,6 +5,7 @@
 		header("location:/Ingress");
 	}else{
 		include "/var/www/Ingress/Tools/database.php";
+		include "/var/www/Ingress/Tools/permission.php";
 
 		$name = strip_tags($_GET['Name']);
 
@@ -15,7 +16,7 @@
 
 		$ID = $row['id'];
 		
-		if($row['admin']!=$_SESSION['name']){
+		if(!IsOfficer($con,$_SESSION['name'])){
 			header("location:/Ingress");
 		}else{
 			$sql="SELECT * FROM AgentTable WHERE Location = ".$row['id'];

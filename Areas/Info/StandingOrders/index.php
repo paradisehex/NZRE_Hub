@@ -7,6 +7,7 @@
 	}else{
 		include "/var/www/Ingress/Tools/database.php";
 		include "/var/www/Ingress/Tools/bb.php";
+		include "/var/www/Ingress/Tools/permission.php";
 
 		$name = strip_tags(stripslashes($_GET['Name']));
 
@@ -29,7 +30,7 @@
 			echo "</div><br><br>";
 
 
-			if($row['admin']==$_SESSION['name']){
+			if(OfficerAndLocation($con,$_SESSION['name'],$name)){
 				//Edit decsription
 				echo "<div id=\"line\"><form action=\"Edit/\" method=\"post\">";
 				echo "<input type=\"hidden\" name=\"Name\" value=\"".$name."\">";

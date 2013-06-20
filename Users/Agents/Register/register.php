@@ -7,12 +7,10 @@ if(!$_SESSION['name']){
 }else{
 	// Connect to server and select databse.
 	include "/var/www/Ingress/Tools/database.php";
+	include "/var/www/Ingress/Tools/permission.php";
 	include "/var/www/Ingress/Tools/log.php";
-	
-	$sql="SELECT * FROM LocationTable WHERE admin='".$_SESSION['name']."'";
-	$count = mysqli_num_rows(mysqli_query($con,$sql));
 		
-	if($count>0){
+	if(IsOfficer($con,$_SESSION['name'])){
 
 		// Define $myusername and $mypassword  and protect againest MYSQL injection
 		$myusername=stripslashes(str_replace ("&#65279","",$_POST['TheUserName']));
