@@ -18,6 +18,7 @@
 
 
 	function OfficerAndLocation($con,$Name,$LocationName){
+		if($_SESSION['admin']){return true;}
 		$Locations = mysqli_query($con,"SELECT * FROM LocationTable WHERE name='".$LocationName."'");
 		$Location =mysqli_fetch_array($Locations, MYSQL_ASSOC);
 
@@ -34,6 +35,7 @@
 
 
 	function CaptainAndLocation($con,$Name,$LocationName){
+		if($_SESSION['admin']){return true;}
 		$result = mysqli_query($con,"SELECT * FROM LocationTable WHERE name='".$LocationName."'");
 
 		$Location =mysqli_fetch_array($result);
@@ -45,6 +47,7 @@
 	}
 
 	function IsOfficer($con,$Name){
+		if($_SESSION['admin']){return true;}
 		$Location = mysqli_query($con,"SELECT * FROM LocationTable WHERE admin='".$Name."'");
 
 		$OfficerQuery="SELECT * FROM OfficerTable WHERE username='".$Name."'";
