@@ -31,15 +31,17 @@
 					echo "<form name=\"ChangePassword\" action=\"op.php\" method=\"post\"><input type=\"hidden\" name=\"Name\" value=\"".$row['username']."\">";
 					echo "<input class=\"button\" type=\"submit\" value=\"Make Admin\"></form>";
 				}
-				echo "</div><br>";
+				echo "</div>";
 				//Change passwd
 				echo "<div id=\"block\"><form name=\"ChangePassword\" action=\"change.php\" method=\"post\" autocomplete=\"off\"><input type=\"hidden\" name=\"Name\" value=\"".$row['username']."\">";
 				echo "<input class=\"field\" type=\"password\" name=\"ThePassword\" placeholder=\"Change Password\">";
-				echo "<input class=\"button\" type=\"submit\" value=\"Change\"></form></div><br><br>";
+				echo "<input class=\"button\" type=\"submit\" value=\"Change\"></form></div>";
 				//Change Level
 				echo "<div id=\"block\"><form name=\"ChangePassword\" action=\"changelvl.php\" method=\"post\"><input type=\"hidden\" name=\"Name\" value=\"".$row['username']."\">";
 				echo "<input class=\"field\" type=\"text\" name=\"Level\" autocomplete=\"off\" placeholder=\"Change Level\">";
 				echo "<input class=\"button\" type=\"submit\" value=\"Change\"></form></div>";
+				//Location
+				echo "<a href=\"Location/?Name=".$row['username']."\">Location</a>";
 		?>
 		</p>
 	</body>
