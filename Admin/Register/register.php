@@ -8,6 +8,7 @@ if(!$_SESSION['admin']){
 	// Connect to server and select databse.
 	include "/var/www/Ingress/Tools/database.php";
 	include "/var/www/Ingress/Tools/log.php";
+	include "/var/www/Ingress/Tools/register.php";
 
 	// Define $myusername and $mypassword  and protect againest MYSQL injection
 	$myusername=stripslashes(str_replace ("&#65279","",$_POST['TheUserName']));
@@ -26,11 +27,7 @@ if(!$_SESSION['admin']){
 		// If count equals 0 the username isn't taken
 		if($count==0){
 			if($level!=null){
-				//Add password and user to data base
-				mysqli_query($con,"insert into AgentTable values('$myusername','$mypassword',false,$level,0,0);");
-				mysqli_query($con,"insert into ItemTable values('$myusername',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'Never',0);");
-				//Go to tools page
-				LogText("User ".$_SESSION['name']." Registered ".$myusername);
+				register($con,$myusername,$mypassword,$level);
 				header("location:/Ingress/Admin");
 			}else{
 				echo "Requies lvl";
