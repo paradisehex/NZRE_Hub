@@ -14,14 +14,25 @@
 			$result=mysqli_query($con,$sql);
 			while ($row = mysqli_fetch_array($result, MYSQL_ASSOC)) {
 				if($lastAP != $row['AP']){
-					$ap = $row['AP'];
-					echo "<div id=\"Line\">";
-					echo "<div id=\"Left\">";
-						echo "<a href=\"/Ingress/Users/Inventory/?Name=".$row['username']."\"><div id=\"Left\" style=\"padding-left:2px;\">".$count."</div>".$row['username']."</a>";
-					echo "</div><div id=\"Right\">";
-							echo "<div id=\"lvl".$row['lvl']."\">".$ap." AP</div>";
-					echo "</div></div>";
-					$count++;
+					if($row['AP']){
+						$ap = $row['AP'];
+						echo "<div id=\"Line\">";
+						echo "<div id=\"Left\">";
+							echo "<a href=\"/Ingress/Users/Inventory/?Name=".$row['username']."\"><div id=\"Left\" style=\"padding-left:2px;\">".$count."</div>".$row['username']."</a>";
+						echo "</div><div id=\"Right\">";
+								echo "<div id=\"lvl".$row['lvl']."\">".$ap." AP</div>";
+						echo "</div></div>";
+						$count++;
+					}else{
+						//$ap = $row['AP'];
+						//echo "<div id=\"Line\">";
+						//	echo "<div id=\"Left\">";
+						//		echo "<div id=\"line\"><div id=\"lvl".$row['lvl']."\">".$row['username']."</div>";
+						//	echo "</div>";
+						//		echo "";
+						//echo "</div></div>";
+						//$count++;
+					}
 				}
 			}
 		$lastAP = $ap;
