@@ -11,7 +11,7 @@
 		$sql = "UPDATE AgentTable SET outLvl = '".$AnyLvl."' WHERE username = '".$_SESSION['name']."'";
 		mysqli_query($con,$sql);
 
-		header("location:./");
+		header("location:../");
 	}else{
 		header("location:/Ingress");
 	}

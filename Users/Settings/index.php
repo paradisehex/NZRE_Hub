@@ -38,5 +38,6 @@
 		<div id="line">
 			<a href="ViewingLevel">Set inventory viewing permissions</a>
 		</div>
+
 	</body>
 </html>
