@@ -21,7 +21,7 @@
 			<div id="Block">
 
 			<form class="e" action="save.php" method="post">
-				Update Description
+				Update Description<br>
 				<textarea name="message"><?php echo file_get_contents('/var/www/Ingress/.data/Enemies/'.$name.'.txt', FILE_USE_INCLUDE_PATH);?></textarea>
 				<?php echo "<input type=\"hidden\" name=\"username\" value=\"".$name."\">";?>
 				<input class="buttone" type="submit" value="Save" >
@@ -29,7 +29,7 @@
 
 
 			<form class="e" action="changelvl.php" method="post">
-					Update Level
+					Update Level<br>
 					<input class="fielde" type="text" name="Level" autocomplete="off" placeholder="New Level">
 					<?php echo "<input type=\"hidden\" name=\"username\" value=\"".$name."\">";?>
 					<input class="buttone" type="submit" value="Change" >
@@ -37,7 +37,7 @@
 
 			<form class="e" action="delete.php" method="post">
 				<?php echo "<input type=\"hidden\" name=\"username\" value=\"".$name."\">";?>
-				Delete Agent
+				Delete Agent<br>
 				<input class="buttone" type="submit" value="Delete" >
 			</form>
 		</div>
