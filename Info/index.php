@@ -15,16 +15,18 @@
 					It's purpose is to allow the New Zealand Resistance<br> to be more organised.
 				</p>
 				<p>
-					Only level 8 agents can change their own level.<br>If you need your level changed ask your area officer.<br>
-					If you try to set your AP to much higher than<br>
-					what's possible with your level it will fail.
+					Only level 8 agents can change their own level.<br>If you need your level changed an area officer.<br>
 				</p>
 				<p>
-					This is how the permsion system works:<br>
-					Area Officers can register players, set player's areas,<br>set player's levels and delete enemy players.<br>
-					Level 7 and 8 players can see anyone's inventory.<br>
-					Level 6 and down can see people's inventory if the person is<br>the same level as them or lower and in their area.<br>
-					Level 5 and up can view, add and edit enemy agent dossiers.
+					This is how the permsion system works.<br>
+					Captains can choose officers.<br>
+					Area officers and captains can: <br>
+					register players,<br>
+					set player's areas,<br>
+					and set player's levels.<br>
+					By default level 7 and up can view other agents inventorys.
+					Anyone can choose the required level to view their inventory.
+					Level 5 and up can use enemy agent dossiers.
 				</p>
 				<p>
 					Any suggestions are welcome.<br>
