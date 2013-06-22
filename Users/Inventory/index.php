@@ -15,7 +15,6 @@
 		$row = mysqli_fetch_array($result, MYSQL_ASSOC);
 
 		$row2 = mysqli_fetch_array(mysqli_query($con,"SELECT * FROM AgentTable WHERE username = \"".$name."\""), MYSQL_ASSOC);
-		$lvl = $row2['lvl'];
 
 		$Location = mysqli_fetch_array(mysqli_query($con,"SELECT * FROM LocationTable WHERE id = ".$row2['Location']), MYSQL_ASSOC);
 	}
@@ -27,13 +26,13 @@
 			<div id="Line">
 				<?php 
 					echo "<strong>".$name."</strong>";
-					echoCounter($lvl,$row2['AP']); 
+					echoCounter($row2['lvl'],$row2['AP']); 
 				?>
 				<?php echo "<div id=\"Location\"><a href=\"/Ingress/Areas/Info/?Name=".$Location['name']."\">Area  ".$Location['name']."</a></div>"; ?>
 			</div>
 			<br style="line-height:6px;"/>
 			<?php
-				if(CanVeiwOther($con,$row2['Location'],$lvl)){
+				if(CanVeiwOther($con,$name)){
 					if($row['month']!='Neve'){
 						echo "<div id=\"Line\">";
 						echo "Last updated on the ".$row['day']." of ".$row['month']." 20".$row['year'];

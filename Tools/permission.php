@@ -1,17 +1,16 @@
 <?php
-	function CanVeiwOther($con,$OthersLocationID,$OthersLevel){
+	function CanVeiwOther($con,$OtherName){
 		$ResultPlayer=mysqli_query($con,"SELECT * FROM AgentTable WHERE username = \"".$_SESSION['name']."\"");
-		$PlayersRow = mysqli_fetch_array($ResultPlayer, MYSQL_ASSOC);
+		$Player = mysqli_fetch_array($ResultPlayer, MYSQL_ASSOC);
 
+		$OtherString = "SELECT * FROM AgentTable WHERE username = '".$OtherName."'";
+		$OtherQuery = mysqli_query($con,$OtherString);
+		$Other = mysqli_fetch_array($OtherQuery);
 
-		if(($_SESSION['lvl']>=7)|($_SESSION['admin'])){
-			return true;
+		if($Player['Location']==$Other['Location']){
+			if($Player['lvl']>=$Other['InLvl']){return true;}else{return false;}
 		}else{
-			if(($OthersLevel<=$_SESSION['lvl'])&($PlayersRow['Location']==$OthersLocationID)){
-				return true;
-			}else{
-				return false;
-			}
+			if($Player['lvl']>=$Other['outLvl']){return true;}else{return false;}
 		}
 	}
 
