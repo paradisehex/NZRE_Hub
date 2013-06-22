@@ -40,17 +40,22 @@
 					}
 
 
-					if(IsOfficer($con,$_SESSION['name'])){
-						$ChLvl =  "<form action=\"changelvl.php\" method=\"post\">";
-							$ChLvl .= "Change players level<br><input class=\"field\" type=\"text\" name=\"Level\" autocomplete=\"off\" placeholder=\"New Level\"><br>";
-							$ChLvl .= "<input type=\"hidden\" value=\"".$name."\" name=\"Name\">";
-							$ChLvl .= "<input class=\"button\" type=\"submit\" value=\"Update\">";
-						$ChLvl .= "</form>";
-					}
+					$ChLvl = "";//This Needs fixing I left it here in a rush
 					echoInv($row,$ChLvl);
 
 				}else{
 					echo "Restricted content<br>Insufficient access level";
+				}
+
+
+
+				if(IsOfficer($con,$_SESSION['name'])){
+					$ChLvl =  "<br><br><form action=\"changelvl.php\" method=\"post\">";
+						$ChLvl .= "Change players level<br><input class=\"field\" type=\"text\" name=\"Level\" autocomplete=\"off\" placeholder=\"New Level\"><br>";
+						$ChLvl .= "<input type=\"hidden\" value=\"".$name."\" name=\"Name\">";
+						$ChLvl .= "<input class=\"button\" type=\"submit\" value=\"Update\">";
+					$ChLvl .= "</form>";
+					echo $ChLvl;
 				}
 			?>
 	</body>
