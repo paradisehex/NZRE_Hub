@@ -7,12 +7,9 @@
 
 		$username=$_SESSION['name'];
 		$ap=stripslashes($_POST['AP']);
-		$maxAP = 20000*pow(2,($_SESSION['lvl']-1));
 
-		if($ap<$maxAP){
-			$sql = "UPDATE AgentTable SET AP = '".$ap."' WHERE username = '".$username."'";
-			mysqli_query($con,$sql);
-		}
+		$sql = "UPDATE AgentTable SET AP = '".$ap."' WHERE username = '".$username."'";
+		mysqli_query($con,$sql);
 
 		header("location:/Ingress/Users");
 	}
