@@ -15,10 +15,10 @@
 					It's purpose is to allow the New Zealand Resistance<br> to be more organised.
 				</p>
 				<p>
-					Only level 8 agents can change their own level.<br>If you need your level changed an area officer.<br>
+					Only level 8 agents can change their own level.<br>If you need your level changed ask an area officer.<br>
 				</p>
 				<p>
-					This is how the permsion system works.<br>
+					This is how the permission system works.<br>
 					Captains can choose officers.<br>
 					Area officers and captains can: <br>
 					register players,<br>
