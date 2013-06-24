@@ -1,6 +1,5 @@
 <?php
 	session_start();
-	//Check if logged in
 	if(!$_SESSION['name']){header("location:/Ingress");}
 ?>
 <html>
@@ -11,7 +10,7 @@
 		<div id="line">
 			<div id="left">
 				<p>
-					The website was created by Tom (GrayGhost).<br>
+					This website was created by Tom (GrayGhost).<br>
 					It's purpose is to allow the New Zealand Resistance<br> to be more organised.
 				</p>
 				<p>

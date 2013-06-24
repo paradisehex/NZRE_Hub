@@ -25,7 +25,8 @@
 				</div>
 
 				<input class="button" type="submit" value="Login">
-		</form><br>
+		</form>
+		<br>
 		<div id="line">
 			<img src="image.png" width="160" height="250" alt="No frogs allowed">
 		</div>
