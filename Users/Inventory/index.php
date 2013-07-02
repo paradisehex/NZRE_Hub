@@ -28,6 +28,8 @@
 					echo "<strong>".$name."</strong>";
 					echoCounter($row2['lvl'],$row2['AP']); 
 				?>
+			</div>
+			<div id="Line">
 				<?php echo "<div id=\"Location\"><a href=\"/Ingress/Areas/Info/?Name=".$Location['name']."\">Area  ".$Location['name']."</a></div>"; ?>
 			</div>
 			<br style="line-height:6px;"/>
@@ -40,7 +42,7 @@
 					}
 
 
-					$ChLvl = "";//This Needs fixing I left it here in a rush
+					$ChLvl = "";//TODO This Needs fixing I left it here in a rush
 					echoInv($row,$ChLvl);
 
 				}else{

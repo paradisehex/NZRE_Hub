@@ -14,12 +14,21 @@
 	<?php include "/var/www/Ingress/Tools/head.php";?>
 	<body>
 		<?php include "/var/www/Ingress/Tools/menu.php";?>
-		<p><form action="subEnemy.php" method="post">
-				Submit Enemy Agent
-				<input class="field" type="text" name="username" autocomplete="off" placeholder="User Name">
-				<input class="field" type="text" name="Level" autocomplete="off" placeholder="Level">
-				<input class="button" type="submit" value="Submit" >
-		</form></p>
+		<form action="subEnemy.php" method="post">
+				<div id="lineE">
+					Submit Enemy Agent
+				</div>
+				<div id="lineE">
+					<input class="field" type="text" name="username" autocomplete="off" placeholder="User Name">
+				</div>
+				<div id="lineE">
+					<input class="field" type="text" name="Level" autocomplete="off" placeholder="Level">
+				</div>
+				<div id="lineE">
+					<input class="button" type="submit" value="Submit" >
+				</div>
+		</form>
+		<br>
 			<?php
 				while ($row = mysqli_fetch_array($result, MYSQL_ASSOC)) {
 					echo "<div id=\"LineE\">";

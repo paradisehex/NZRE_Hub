@@ -22,6 +22,7 @@ if($count==1){
 	$_SESSION['name'] = $row['username'];
 	$_SESSION['admin'] = $row['Admin'];
 	$_SESSION['lvl'] = $row['lvl'];
+	$_SESSION['view'] = "Desktop";
 	
 	//Don't log me (I log in a lot)
 	if($username!="GrayGhost"){

@@ -14,9 +14,7 @@
 	<?php include "/var/www/Ingress/Tools/head.php";?>
 	<body>
 		<?php include "/var/www/Ingress/Tools/menu.php";?>
-		<div id="line">
-			<form action="Register" method="post"><input class="button" type="submit" value="Register User"></form>
-		</div>
+		<div id="line"><a href="Register">Register User</a></div>
 		<div id="line"><a href="/Ingress/Admin/Location">Location</a></div>
 		<div id="line">Users:</div>
 		<?php

@@ -1,0 +1,9 @@
+<?php
+	session_start();
+	if($_SESSION['view']=="Mobile"){
+		$_SESSION['view']="Desktop";
+	}else{
+		$_SESSION['view']="Mobile";
+	}
+	header("location:".$_POST['URL']);
+?>

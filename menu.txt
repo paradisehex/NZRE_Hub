@@ -1,6 +1,6 @@
-<div id="Item"><a href="/Ingress/Users/"><strong>Home</strong></a></div>
-<div id="Item"><a href="/Ingress/Users/Agents"><strong>Agents</strong></a></div>
-<div id="Item"><a href="/Ingress/Areas"><strong>Areas</strong></a></div>
-<div id="Item"><a href="/Ingress/Portals"><strong>Portals</strong></a></div>
-<div id="Item"><a href="/Ingress/Info"><strong>Info</strong></a></div>
-<div id="Item"><a href="/Ingress/Users/Settings"><strong>Settings</strong></a></div>
+<div id="Item"><a href="/Ingress/Users/">Home</a></div>
+<div id="Item"><a href="/Ingress/Users/Agents">Agents</a></div>
+<div id="Item"><a href="/Ingress/Areas">Areas</a></div>
+<div id="Item"><a href="/Ingress/Portals">Portals</a></div>
+<div id="Item"><a href="/Ingress/Info">Info</a></div>
+<div id="Item"><a href="/Ingress/Users/Settings">Settings</a></div>
