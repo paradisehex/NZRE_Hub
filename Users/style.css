@@ -263,6 +263,7 @@ textarea.R{border: 1px solid #59FBEA;}
 	height:100%;
 	display: inline-block;
 	background-color:#a91010;
+	float: left;
 }
 #RES{background-color:#1021a9;}
 #OTH{background-color:#666666;}

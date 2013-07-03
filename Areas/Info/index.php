@@ -63,7 +63,8 @@
 				echo "</form>";
 			}
 
-			echo "<a href=\"StandingOrders/?Name=".$name."\">Standing Orders</a>"; 
+			echo "<a href=\"StandingOrders/?Name=".$name."\">Standing Orders</a><br>";
+			echo "<a href=\"Inventory/?Name=".$name."\">Inventory</a>"; 
 			echo "<div id=\"lineE\"><a href=\"Enemies/?Name=".$name."\">Enemy Agents</a></div>"; 
 		?>
 		<div id="line">Agents:</div>
