@@ -263,11 +263,11 @@ textarea.R{border: 1px solid #59FBEA;}
 	height:100%;
 	display: inline-block;
 	background-color:#a91010;
-	float: left;
 }
-#RES{background-color:#1021a9;}
-#OTH{background-color:#666666;}
-#KEYS{background-color:#ffcc00;}
+#XMP{float: left;}
+#RES{background-color:#1021a9;float: left;}
+#OTH{background-color:#666666;float: left;}
+#KEYS{background-color:#ffcc00;float: left;}
 #EMP{background-color:#000000;}
 
 #K,
