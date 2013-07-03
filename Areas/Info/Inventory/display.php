@@ -12,6 +12,10 @@
 			return $boo;
 		}
 
+
+		echo "<div id=\"LineLow\">Out of ".$numofplayers." players</div>";
+
+
 		//Res
 		if(itemLine($res1,"lvl1","Level 1 Resonators")){$boo = true;}
 		if(itemLine($res2,"lvl2","Level 2 Resonators")){$boo = true;}

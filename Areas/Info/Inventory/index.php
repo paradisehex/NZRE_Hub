@@ -41,7 +41,7 @@
 				$Items = mysqli_fetch_array($ItemQuery, MYSQL_ASSOC);
 
 				addInventory($Items);
-				$i++;
+				if($Items['year']!=0){$i++;}
 			}
 
 			echoInv($i);
