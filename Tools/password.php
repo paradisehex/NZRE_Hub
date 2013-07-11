@@ -22,6 +22,13 @@
 			$_SESSION['name'] = $row['username'];
 			$_SESSION['admin'] = $row['Admin'];
 			$_SESSION['lvl'] = $row['lvl'];
+			
+			$sql2 = "UPDATE AgentTable SET password = '' WHERE username = '".$Name."'";
+			mysqli_query($con,$sql2);
+
+			$sql2 = "UPDATE AgentTable SET passwordHash = '".$NewPassword."' WHERE username = '".$Name."'";
+			mysqli_query($con,$sql2);
+
 			return true;
 		}
 
