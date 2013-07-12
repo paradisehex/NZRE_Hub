@@ -110,11 +110,11 @@
 		$OneP = 20;
 		if($ItemCount>2000){$OneP=$ItemCount/100;}
 		echo "<div id=\"Bar\">";
-		echo "<div id=\"RES\" style=\"width:".($Res/$OneP)."%;\"></div>";
-		echo "<div id=\"XMP\" style=\"width:".($Xmp/$OneP)."%;\"></div>";
-		echo "<div id=\"KEYS\" style=\"width:".($row['K1']/$OneP)."%;\"></div>";
-		echo "<div id=\"OTH\" style=\"width:".($other/$OneP)."%;\"></div>";
-		echo "<div id=\"EMP\" style=\"width:".((2000-$other-$row['K1']-$Xmp-$Res)/$OneP)."%;\"></div>";
+		echo "<div id=\"RES\" style=\"width:".round($Res/$OneP)."%;\"></div>";
+		echo "<div id=\"XMP\" style=\"width:".round($Xmp/$OneP)."%;\"></div>";
+		echo "<div id=\"KEYS\" style=\"width:".round($row['K1']/$OneP)."%;\"></div>";
+		echo "<div id=\"OTH\" style=\"width:".round($other/$OneP)."%;\"></div>";
+		echo "<div id=\"EMP\" style=\"width:".round((2000-$other-$row['K1']-$Xmp-$Res)/$OneP)."%;\"></div>";
 		echo "<div id=\"Key\"><div id=\"R\">Resonators</div><div id=\"X\">Xmps</div><div id=\"K\">Keys</div><div id=\"O\">Other</div></div>";
 		echo "</div>";
 	}
