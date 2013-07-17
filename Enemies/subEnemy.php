@@ -23,7 +23,7 @@ if(!$_SESSION['name']){
 				$sql = "insert into EnemyTable values('$myusername',$level,".date('d',time()).",'".date('M',time())."',".date('y',time()).",0)";
 				mysqli_query($con,$sql);
 				//Go to tools page
-				header("location:/Ingress/Enemies");
+				header("location:/Ingress/Enemies/Info/?Name=".$myusername);
 		}
 		else {
 			echo "Enemy already added";
