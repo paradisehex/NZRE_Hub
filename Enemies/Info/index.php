@@ -27,11 +27,11 @@
 					echo "Last updated on the ".$row['day']." of ".$row['month']." 20".$row['year'];
 				?>
 			</div>
-			<div id="Text">
+			<!--div id="Text">
 				<?php
-					echo file_get_contents('/var/www/Ingress/.data/Enemies/'.$name.'.txt', FILE_USE_INCLUDE_PATH);
+					//echo file_get_contents('/var/www/Ingress/.data/Enemies/'.$name.'.txt', FILE_USE_INCLUDE_PATH);
 				?>
-			</div>
+			</div-->
 			<p><form action="Edit/index.php" method="post">
 				<?php echo "<input type=\"hidden\" name=\"username\" value=\"".$name."\">"; ?>
 				<input class="buttone" type="submit" value="Edit" >
