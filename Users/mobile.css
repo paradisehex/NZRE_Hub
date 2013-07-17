@@ -235,14 +235,6 @@ textarea.R{border: 2px solid #59FBEA;}
 	margin-right: auto ;
 }
 
-#Meter0{}
-#Meter1{background: url("/Ingress/sprite.png") no-repeat scroll 0px -558px transparent;height: 62px;}
-#Meter2{background: url("/Ingress/sprite.png") no-repeat scroll 0px -186px transparent;height: 62px;}
-#Meter3{background: url("/Ingress/sprite.png") no-repeat scroll 0px -620px transparent;height: 62px;}
-#Meter4{background: url("/Ingress/sprite.png") no-repeat scroll 0px -372px transparent;height: 62px;}
-#Meter5{background: url("/Ingress/sprite.png") no-repeat scroll 0px -930px transparent;height: 62px;}
-#Meter6{background: url("/Ingress/sprite.png") no-repeat scroll 0px -248px transparent;height: 62px;}
-#Meter7{background: url("/Ingress/sprite.png") no-repeat scroll 0px -682px transparent;height: 62px;}
 
 #Counter{display: none;}
 #AP{display: inline;}

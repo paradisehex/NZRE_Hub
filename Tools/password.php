@@ -3,8 +3,6 @@
 		$OldPassword = md5($Password);
 		$NewPassword =getHash($Name,$Password);
 
-		echo $NewPassword."<br>";
-
 		$OldSQL = "SELECT * FROM AgentTable WHERE username='$Name' and password='$OldPassword'";
 		$NewSQL = "SELECT * FROM AgentTable WHERE username='$Name' and passwordHash='$NewPassword'";
 

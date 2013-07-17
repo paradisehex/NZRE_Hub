@@ -18,7 +18,7 @@
 		<?php include "/var/www/Ingress/Tools/menu.php";?>
 			<br>
 			<div id="LineE"><?php echo "<div id=\"lvl".$row['lvl']."\">"."Veiwing ".$name." Level ".$row['lvl']."</div>"; ?></div>
-			<div id="Block">
+		<div id="Block">
 
 			<form class="e" action="save.php" method="post">
 				Update Description
@@ -43,6 +43,7 @@
 				Delete Agent<br>
 				<input class="buttone" type="submit" value="Delete" >
 			</form>
+		<div id="LineE">Please do not put any personal information about <?php echo $name; ?> or I'll lower your level to -1 so you can't use enemy info</div>
 		</div>
 	</body>
 </html>
