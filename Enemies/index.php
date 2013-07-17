@@ -30,13 +30,23 @@
 		</form>
 		<br>
 			<?php
+				$Names = array();
 				while ($row = mysqli_fetch_array($result, MYSQL_ASSOC)) {
-					echo "<div id=\"LineE\">";
-						echo "<div id=\"Left\">";
-							echo "<a href=\"/Ingress/Enemies/Info/?Name=".$row['username']."\">".$row['username']."</a>";
-						echo "</div><div id=\"Right\">";
-							echo "<div id=\"lvl".$row['lvl']."\">".$row['lvl']."</div>";
-					echo "</div></div>";
+					array_push($Names,$row['username']);
+				}
+				natcasesort ($Names);
+
+				foreach($Names as $name){
+					$sql="SELECT * FROM EnemyTable WHERE username = '".$name."'";
+					$result=mysqli_query($con,$sql);
+					while ($row = mysqli_fetch_array($result, MYSQL_ASSOC)) {
+						echo "<div id=\"LineE\">";
+							echo "<div id=\"Left\">";
+								echo "<a href=\"/Ingress/Enemies/Info/?Name=".$row['username']."\">".$row['username']."</a>";
+							echo "</div><div id=\"Right\">";
+								echo "<div id=\"lvl".$row['lvl']."\">".$row['lvl']."</div>";
+						echo "</div></div>";
+					}
 				}
 			?>
 	</body>
