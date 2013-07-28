@@ -23,15 +23,6 @@
 								echo "<div id=\"lvl".$row['lvl']."\">".$ap." AP</div>";
 						echo "</div></div>";
 						$count++;
-					}else{
-						//$ap = $row['AP'];
-						//echo "<div id=\"Line\">";
-						//	echo "<div id=\"Left\">";
-						//		echo "<div id=\"line\"><div id=\"lvl".$row['lvl']."\">".$row['username']."</div>";
-						//	echo "</div>";
-						//		echo "";
-						//echo "</div></div>";
-						//$count++;
 					}
 				}
 			}
