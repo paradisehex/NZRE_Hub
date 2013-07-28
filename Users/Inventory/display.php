@@ -34,8 +34,8 @@
 
 
 		//Viruses
-		if(itemLine($row['VJ'],"Jarvis","Jarvis Virus")){$boo = true;}
 		if(itemLine($row['VA'],"Ada","ADA Refactor")){$boo = true;}
+		if(itemLine($row['VJ'],"Jarvis","Jarvis Virus")){$boo = true;}
 		if($boo){echo "<br>";$boo = false;}
 
 

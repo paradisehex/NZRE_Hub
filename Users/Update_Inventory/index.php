@@ -43,8 +43,8 @@
 
 
 				//Viruses
-				echoLine($row['VJ'] , 'VJ' , "Jarvis V" , "Jarvis Virus");
 				echoLine($row['VA'] , 'VA' , "Ada V" , "ADA Refactor");
+				echoLine($row['VJ'] , 'VJ' , "Jarvis V" , "Jarvis Virus");
 
 
 				//Shields
