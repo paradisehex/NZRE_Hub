@@ -1,4 +1,4 @@
-<?php
+<?php 
 	function echoAgentsRanking($result,$con){
 		$AP = array();
 		while ($row = mysqli_fetch_array($result, MYSQL_ASSOC)) {
