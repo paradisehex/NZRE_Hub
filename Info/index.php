@@ -68,7 +68,7 @@
 						echo $count;
 
 					?><br>
-					(Users who log in at least once a week)
+					(Users who update their inventory at least once a week)
 				</p>
 			</div>
 		</div>
