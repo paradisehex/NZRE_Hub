@@ -3,6 +3,9 @@
 	//Check if logged in
 	if(!$_SESSION['name']){
 		header("location:/Ingress");
+	}else{
+		include "/var/www/Ingress/Tools/database.php";
+		include "/var/www/Ingress/Tools/permission.php";
 	}
 ?>
 <html>
@@ -11,7 +14,9 @@
 		<?php include "/var/www/Ingress/Tools/menu.php";?>
 		<p>
 			<?php
-				echo file_get_contents('/var/www/Ingress/Portals/Portals.html', FILE_USE_INCLUDE_PATH);
+				if(IsOfficer($con,$_SESSION['name'])){
+					echo "<div id=\"line\"><a href=\"Submit\">Submit Portal</a></div>";
+				}
 			?>
 		</p>
 	</body>
