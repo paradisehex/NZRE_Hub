@@ -16,6 +16,20 @@
 			<?php
 				if(IsOfficer($con,$_SESSION['name'])){
 					echo "<div id=\"line\"><a href=\"Submit\">Submit Portal</a></div>";
+					echo "<br>";
+				}
+				
+				
+				$Names = array();
+				$result = mysqli_query($con,"SELECT * FROM PortalTable");
+				while ($row = mysqli_fetch_array($result, MYSQL_ASSOC)) {
+					array_push($Names,$row['portalName']);
+				}
+				
+				natcasesort ($Names);
+				
+				foreach($Names as $Name){
+					echo "<div id=\"Line\"><a href=\"/Ingress/Portals/Info/?Name=".$Name."\">".$Name."</a></div>";
 				}
 			?>
 		</p>

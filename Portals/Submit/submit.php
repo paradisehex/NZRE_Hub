@@ -17,7 +17,7 @@
 			echo $count;
 			if($count == 0){
 				mysqli_query($con,"insert into PortalTable values('$Name','$Location','$URL');");
-				header("location:./");
+				header("location:../");
 			}else{
 				echo "Portal already added";
 			}
