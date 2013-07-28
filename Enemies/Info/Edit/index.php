@@ -20,14 +20,6 @@
 			<div id="LineE"><?php echo "<div id=\"lvl".$row['lvl']."\">"."Veiwing ".$name." Level ".$row['lvl']."</div>"; ?></div>
 		<div id="Block">
 
-			<!--form class="e" action="save.php" method="post">
-				Update Description
-				<br>
-				<textarea name="message"><?php echo file_get_contents('/var/www/Ingress/.data/Enemies/'.$name.'.txt', FILE_USE_INCLUDE_PATH);?></textarea>
-				<?php echo "<input type=\"hidden\" name=\"username\" value=\"".$name."\">";?>
-				<input class="buttone" type="submit" value="Save" >
-			</form-->
-
 
 			<form class="e" action="changelvl.php" method="post">
 					Update Level<br>
@@ -42,7 +34,6 @@
 				Delete Agent<br>
 				<input class="buttone" type="submit" value="Delete" >
 			</form>
-		<!--div id="LineE">Please do not put any personal information about <?php echo $name; ?> or I'll lower your level to -1 so you can't use enemy info</div-->
 		</div>
 	</body>
 </html>
