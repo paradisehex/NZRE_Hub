@@ -23,7 +23,7 @@
 				$Names = array();
 				$result = mysqli_query($con,"SELECT * FROM PortalTable");
 				while ($row = mysqli_fetch_array($result, MYSQL_ASSOC)) {
-					array_push($Names,$row['portalName']);
+					array_push($Names,$row['PortalName']);
 				}
 				
 				natcasesort ($Names);
