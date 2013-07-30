@@ -8,7 +8,7 @@
 	
 	$HOST = "localhost";
 	$USER = "resistance";
-	$PSWD = "dont tell robo the password";
+	$PSWD = "oothjssr";
 	$DB = "Ingress";
 	
 	$con = mysqli_connect($HOST,$USER,$PSWD,$DB);
