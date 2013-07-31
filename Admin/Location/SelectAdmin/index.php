@@ -1,17 +1,13 @@
 <?php
-	ob_start();
 	session_start();
-	//Check if session is admin.
-	if(!$_SESSION['admin']){
-		header("location:/Ingress");
-	}else{
-		include "/var/www/Ingress/Tools/database.php";
+	if(!$_SESSION['admin']){header("location:/Ingress");return;}
+	
+	include "/var/www/Ingress/Tools/database.php";
 
-		$name = strip_tags(stripslashes($_GET['Name']));
+	$name = strip_tags(stripslashes($_GET['Name']));
 
-		$sql="SELECT * FROM AgentTable";
-		$result= mysqli_query($con,$sql);
-	}
+	$sql="SELECT * FROM AgentTable";
+	$result= mysqli_query($con,$sql);
 ?>
 <html>
 	<?php include "/var/www/Ingress/Tools/head.php";?>

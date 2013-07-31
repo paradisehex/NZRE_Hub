@@ -1,10 +1,10 @@
 <?php
 	session_start();
-	if($_SESSION['name']){
+	
+		include "/var/www/Ingress/Tools/database.php";
+	
 		$AnyLvl=strip_tags(stripslashes($_POST['AnyOneLevel']));
 		$AreaLvl=strip_tags(stripslashes($_POST['AreaLevel']));
-
-		include "/var/www/Ingress/Tools/database.php";
 
 		$sql = "UPDATE AgentTable SET InLvl = '".$AreaLvl."' WHERE username = '".$_SESSION['name']."'";
 		mysqli_query($con,$sql);
@@ -12,7 +12,4 @@
 		mysqli_query($con,$sql);
 
 		header("location:../");
-	}else{
-		header("location:/Ingress");
-	}
 ?>

@@ -1,8 +1,5 @@
 <?php
 	session_start();
-	if(!$_SESSION['name']){
-		header("location:/Ingress");
-	}else{
 		include "/var/www/Ingress/Tools/database.php";	
 
 		$username=$_SESSION['name'];
@@ -12,5 +9,4 @@
 		mysqli_query($con,$sql);
 
 		header("location:/Ingress/Users");
-	}
 ?>

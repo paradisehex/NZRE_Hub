@@ -1,14 +1,10 @@
 <?php
-	ob_start();
 	session_start();
-	//Check if session is admin.
-	if(!$_SESSION['admin']){
-		header("location:/Ingress");
-	}else{
-		include "/var/www/Ingress/Tools/database.php";
-		$sql="SELECT * FROM LocationTable";
-		$result=mysqli_query($con,$sql);
-	}
+	if(!$_SESSION['admin']){header("location:/Ingress");return;}
+	
+	include "/var/www/Ingress/Tools/database.php";
+	$sql="SELECT * FROM LocationTable";
+	$result=mysqli_query($con,$sql);
 ?>
 <html>
 	<?php include "/var/www/Ingress/Tools/head.php";?>

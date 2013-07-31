@@ -1,13 +1,7 @@
 <?php
 	session_start();
 	//Check if logged in
-	if(!$_SESSION['name']){
-		header("location:/Ingress");
-	}else{
-		include "/var/www/Ingress/Tools/database.php";
-		$sql="SELECT * FROM EnemyTable";
-		$result=mysqli_query($con,$sql);
-	}
+	if(!$_SESSION['name']){header("location:/Ingress");return;}
 ?>
 <html>
 	<?php include "/var/www/Ingress/Tools/head.php";?>

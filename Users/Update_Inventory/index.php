@@ -1,15 +1,10 @@
 <?php
 	session_start();
-	//Check if logged in
-	if(!$_SESSION['name']){
-		header("location:/Ingress");
-	}else{
 		include "/var/www/Ingress/Tools/database.php";
 
 		$sql="SELECT * FROM ItemTable WHERE username = \"".$_SESSION['name']."\"";
 		$result=mysqli_query($con,$sql);
 		$row = mysqli_fetch_array($result, MYSQL_ASSOC);
-	}
 ?>
 <html>
 	<?php include "/var/www/Ingress/Tools/head.php";?>

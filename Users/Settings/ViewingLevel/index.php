@@ -1,14 +1,9 @@
 <?php
 	session_start();
-	//Check if logged in
-	if(!$_SESSION['name']){
-		header("location:/Ingress");
-	}else{
 		include "/var/www/Ingress/Tools/database.php";
 		$UserString = "SELECT * FROM AgentTable WHERE username = '".$_SESSION['name']."'";
 		$UserQuery = mysqli_query($con,$UserString);
 		$User = mysqli_fetch_array($UserQuery);
-	}
 ?>
 <html>
 	<?php include "/var/www/Ingress/Tools/head.php";?>

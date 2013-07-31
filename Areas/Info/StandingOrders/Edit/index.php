@@ -1,15 +1,10 @@
 <?php
 	session_start();
-	//Check if logged in
-	if(!$_SESSION['name']){
-		header("location:/Ingress");
-	}else{
 		include "/var/www/Ingress/Tools/database.php";
 
 		$name = strip_tags(stripslashes($_POST['Name']));
 
 		$sql="SELECT * FROM LocationTable WHERE name = \"".$name."\"";
-	}
 ?>
 <html>
 	<?php include "/var/www/Ingress/Tools/head.php";?>

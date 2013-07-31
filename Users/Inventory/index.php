@@ -1,9 +1,6 @@
 <?php
 	session_start();
-	//Check if logged in
-	if(!$_SESSION['name']){
-		header("location:/Ingress");
-	}else{
+	
 		include "/var/www/Ingress/Tools/database.php";
 		include "/var/www/Ingress/Tools/permission.php";
 		include "/var/www/Ingress/Tools/AP.php";		
@@ -17,7 +14,6 @@
 		$row2 = mysqli_fetch_array(mysqli_query($con,"SELECT * FROM AgentTable WHERE username = \"".$name."\""), MYSQL_ASSOC);
 
 		$Location = mysqli_fetch_array(mysqli_query($con,"SELECT * FROM LocationTable WHERE id = ".$row2['Location']), MYSQL_ASSOC);
-	}
 ?>
 <html>
 	<?php include "/var/www/Ingress/Tools/head.php";?>

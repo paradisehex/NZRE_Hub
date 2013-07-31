@@ -1,10 +1,6 @@
 <?php
-ob_start();
-session_start();
-//Check if session is admin.
-if(!$_SESSION['name']){
-	header("location:/Ingress");
-}else{
+	session_start();
+	
 	// Connect to server and select databse.
 	include "/var/www/Ingress/Tools/database.php";
 	include "/var/www/Ingress/Tools/permission.php";
@@ -46,5 +42,4 @@ if(!$_SESSION['name']){
 	}else{
 		header("location:/Ingress");
 	}
-}
 ?>

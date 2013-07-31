@@ -1,6 +1,5 @@
 <?php
 	session_start();
-	if(!$_SESSION['name']){header("location:/Ingress");return;}
 	
 	include "/var/www/Ingress/Tools/database.php";
 	include "/var/www/Ingress/Tools/permission.php";

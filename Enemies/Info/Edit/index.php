@@ -1,16 +1,13 @@
 <?php
 	session_start();
-	//Check if logged in
-	if(!$_SESSION['name']){
-		header("location:/Ingress");
-	}else{
-		if($_SESSION['lvl']<5){header("location:/Ingress/Enemies/Error");}
+	
 		include "/var/www/Ingress/Tools/database.php";
+		if($_SESSION['lvl']<5){header("location:/Ingress/Enemies/Error");return;}
+		
 		$name = strip_tags(stripslashes($_POST['username']));
 		$sql="SELECT * FROM EnemyTable WHERE username = \"".$name."\"";
 		$result=mysqli_query($con,$sql);
 		$row = mysqli_fetch_array($result, MYSQL_ASSOC);
-	}
 ?>
 <html>
 	<?php include "/var/www/Ingress/Tools/head.php";?>

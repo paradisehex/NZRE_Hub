@@ -1,6 +1,8 @@
 <?php
 session_start();
 
+$_SESSION['name'] = "Not Null";
+
 include "/var/www/Ingress/Tools/database.php";
 include "/var/www/Ingress/Tools/log.php";
 include "/var/www/Ingress/Tools/password.php";
@@ -27,6 +29,7 @@ if(checkPassword($username,$password,$con)){
 	header("location:/Ingress/Users");
 }
 else {
+	$_SESSION['name'] = null;
 	LogText("User ".$username." Failed to login");
 	echo "<html><head>
 			<title>Resistance</title>

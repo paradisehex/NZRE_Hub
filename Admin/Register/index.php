@@ -1,10 +1,6 @@
 <?php
-	ob_start();
 	session_start();
-	//Check if session is admin.
-	if(!$_SESSION['admin']){
-		header("location:/Ingress");
-	}
+	if(!$_SESSION['admin']){header("location:/Ingress");return;}
 ?>
 <html>
 	<?php include "/var/www/Ingress/Tools/head.php";?>

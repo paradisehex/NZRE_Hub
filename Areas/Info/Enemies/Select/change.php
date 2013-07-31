@@ -1,8 +1,5 @@
 <?php
 	session_start();
-	if(!$_SESSION['name']){
-		header("location:/Ingress");
-	}else{
 		include "/var/www/Ingress/Tools/database.php";
 
 		$name = strip_tags(stripslashes($_POST['Name']));
@@ -16,5 +13,4 @@
 		}else{
 			header("location:/Ingress");
 		}
-	}
 ?>

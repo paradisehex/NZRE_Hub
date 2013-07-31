@@ -1,8 +1,7 @@
 <?php
 	session_start();
-	if(!$_SESSION['admin']){
-		header("location:/Ingress");
-	}else{
+	if(!$_SESSION['admin']){header("location:/Ingress");return;}
+	
 		include "/var/www/Ingress/Tools/database.php";
 		include "/var/www/Ingress/Tools/password.php";
 
@@ -17,5 +16,4 @@
 		mysqli_query($con,$sql);
 
 		header("location:/Ingress/Admin");
-	}
 ?>

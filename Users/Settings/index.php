@@ -1,9 +1,6 @@
 <?php
 	session_start();
-	//Check if logged in
-	if(!$_SESSION['name']){
-		header("location:/Ingress");
-	}
+	if(!$_SESSION['name']){header("location:/Ingress");return;}
 ?>
 <html>
 	<?php include "/var/www/Ingress/Tools/head.php";?>

@@ -1,17 +1,12 @@
 <?php
 	session_start();
-	//Check if logged in
-	if(!$_SESSION['name']){
-		header("location:/Ingress");
-	}else{
-		include "/var/www/Ingress/Tools/database.php";
-		include "/var/www/Ingress/Tools/permission.php";
+	include "/var/www/Ingress/Tools/database.php";
+	include "/var/www/Ingress/Tools/permission.php";
 
-		$Name = strip_tags(stripslashes($_GET['Name']));
+	$Name = strip_tags(stripslashes($_GET['Name']));
 
-		$ThePortal = mysqli_fetch_array(mysqli_query($con,"SELECT * FROM PortalTable WHERE portalName='$Name'"));
-		$TheKeys = mysqli_query($con,"SELECT * FROM KeyTable WHERE portalName='$Name'");
-	}
+	$ThePortal = mysqli_fetch_array(mysqli_query($con,"SELECT * FROM PortalTable WHERE portalName='$Name'"));
+	$TheKeys = mysqli_query($con,"SELECT * FROM KeyTable WHERE portalName='$Name'");
 ?>
 <html>
 	<?php include "/var/www/Ingress/Tools/head.php";?>

@@ -1,10 +1,6 @@
 <?php
-	ob_start();
 	session_start();
-	//Check if session is admin.
-	if((!$_SESSION['name'])|($_SESSION['lvl']<7)){
-		header("location:/Ingress");
-	}else{
+	if($_SESSION['lvl']<7){header("location:/Ingress");return;}
 		
 		include "/var/www/Ingress/Tools/database.php";
 		include "/var/www/Ingress/Tools/permission.php";
@@ -16,7 +12,6 @@
 		
 		$OfficerQuery="SELECT * FROM OfficerTable WHERE Location='".$row['id']."'";
 		$AreaOfficers = mysqli_query($con,$OfficerQuery);
-	}
 ?>
 <html>
 	<?php include "/var/www/Ingress/Tools/head.php";?>

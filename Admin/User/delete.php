@@ -1,8 +1,6 @@
 <?php
 	session_start();
-	if(!$_SESSION['admin']){
-		header("location:/Ingress");
-	}else{
+	if(!$_SESSION['admin']){header("location:/Ingress");return;}
 
 
 		$username=strip_tags(stripslashes($_POST['Name']));
@@ -17,5 +15,4 @@
 
 		//Go back to tools
 			header("location:/Ingress/Admin");
-	}
 ?>
