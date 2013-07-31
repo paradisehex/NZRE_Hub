@@ -16,9 +16,9 @@
 			<?php
 				if(IsOfficer($con,$_SESSION['name'])){
 					echo "<div id=\"line\"><a href=\"Submit\">Submit Portal</a></div>";
-					echo "<br>";
 				}
 				
+				echo "<div id=\"line\"><a href=\"Keys\">Update Keys</a></div><br>";
 				
 				$Names = array();
 				$result = mysqli_query($con,"SELECT * FROM PortalTable");
