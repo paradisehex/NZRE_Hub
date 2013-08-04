@@ -6,10 +6,7 @@
 		return;
 	}
 	
-	$HOST = "localhost";
-	$USER = "resistance";
-	$PSWD = "dont tell robo the password";
-	$DB = "Ingress";
+	include "/var/www/Ingress/.data/DB_PASSWORD.php";
 	
 	$con = mysqli_connect($HOST,$USER,$PSWD,$DB);
 ?>
