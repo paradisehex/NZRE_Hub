@@ -15,8 +15,8 @@ function initialize() {
 			]
 		},
 		{
-			elementType: 'labels',
-			stylers: [{ visibility: 'off' }]
+			elementType: "labels",
+			stylers: [{ 'invert_lightness': true },{visibility: 'on' } ]
 		},
 		{
 			featureType: 'water',
@@ -28,6 +28,11 @@ function initialize() {
 			stylers: [ { color: "#000090" },] 
 		},
 		
+		{
+			featureType: "road",
+			elementType: 'labels',
+			stylers: [{ visibility: 'off' }]
+		},
 		{
 			featureType: "road",
 			stylers: [{ "color": RoadColour }]
