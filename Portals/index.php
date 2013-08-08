@@ -14,7 +14,8 @@
 					echo "<div id=\"line\"><a href=\"Submit\">Submit Portal</a></div>";
 				}
 				
-				echo "<div id=\"line\"><a href=\"Keys\">Update Keys</a></div><br>";
+				echo "<div id=\"line\"><a href=\"Keys\">Update Keys</a></div>";
+				echo "<div id=\"line\"><a href=\"Map\">Map</a></div><br>";
 				
 				$Names = array();
 				$result = mysqli_query($con,"SELECT * FROM PortalTable");
