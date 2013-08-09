@@ -105,6 +105,7 @@ input.buttonOfficer{color:#FF0000;}
 	float:right;
 }
 #Item{
+	font-weight:bold;
 	display: inline;
 	padding:5px;
 }
