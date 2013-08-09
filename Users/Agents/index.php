@@ -17,8 +17,6 @@
 					echo "<div id=\"line\"><a href=\"Register\">Register Agent</a></div>";
 				}
 
-				echo "<div id=\"line\"><a href=\"/Ingress/Enemies\">Enemy Agents</a></div><br>";
-
 				echoAgentsRanking($result,$con);
 			?>
 		</p>

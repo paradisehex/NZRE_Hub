@@ -59,7 +59,6 @@
 
 			echo "<a href=\"StandingOrders/?Name=".$name."\">Standing Orders</a><br>";
 			if($_SESSION['lvl']>=7){echo "<a href=\"Inventory/?Name=".$name."\">Inventory</a>";}
-			if($_SESSION['lvl']>=4){echo "<div id=\"lineE\"><a href=\"Enemies/?Name=".$name."\">Enemy Agents</a></div>"; }
 		?>
 		<div id="line">Agents:</div>
 		<?php

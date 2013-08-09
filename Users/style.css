@@ -11,14 +11,12 @@ body {
 }
 
 form.short,
-form.e,
 form{
 	display: block;
 	margin-left: auto ;
 	margin-right: auto ;
 	width:400px;
 }
-form.e{color: #28F428;}
 form.short{height:18px;}
 
 form.inventory{
@@ -32,8 +30,7 @@ form.wide{
 
 
 input.fieldShort,
-input.field,
-input.fielde{
+input.field{
 	height:30px;
 	width:280px;
 	border: 1px solid #59FBEA;
@@ -44,12 +41,10 @@ input.fielde{
 	margin-bottom: 2px;
 }
 input.fieldShort{width:220px;}
-input.fielde{border: 1px solid #28F428;background-color: #0B0C0D;}
 
 
 input.buttonOfficer,
 input.button,
-input.buttonE,
 a{
 	font-size:16;
 	font-family: coda_regular, arial, helvetica, sans-serif;
@@ -64,14 +59,12 @@ a{
 	margin-top: 2px;
 	margin-bottom: 2px;
 }
-input.buttonE{background-color: #004F0D;color: #28F428;border: 1px solid #28F428;}
 
 
 select:hover,
 option:hover,
 input.buttonOfficer:hover,
 input.button:hover,
-input.buttonE:hover,
 a:hover{
 	box-shadow: inset 0 0 6px rgba(255, 255, 255, 1);
 	-webkit-box-shadow: inset 0 0 6px rgba(255, 255, 255, 1);
@@ -127,7 +120,6 @@ input.buttonOfficer{color:#FF0000;}
 
 /*General*/
 #lineWideTall,
-#lineE,
 #lineTall,
 #lineLow,
 #lineWide,
@@ -141,26 +133,10 @@ input.buttonOfficer{color:#FF0000;}
 #lineLow{height:25px;}
 #lineTall{height:30px;width:100%;padding:3px;}
 #lineWideTall{height:25px;width:280px;}
-#lineE{color: #28F428;}
 
 
 
-/*Enemys*/
-#LineE a{
-	color: #28F428;
-	background-color: #004F0D;
-	border: 1px solid #28F428;
-}
-#lineE2{
-	display:block;
-	color: #28F428;
-	height:30px;
-	padding:3px 0px 3px 0px;
-}
-#lineE2{
-	text-align:center;
-	color: #28F428;
-}
+
 
 textarea.R,
 textarea{
@@ -169,13 +145,12 @@ textarea{
 	padding:2px 0px 2px 0px;
 	height:212px;
 	width:100%;
-	border: 1px solid #28F428;
+	border: 1px solid #59FBEA;
 	background-color: #0B0C0D;
 	color: #DDD;
 	font-size:16;
 	resize:vertical;
 }
-textarea.R{border: 1px solid #59FBEA;}
 
 
 
@@ -225,7 +200,6 @@ textarea.R{border: 1px solid #59FBEA;}
 
 
 /*Location*/
-#LocationE a,
 #Location a{
 	font-weight:bold;
 	box-shadow:initial;
@@ -236,9 +210,7 @@ textarea.R{border: 1px solid #59FBEA;}
 	background-color:0;
 	color:#00C2FF;
 }
-#LocationE a{color: #28F428;}
 
-#LocationE a:hover,
 #Location a:hover{
 	text-decoration:underline;
 }
