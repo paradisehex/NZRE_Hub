@@ -25,7 +25,6 @@
 					and set player's levels.<br>
 					By default level 7 and up can view other agents inventorys.
 					Anyone can choose the required level to view their inventory.
-					Level 5 and up can use enemy agent dossiers.
 				</p>
 				<p>
 					Any suggestions are welcome.<br>
