@@ -14,7 +14,7 @@
 		<p>
 			<?php
 				if(IsOfficer($con,$_SESSION['name'])){
-					echo "<div id=\"line\"><a href=\"Register\">Register Agent</a></div>";
+					echo "<div id=\"line\"><a href=\"Register\">Register Agent</a></div><br>";
 				}
 
 				echoAgentsRanking($result,$con);
