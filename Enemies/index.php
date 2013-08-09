@@ -15,13 +15,13 @@
 					Submit Enemy Agent
 				</div>
 				<div id="lineE">
-					<input class="field" type="text" name="username" autocomplete="off" placeholder="User Name">
+					<input class="fielde" type="text" name="username" autocomplete="off" placeholder="User Name">
 				</div>
 				<div id="lineE">
-					<input class="field" type="text" name="Level" autocomplete="off" placeholder="Level">
+					<input class="fielde" type="text" name="Level" autocomplete="off" placeholder="Level">
 				</div>
 				<div id="lineE">
-					<input class="button" type="submit" value="Submit" >
+					<input class="buttone" type="submit" value="Submit" >
 				</div>
 		</form>
 		<br>
