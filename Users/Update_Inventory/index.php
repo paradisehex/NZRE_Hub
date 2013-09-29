@@ -47,7 +47,7 @@
 				echoLine($row['VA'] , 'VA' , "Ada V" , "ADA Refactor");
 
 
-				//Shields
+				//Mods
 				echoLine($row['S1'] , 'S1' , "C Shield" , "Common Shields");
 				echoLine($row['S2'] , 'S2' , "R Shield" , "Rare Shields");
 				echoLine($row['S3'] , 'S3' , "VR Shield" , "Very Rare Shields");
@@ -60,17 +60,17 @@
 				echoLine($row['RMH'] , 'RMH' , "R Heat Sink" , "Rare Heat Sink");
 				echoLine($row['VMH'] , 'VMH' , "VR Heat Sink" , "Very Rare Heat Sink");
 
-				echoLine($row['CMM'] , 'CMM' , "C Multi-hack" , "Common Multi-hack");
+				//echoLine($row['CMM'] , 'CMM' , "C Multi-hack" , "Common Multi-hack");
 				echoLine($row['RMM'] , 'RMM' , "R Multi-hack" , "Rare Multi-hack");
-				echoLine($row['VMM'] , 'VMM' , "VR Multi-hack" , "Very Rare Multi-hack");
+				//echoLine($row['VMM'] , 'VMM' , "VR Multi-hack" , "Very Rare Multi-hack");
 
-				echoLine($row['CMF'] , 'CMF' , "C Force Amp" , "Common Force Amp");
+				//echoLine($row['CMF'] , 'CMF' , "C Force Amp" , "Common Force Amp");
 				echoLine($row['RMF'] , 'RMF' , "R Force Amp" , "Rare Force Amp");
-				echoLine($row['VMF'] , 'VMF' , "VR Force Amp" , "Very Rare Force Amp");
+				//echoLine($row['VMF'] , 'VMF' , "VR Force Amp" , "Very Rare Force Amp");
 
-				echoLine($row['CMT'] , 'CMT' , "C Turret" , "Common Turret");
+				//echoLine($row['CMT'] , 'CMT' , "C Turret" , "Common Turret");
 				echoLine($row['RMT'] , 'RMT' , "R Turret" , "Rare Turret");
-				echoLine($row['VMT'] , 'VMT' , "VR Turret" , "Very Rare Turret");
+				//echoLine($row['VMT'] , 'VMT' , "VR Turret" , "Very Rare Turret");
 
 				//Power Cubes
 				for ($i = 1; $i <= 8; $i++) {
