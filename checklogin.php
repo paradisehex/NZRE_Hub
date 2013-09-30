@@ -1,27 +1,19 @@
 <?php
-ob_start();
 session_start();
-// Connect to MYSQL server
+
+$_SESSION['name'] = "Not Null";
+
 include "/var/www/Ingress/Tools/database.php";
 include "/var/www/Ingress/Tools/log.php";
+include "/var/www/Ingress/Tools/password.php";
 
-// Define $myusername and $mypassword 
-$username=stripslashes($_POST['TheUserName']); 
-$password=md5($_POST['ThePassword']); 
 
-$sql="SELECT * FROM AgentTable WHERE username='$username' and password='$password'";
-$result=mysqli_query($con,$sql);
+$username = stripslashes($_POST['TheUserName']); 
+$password = $_POST['ThePassword']; 
 
-// Mysql_num_row is counting table row
-$count=mysqli_num_rows($result);
 
-// If result matched $myusername and $mypassword, table row must be 1 row
-if($count==1){
-	// Register $myusername, $mypassword
-	$row = mysqli_fetch_array($result);
-	$_SESSION['name'] = $row['username'];
-	$_SESSION['admin'] = $row['Admin'];
-	$_SESSION['lvl'] = $row['lvl'];
+if(checkPassword($username,$password,$con)){
+
 	if(check_user_agent('mobile')) {
 		$_SESSION['view'] = "Mobile";
 	} else {
@@ -37,6 +29,7 @@ if($count==1){
 	header("location:/Ingress/Users");
 }
 else {
+	$_SESSION['name'] = null;
 	LogText("User ".$username." Failed to login");
 	echo "<html><head>
 			<title>Resistance</title>
@@ -45,7 +38,7 @@ else {
 			</head><body>You made a mistake or you're a frog.
 		</body></html>";
 }
-ob_end_flush();
+
 
 
 /* USER-AGENTS

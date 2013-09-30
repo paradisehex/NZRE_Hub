@@ -1,10 +1,5 @@
 <?php
-	ob_start();
 	session_start();
-	//Check if session is admin.
-	if(!$_SESSION['name']){
-		header("location:/Ingress");
-	}else{
 		include "/var/www/Ingress/Tools/database.php";
 		include "/var/www/Ingress/Tools/bb.php";
 		include "/var/www/Ingress/Tools/permission.php";
@@ -13,7 +8,6 @@
 
 		$sql="SELECT * FROM LocationTable WHERE name='".$name."'";
 		$row = mysqli_fetch_array(mysqli_query($con,$sql));
-	}
 ?>
 <html>
 	<?php include "/var/www/Ingress/Tools/head.php";?>

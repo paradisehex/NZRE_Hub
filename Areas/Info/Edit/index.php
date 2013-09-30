@@ -1,16 +1,12 @@
 <?php
 	session_start();
-	//Check if logged in
-	if(!$_SESSION['name']){
-		header("location:/Ingress");
-	}else{
-		include "/var/www/Ingress/Tools/database.php";
-		include "/var/www/Ingress/Tools/permission.php";
+	
+	include "/var/www/Ingress/Tools/database.php";
+	include "/var/www/Ingress/Tools/permission.php";
 
-		$name = strip_tags(stripslashes($_POST['Name']));
+	$name = strip_tags(stripslashes($_POST['Name']));
 		
-		if(!OfficerAndLocation($con,$_SESSION['name'],$name)){header("location:/Ingress");}
-	}
+	if(!OfficerAndLocation($con,$_SESSION['name'],$name)){header("location:/Ingress");}
 ?>
 <html>
 	<?php include "/var/www/Ingress/Tools/head.php";?>

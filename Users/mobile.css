@@ -12,7 +12,6 @@ body {
 }
 
 form.short,
-form.e,
 form{
 	display: block;
 	margin-left: auto ;
@@ -22,7 +21,6 @@ form{
 	margin-top: 2px;
 	margin-bottom: 2px;
 }
-form.e{color: #28F428;}
 
 form.inventory{
 	display: inline-block;
@@ -35,8 +33,7 @@ form.wide{
 
 
 input.fieldShort,
-input.field,
-input.fielde{
+input.field{
 	height:60px;	
 	width:400px;
 	border: 2px solid #59FBEA;
@@ -47,12 +44,10 @@ input.fielde{
 	margin-bottom: 2px;
 }
 input.fieldShort{width:250px;}
-input.fielde{border: 2px solid #28F428;background-color: #0B0C0D;}
 
 
 input.buttonOfficer,
 input.button,
-input.buttonE,
 a{
 	font-size:35px;
 	font-family: coda_regular, arial, helvetica, sans-serif;
@@ -70,7 +65,6 @@ a{
 	box-shadow: inset 0 0 20px rgba(89, 251, 234, 1);
 	-webkit-box-shadow: inset 0 0 20px rgba(89, 251, 234, 1);
 }
-input.buttonE{background-color: #004F0D;color: #28F428;border: 2px solid #28F428;}
 
 select,
 option{
@@ -109,7 +103,6 @@ input.buttonOfficer{color:#FF0000;}
 
 /*General*/
 #lineWideTall,
-#lineE,
 #lineTall,
 #lineLow,
 #lineWide,
@@ -117,31 +110,11 @@ input.buttonOfficer{color:#FF0000;}
 	display:block;
 	margin-left: auto ;
 	margin-right: auto ;
-	width:100%;	
+	width:95%;	
 	height:108px;
 }
 #lineLow{height:47px;}
 #lineTall{height:60px;padding:3px;}
-#lineE{color: #28F428;}
-
-
-
-/*Enemys*/
-#LineE a{
-	color: #28F428;
-	background-color: #004F0D;
-	border: 2px solid #28F428;
-}
-#lineE2{
-	display:block;
-	color: #28F428;
-	height:30px;
-	padding:3px 0px 3px 0px;
-}
-#lineE2{
-	text-align:center;
-	color: #28F428;
-}
 
 textarea.R,
 textarea{
@@ -150,13 +123,12 @@ textarea{
 	padding:2px 0px 2px 0px;
 	height:212px;
 	width:100%;
-	border: 2px solid #28F428;
+	border: 2px solid #59FBEA;
 	background-color: #0B0C0D;
 	color: #DDD;
 	font-size:16;
 	resize:vertical;
 }
-textarea.R{border: 2px solid #59FBEA;}
 
 
 
@@ -205,7 +177,6 @@ textarea.R{border: 2px solid #59FBEA;}
 
 
 /*Location*/
-#LocationE a,
 #Location a{	
 	font-size:30px;
 	font-weight:bold;
@@ -217,9 +188,7 @@ textarea.R{border: 2px solid #59FBEA;}
 	background-color:0;
 	color:#00C2FF;
 }
-#LocationE a{color: #28F428;}
 
-#LocationE a:hover,
 #Location a:hover{
 	text-decoration:underline;
 }
@@ -235,14 +204,6 @@ textarea.R{border: 2px solid #59FBEA;}
 	margin-right: auto ;
 }
 
-#Meter0{}
-#Meter1{background: url("/Ingress/sprite.png") no-repeat scroll 0px -558px transparent;height: 62px;}
-#Meter2{background: url("/Ingress/sprite.png") no-repeat scroll 0px -186px transparent;height: 62px;}
-#Meter3{background: url("/Ingress/sprite.png") no-repeat scroll 0px -620px transparent;height: 62px;}
-#Meter4{background: url("/Ingress/sprite.png") no-repeat scroll 0px -372px transparent;height: 62px;}
-#Meter5{background: url("/Ingress/sprite.png") no-repeat scroll 0px -930px transparent;height: 62px;}
-#Meter6{background: url("/Ingress/sprite.png") no-repeat scroll 0px -248px transparent;height: 62px;}
-#Meter7{background: url("/Ingress/sprite.png") no-repeat scroll 0px -682px transparent;height: 62px;}
 
 #Counter{display: none;}
 #AP{display: inline;}
@@ -264,6 +225,25 @@ input.footer{
 	color:#00C2FF;
 	background: rgba(0,0,0,0);
 	border:0px solid #59FBEA;
+}
+
+/*Map*/
+#map-canvas{
+	width:100%;
+	height:100%;
+	background-color:black;
+	position:absolute;
+	top: 0;
+	left: 0;
+}
+#map-canvas a{
+	font-size: initial;
+	background-color: initial;
+	width: initial;
+	height: initial;
+	border: initial;
+	box-shadow:initial;
+	-webkit-box-shadow:initial;
 }
 
 

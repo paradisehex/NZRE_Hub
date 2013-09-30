@@ -1,8 +1,11 @@
 <?php
-	$HOST = "localhost";
-	$USER = "resistance";
-	$PSWD = "dont tell robo the password";
-	$DB = "Ingress";
+	
+	//Get rid of people who haven't logged in
+	if(!$_SESSION['name']){
+		header("location:/Ingress");
+		return;
+	}
+	include "/var/www/Ingress/.data/DB_PASSWORD.php";
 	
 	$con = mysqli_connect($HOST,$USER,$PSWD,$DB);
 ?>

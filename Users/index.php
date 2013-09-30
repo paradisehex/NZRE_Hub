@@ -1,9 +1,5 @@
 <?php
 	session_start();
-	//Check if logged in
-	if(!$_SESSION['name']){
-		header("location:/Ingress");
-	}else{
 		include "/var/www/Ingress/Tools/database.php";
 		include "/var/www/Ingress/Tools/AP.php";
 		include "/var/www/Ingress/Users/Inventory/display.php";
@@ -16,7 +12,6 @@
 		$lvl = $row2['lvl'];
 
 		$Location = mysqli_fetch_array(mysqli_query($con,"SELECT * FROM LocationTable WHERE id = ".$row2['Location']), MYSQL_ASSOC);
-	}
 ?>
 <html>
 	<?php include "/var/www/Ingress/Tools/head.php";?>

@@ -110,7 +110,7 @@
 		echo "<div id=\"Bar\">";
 		echo "<div id=\"RES\" style=\"width:".($Res/$OneP)."%;\"></div>";
 		echo "<div id=\"XMP\" style=\"width:".($Xmp/$OneP)."%;\"></div>";
-		echo "<div id=\"KEYS\" style=\"width:".($row['K1']/$OneP)."%;\"></div>";
+		echo "<div id=\"KEYS\" style=\"width:".($k/$OneP)."%;\"></div>";
 		echo "<div id=\"OTH\" style=\"width:".($other/$OneP)."%;\"></div>";
 		echo "<div id=\"EMP\" style=\"width:".((2000-$other-$k-$Xmp-$Res)/$OneP)."%;\"></div>";
 		echo "<div id=\"Key\"><div id=\"R\">Resonators</div><div id=\"X\">Xmps</div><div id=\"K\">Keys</div><div id=\"O\">Other</div></div>";
@@ -199,7 +199,6 @@
 
 		//Keys
 		$k +=$row['K1'];
-		$other +=$row['K1'];
 	}
 
 

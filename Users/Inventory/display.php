@@ -34,8 +34,8 @@
 
 
 		//Viruses
-		if(itemLine($row['VJ'],"Jarvis","Jarvis Virus")){$boo = true;}
 		if(itemLine($row['VA'],"Ada","ADA Refactor")){$boo = true;}
+		if(itemLine($row['VJ'],"Jarvis","Jarvis Virus")){$boo = true;}
 		if($boo){echo "<br>";$boo = false;}
 
 
@@ -69,6 +69,18 @@
 
 		if($boo){echo "<br>";$boo = false;}
 
+		$ItemCount+=$row['CML']+$row['RML']+$row['VML']
+					+$row['CMH']+$row['RMH']+$row['VMH']
+					+$row['CMM']+$row['RMM']+$row['VMM']
+					+$row['CMF']+$row['RMF']+$row['VMF']
+					+$row['CMT']+$row['RMT']+$row['VMT'];
+
+		$other+=$row['CML']+$row['RML']+$row['VML']
+					+$row['CMH']+$row['RMH']+$row['VMH']
+					+$row['CMM']+$row['RMM']+$row['VMM']
+					+$row['CMF']+$row['RMF']+$row['VMF']
+					+$row['CMT']+$row['RMT']+$row['VMT'];
+
 
 		//Power Cubes
 		for ($i = 1; $i <= 8; $i++) {
@@ -85,7 +97,7 @@
 
 		//Items
 		$ItemCount+=$row['VA']+$row['VJ']+$row['S1']+$row['S2']+$row['S3']+$row['K1'];
-		$other+=$row['VA']+$row['VJ']+$row['S1']+$row['S2']+$row['S3']+$row['MA']+$row['MH']+$row['MM']+$row['MF']+$row['MT'];
+		$other+=	$row['VA']+$row['VJ']+$row['S1']+$row['S2']+$row['S3'];
 		if($ItemCount!=0){
 			echo "<div id=\"LineLow\">Total ".$ItemCount."</div>";
 		}else{
@@ -96,12 +108,13 @@
 
 		//Graph
 		$OneP = 20;
+		if($ItemCount>2000){$OneP=$ItemCount/100;}
 		echo "<div id=\"Bar\">";
-		echo "<div id=\"RES\" style=\"width:".($Res/$OneP)."%;\"></div>";
-		echo "<div id=\"XMP\" style=\"width:".($Xmp/$OneP)."%;\"></div>";
-		echo "<div id=\"KEYS\" style=\"width:".($row['K1']/$OneP)."%;\"></div>";
-		echo "<div id=\"OTH\" style=\"width:".($other/$OneP)."%;\"></div>";
-		echo "<div id=\"EMP\" style=\"width:".((2000-$other-$row['K1']-$Xmp-$Res)/$OneP)."%;\"></div>";
+		echo "<div id=\"RES\" style=\"width:".round($Res/$OneP)."%;\"></div>";
+		echo "<div id=\"XMP\" style=\"width:".round($Xmp/$OneP)."%;\"></div>";
+		echo "<div id=\"KEYS\" style=\"width:".round($row['K1']/$OneP)."%;\"></div>";
+		echo "<div id=\"OTH\" style=\"width:".round($other/$OneP)."%;\"></div>";
+		echo "<div id=\"EMP\" style=\"width:0%;\"></div>";
 		echo "<div id=\"Key\"><div id=\"R\">Resonators</div><div id=\"X\">Xmps</div><div id=\"K\">Keys</div><div id=\"O\">Other</div></div>";
 		echo "</div>";
 	}

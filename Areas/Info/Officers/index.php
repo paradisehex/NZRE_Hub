@@ -1,9 +1,5 @@
 <?php
 	session_start();
-	//Check if logged in
-	if(!$_SESSION['name']){
-		header("location:/Ingress");
-	}else{
 		include "/var/www/Ingress/Tools/database.php";
 
 		$name = strip_tags($_GET['Name']);
@@ -20,7 +16,6 @@
 
 		$sql="SELECT * FROM AgentTable";
 		$EveryOne =mysqli_query($con,$sql);
-	}
 ?>
 <html>
 	<?php include "/var/www/Ingress/Tools/head.php";?>

@@ -1,20 +1,12 @@
 <?php
 	session_start();
-	//Check if logged in
-	if(!$_SESSION['name']){
-		header("location:/Ingress");
-	}else{
-		include "/var/www/Ingress/Tools/database.php";
+	include "/var/www/Ingress/Tools/database.php";
+	include "/var/www/Ingress/Tools/permission.php";
 
-		$name = strip_tags(stripslashes($_GET['PortalName']));
+	$Name = strip_tags(stripslashes($_GET['Name']));
 
-		$sql="SELECT * FROM PortalTable WHERE portalName='$name'";
-		$result=mysqli_query($con,$sql);
-		$count=mysqli_num_rows($result);
-
-		$result=mysqli_query($con,"SELECT * FROM PortalTable WHERE portalName = \"".$name."\"");
-		$row = mysqli_fetch_array($result, MYSQL_ASSOC);
-	}
+	$ThePortal = mysqli_fetch_array(mysqli_query($con,"SELECT * FROM PortalTable WHERE portalName='$Name'"));
+	$TheKeys = mysqli_query($con,"SELECT * FROM KeyTable WHERE portalName='$Name'");
 ?>
 <html>
 	<?php include "/var/www/Ingress/Tools/head.php";?>
@@ -22,7 +14,24 @@
 		<?php include "/var/www/Ingress/Tools/menu.php";?>
 		<p>
 			<?php
-				echo file_get_contents('/var/www/Ingress/.data/Portals/'.$name .'.html', FILE_USE_INCLUDE_PATH);
+				echo "<b>".$ThePortal['PortalName']."</b>";
+				echo "<div id=\"LineWideTall\"><div id=\"Left\"><b>Latitude</b></div><div id=\"Right\">".($ThePortal['Lat']/1000000)."</div></div><br>";
+				echo "<div id=\"LineWideTall\"><div id=\"Left\"><b>Longitude</b></div><div id=\"Right\">".($ThePortal['Lon']/1000000)."</div></div><br>";
+				echo "<a href=\"https://ingress.com/intel?latE6=".$ThePortal['Lat'].";lngE6=".$ThePortal['Lon'].";z=17;\">Intel Map</a>";
+				
+				echo "<br><br><div id=\"Line\">List of keys</div>";
+				
+				$Keys = mysqli_query($con,"SELECT * FROM KeyTable WHERE portalName = '".$ThePortal['PortalName']."'");
+				while ($row = mysqli_fetch_array($Keys, MYSQL_ASSOC)) {
+					echo "<div id=\"Line\"><div id=\"Left\">".$row['username']."</div><div id=\"Right\">".$row['NumKeys']."</div></div><br>";
+				}
+				
+				if(IsOfficer($con,$_SESSION['name'])){
+					echo "<form action=\"delete.php\" method=\"post\" autocomplete=\"off\">";
+						echo "<input type=\"hidden\" name=\"Name\" value=\"".$Name."\">";
+						echo "<input class=\"button\" type=\"submit\" value=\"Delete\">";
+					echo "</form>";
+				}
 			?>
 		</p>
 	</body>

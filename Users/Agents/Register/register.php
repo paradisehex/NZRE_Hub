@@ -1,10 +1,6 @@
 <?php
-ob_start();
-session_start();
-//Check if session is admin.
-if(!$_SESSION['name']){
-	header("location:/Ingress");
-}else{
+	session_start();
+	
 	// Connect to server and select databse.
 	include "/var/www/Ingress/Tools/database.php";
 	include "/var/www/Ingress/Tools/permission.php";
@@ -15,8 +11,8 @@ if(!$_SESSION['name']){
 
 		// Define $myusername and $mypassword  and protect againest MYSQL injection
 		$myusername=stripslashes(str_replace ("&#65279","",$_POST['TheUserName']));
-		$mypassword=md5($_POST['ThePassword3']);
-		$mypassword2=md5($_POST['ThePassword2']);
+		$mypassword = $_POST['ThePassword3'];
+		$mypassword2 =$_POST['ThePassword2'];
 		$level=stripslashes($_POST['Level']);
 
 		//See if passwords match
@@ -46,5 +42,4 @@ if(!$_SESSION['name']){
 	}else{
 		header("location:/Ingress");
 	}
-}
 ?>

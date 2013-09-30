@@ -1,8 +1,7 @@
 <?php
-	ob_start();
 	session_start();
 	
-	if(!$_SESSION['name']){header("location:/Ingress");}
+	if(!$_SESSION['name']){header("location:/Ingress");return;}
 ?>
 <html>
 	<?php include "/var/www/Ingress/Tools/head.php";?>

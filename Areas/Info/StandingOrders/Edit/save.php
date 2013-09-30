@@ -1,8 +1,5 @@
 <?php
 	session_start();
-	if(!$_SESSION['name']){
-		header("location:/Ingress");
-	}else{
 		include "/var/www/Ingress/Tools/database.php";
 		include "/var/www/Ingress/Tools/permission.php";
 
@@ -16,5 +13,4 @@
 			file_put_contents($file,$msg)==false;
 			header("location:/Ingress/Areas/Info/StandingOrders/?Name=".$name);
 		}
-	}
 ?>
