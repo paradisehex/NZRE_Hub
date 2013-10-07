@@ -246,6 +246,33 @@ input.footer{
 	-webkit-box-shadow:initial;
 }
 
+/*Table*/
+table{
+	border-spacing: 0;
+	display:block;
+	margin-left: auto ;
+	margin-right: auto ;
+	width:95%;	
+	height:108px;
+}
+input.Cell{
+	height: 60px;
+	width: 100%;
+	text-align: center;
+	border: 0;
+	background-color: #0B0C0D;
+	color: #DDD;
+	font-size: 30;
+	margin: 0;
+	padding: 0;
+}
+td{
+	font-size: 30;
+	width: 80px;
+	padding: 0;
+	text-align: left;
+}
+
 
 
 /*Colours*/

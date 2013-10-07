@@ -21,7 +21,7 @@ form.short{height:18px;}
 
 form.inventory{
 	display: inline-block;
-	width:330px;
+	width:400px;
 }
 
 form.wide{
@@ -347,6 +347,27 @@ input.footer{
 	border: initial;
 	box-shadow:initial;
 	-webkit-box-shadow:initial;
+}
+
+/*Table*/
+table{
+	border-spacing: 0;
+}
+input.Cell{
+	height: 30px;
+	width: 100%;
+	text-align: center;
+	border: 0;
+	background-color: #0B0C0D;
+	color: #DDD;
+	font-size:16;
+	margin: 0;
+	padding: 0;
+}
+td{
+	width: 25%;
+	padding: 0;
+	text-align: left;
 }
 
 
