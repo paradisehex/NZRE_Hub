@@ -56,13 +56,13 @@
 								echoCell($row["R".$i], "R".$i, $i, $i);
 								echoCell($row["X".$i], "X".$i, $i, $i+8);
 								echoCell($row['U'.$i] , 'U'.$i, $i, $i+16);
-								echoCell($row["P".$i], "P".$i, $i, $i+24);
+								echoCell($row["P".$i], "P".$i, $i, $i+38);
 								//echoCell($row['M'.$i] , 'M'.$i, $i);
 							echo "</tr>";
 						}
 					?>
 					<?php
-						$Tab = 8*4;
+						$Tab = 8*3;
 						//ADA
 							echo "<tr><td>ADA</td>";
 							echo "<td></td>";
@@ -111,6 +111,8 @@
 							echoCellMod($row["RMT"], "RMT", 2, ++$Tab);
 							echo "<td></td>";
 							echo "</tr>";
+							
+						$Tab +=8;
 						//Keys
 							echo "<tr><td>Keys</td>";
 							echoCellMod($row["K1"], "K1", 4, ++$Tab);
