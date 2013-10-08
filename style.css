@@ -31,6 +31,7 @@ input.field{
 	background-color: #0B0C0D;
 	color: #DDD;
 	font-family: coda_regular, arial, helvetica, sans-serif;
+	box-shadow: 0px 0px 2px #59FBEA;
 	font-size:16;
 }
 input.button{

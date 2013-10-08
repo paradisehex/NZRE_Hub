@@ -8,6 +8,7 @@ body {
 	color:#00C2FF;
 	font-size:16;
 	background-color:#000000;
+	text-shadow: 0 0 1px;
 }
 
 form.short,
@@ -39,6 +40,9 @@ input.field{
 	font-size:16;
 	margin-top: 2px;
 	margin-bottom: 2px;
+	padding-left: 5px;
+	text-shadow: 0 0 1px;
+	box-shadow: 0px 0px 1px #59FBEA, 0px 0px 1px #59FBEA inset;
 }
 input.fieldShort{width:220px;}
 
@@ -58,6 +62,8 @@ a{
 	height:30px;
 	margin-top: 2px;
 	margin-bottom: 2px;
+	text-shadow: 0 0 1px;
+	box-shadow: 0px 0px 1px #59FBEA, 0px 0px 1px #59FBEA inset;
 }
 
 
@@ -109,6 +115,7 @@ input.buttonOfficer{color:#FF0000;}
 	background-color:initial;
 	color:#00C2FF;
 	margin-top: 0px;
+	box-shadow: 0 0 0;
 }
 #Item a:hover{
 	text-decoration:underline;
@@ -223,6 +230,7 @@ textarea{
 	display: inline-block;
 	width:400px;
 	height:30px;
+	box-shadow: 0px 0px 1px #59FBEA, 0px 0px 1px #59FBEA inset;
 }
 
 #Bar:hover #Key{
@@ -237,7 +245,7 @@ textarea{
 	width:0;
 	height:100%;
 	display: inline-block;
-	background-color:#a91010;
+	background-color:#e40000;
 }
 #XMP{float: left;}
 #RES{background-color:#1021a9;float: left;}
@@ -253,7 +261,8 @@ textarea{
 	position: relative;
 	display:inline-block;
 	width:25%;
-	color:#a91010;
+	color:#e40000;
+	text-shadow: 0 0 1px;
 }
 #O{color:#666666;}
 #R{color:#1021a9;}
@@ -289,6 +298,7 @@ textarea{
 
 #Counter{
 	color: rgb(235, 188, 74);
+	text-shadow: 0 0 3px;
 	cursor: pointer;
 	font-size: 32px;
 	line-height: 58px;
@@ -363,6 +373,9 @@ input.Cell{
 	font-size:16;
 	margin: 0;
 	padding: 0;
+	text-shadow: 0 0 2px;
+	box-shadow: 	2px 1px 1px #59FBEA, 1px 2px 1px #59FBEA, 1px -2px 1px #59FBEA, -2px 1px 1px #59FBEA,
+				2px -1px 1px #59FBEA, -1px 2px 1px #59FBEA, -1px -2px 1px #59FBEA, -2px -1px 1px #59FBEA;
 }
 td{
 	width: 20%;
@@ -372,6 +385,7 @@ td{
 
 
 /*Colours*/
+#lvl1,#lvl2,#lvl3,#lvl4,#lvl5,#lvl6,#lvl7,#lvl8,#Ada,#Jarvis,#Com,#Rar,#Ver,#Ke,#Resistance,#Enlightenment{text-shadow: 0 0 1px;}
 #Ada{color:#0022FF;}#Jarvis{color:#28F428;}
 #Com{color:#8dffc3;}#Rar{color:#ab8afd;}#Ver{color:#fe8bf5;}#Ke{color:#ffcc00;}
 #Resistance{color:#0022FF;}#Enlightenment{color: #28F428;}#Unclaimed{color:gray;}
