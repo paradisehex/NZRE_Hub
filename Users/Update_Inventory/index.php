@@ -60,8 +60,7 @@
 								//echoCell($row['M'.$i] , 'M'.$i, $i);
 							echo "</tr>";
 						}
-					?>
-					<?php
+						
 						$Tab = 8*3;
 						//ADA
 							echo "<tr><td>ADA</td>";

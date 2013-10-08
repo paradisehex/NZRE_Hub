@@ -30,6 +30,8 @@
 				return "#fe8bf5";
 			case 4:
 				return "#ffcc00";
+			case 5:
+				return "#FFFFFF";
 			default:
 				return "#00C2FF";
 		}
