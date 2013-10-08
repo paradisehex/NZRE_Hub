@@ -1,7 +1,7 @@
 <?php
 
 	function echoInv($numofplayers){
-		global $res1,$res2,$res3,$res4,$res5,$res6,$res7,$res8,$xmp1,$xmp2,$xmp3,$xmp4,$xmp5,$xmp6,$xmp7,$xmp8,$jv,$av,$s1,$s2,$s3,$l1,$l2,$l3,$h1,$h2,$h3,$m1,$m2,$m3,$f1,$f2,$f3,$t1,$t2,$t3,$p1,$p2,$p3,$p4,$p5,$p6,$p7,$p8,$k,$Res,$Xmp,$other,$total;
+		global $res1,$res2,$res3,$res4,$res5,$res6,$res7,$res8,$xmp1,$xmp2,$xmp3,$xmp4,$xmp5,$xmp6,$xmp7,$xmp8,$ultp1,$ult2,$ult3,$ult4,$ult5,$ult6,$ult7,$ult8,$jv,$av,$s1,$s2,$s3,$l1,$l2,$l3,$h1,$h2,$h3,$m1,$m2,$m3,$f1,$f2,$f3,$t1,$t2,$t3,$p1,$p2,$p3,$p4,$p5,$p6,$p7,$p8,$k,$Res,$Xmp,$Ultra,$other,$total;
 		$boo = false;
 
 		function itemLine($Num,$ID,$Des){
@@ -37,6 +37,18 @@
 		if(itemLine($xmp6,"lvl6","Level 6 Xmp Bursters")){$boo = true;}
 		if(itemLine($xmp7,"lvl7","Level 7 Xmp Bursters")){$boo = true;}
 		if(itemLine($xmp8,"lvl8","Level 8 Xmp Bursters")){$boo = true;}
+		if($boo){echo "<br>";$boo = false;}
+
+
+		//Ultra
+		if(itemLine($ult1,"lvl1","Level 1 Ultra Stike")){$boo = true;}
+		if(itemLine($ult2,"lvl2","Level 2 Ultra Stike")){$boo = true;}
+		if(itemLine($ult3,"lvl3","Level 3 Ultra Stike")){$boo = true;}
+		if(itemLine($ult4,"lvl4","Level 4 Ultra Stike")){$boo = true;}
+		if(itemLine($ult5,"lvl5","Level 5 Ultra Stike")){$boo = true;}
+		if(itemLine($ult6,"lvl6","Level 6 Ultra Stike")){$boo = true;}
+		if(itemLine($ult7,"lvl7","Level 7 Ultra Stike")){$boo = true;}
+		if(itemLine($ult8,"lvl8","Level 8 Ultra Stike")){$boo = true;}
 		if($boo){echo "<br>";$boo = false;}
 
 
@@ -118,7 +130,7 @@
 	}
 
 	function addInventory($row){
-		global $res1,$res2,$res3,$res4,$res5,$res6,$res7,$res8,$xmp1,$xmp2,$xmp3,$xmp4,$xmp5,$xmp6,$xmp7,$xmp8,$jv,$av,$s1,$s2,$s3,$l1,$l2,$l3,$h1,$h2,$h3,$m1,$m2,$m3,$f1,$f2,$f3,$t1,$t2,$t3,$p1,$p2,$p3,$p4,$p5,$p6,$p7,$p8,$k,$Res,$Xmp,$other,$total;
+		global $res1,$res2,$res3,$res4,$res5,$res6,$res7,$res8,$xmp1,$xmp2,$xmp3,$xmp4,$xmp5,$xmp6,$xmp7,$xmp8,$ultp1,$ult2,$ult3,$ult4,$ult5,$ult6,$ult7,$ult8,$jv,$av,$s1,$s2,$s3,$l1,$l2,$l3,$h1,$h2,$h3,$m1,$m2,$m3,$f1,$f2,$f3,$t1,$t2,$t3,$p1,$p2,$p3,$p4,$p5,$p6,$p7,$p8,$k,$Res,$Xmp,$Ultra,$other,$total;
 		//Res
 		$res1 +=$row['R1'];
 		$res2 +=$row['R2'];
@@ -143,6 +155,19 @@
 		$xmp8 +=$row['X8'];
 		$Xmp+=$row['X1']+$row['X2']+$row['X3']+$row['X4']+$row['X5']+$row['X6']+$row['X7']+$row['X8'];
 		$total +=$row['X1']+$row['X2']+$row['X3']+$row['X4']+$row['X5']+$row['X6']+$row['X7']+$row['X8'];
+
+
+		//Ultra
+		$ult1 +=$row['U1'];
+		$ult2 +=$row['U2'];
+		$ult3 +=$row['U3'];
+		$ult4 +=$row['U4'];
+		$ult5 +=$row['U5'];
+		$ult6 +=$row['U6'];
+		$ult7 +=$row['U7'];
+		$ult8 +=$row['U8'];
+		$Ultra+=$row['U1']+$row['U2']+$row['U3']+$row['U4']+$row['U5']+$row['U6']+$row['U7']+$row['U8'];
+		$total +=$row['U1']+$row['U2']+$row['U3']+$row['U4']+$row['U5']+$row['U6']+$row['U7']+$row['U8'];
 
 
 		//Viruses
@@ -218,6 +243,14 @@
 	$xmp6 = 0;
 	$xmp7 = 0;
 	$xmp8 = 0;
+	$ult1 = 0;
+	$ult2 = 0;
+	$ult3 = 0;
+	$ult4 = 0;
+	$ult5 = 0;
+	$ult6 = 0;
+	$ult7 = 0;
+	$ult8 = 0;
 	$jv = 0;
 	$av = 0;
 	$s1 = 0;
@@ -250,6 +283,7 @@
 
 	$Res = 0;
 	$Xmp = 0;
+	$Ultra = 0;
 	$other = 0;
 
 	$total = 0;
