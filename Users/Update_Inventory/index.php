@@ -111,8 +111,8 @@
 							echoCellMod($row["RMT"], "RMT", 2, ++$Tab);
 							echo "<td></td>";
 							echo "</tr>";
-							
-						$Tab +=8;
+						//Power cubes fit in here in tab order
+							$Tab +=8;
 						//Keys
 							echo "<tr><td>Keys</td>";
 							echoCellMod($row["K1"], "K1", 4, ++$Tab);
