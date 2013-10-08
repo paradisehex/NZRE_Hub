@@ -16,24 +16,24 @@
 				Update Inventory<br><br>
 				<?php
 
-				function echoCell($Num, $ID, $Lvl){
+				function echoCell($Num, $ID, $Lvl, $Tab){
 					$colour = getLvlColour($Lvl); 
 					echo "<td style=\"border: 1px solid #59FBEA;\">";
 					if($Num!=0){
-						echo "<input class=\"Cell\" type=\"text\" name=\"".$ID."\" autocomplete=\"off\" style=\"color:".$colour.";\" value=\"".$Num."\">";
+						echo "<input class=\"Cell\" type=\"text\" name=\"".$ID."\" autocomplete=\"off\" style=\"color:".$colour.";\" value=\"".$Num."\" tabindex=".$Tab.">";
 					}else{
-						echo "<input class=\"Cell\" type=\"text\" name=\"".$ID."\" autocomplete=\"off\" style=\"color:".$colour.";\">";
+						echo "<input class=\"Cell\" type=\"text\" name=\"".$ID."\" autocomplete=\"off\" style=\"color:".$colour.";\" tabindex=".$Tab.">";
 					}
 					echo "</td>";
 				}
 
-				function echoCellMod($Num, $ID, $Lvl){
+				function echoCellMod($Num, $ID, $Lvl, $Tab){
 					$colour = getRarityColour($Lvl); 
 					echo "<td style=\"border: 1px solid #59FBEA;\">";
 					if($Num!=0){
-						echo "<input class=\"Cell\" type=\"text\" name=\"".$ID."\" autocomplete=\"off\" style=\"color:".$colour.";\" value=\"".$Num."\">";
+						echo "<input class=\"Cell\" type=\"text\" name=\"".$ID."\" autocomplete=\"off\" style=\"color:".$colour.";\" value=\"".$Num."\" tabindex=".$Tab.">";
 					}else{
-						echo "<input class=\"Cell\" type=\"text\" name=\"".$ID."\" autocomplete=\"off\" style=\"color:".$colour.";\">";
+						echo "<input class=\"Cell\" type=\"text\" name=\"".$ID."\" autocomplete=\"off\" style=\"color:".$colour.";\" tabindex=".$Tab.">";
 					}
 					echo "</td>";
 				}
@@ -53,66 +53,67 @@
 						for ($i = 1; $i <= 8; $i++) {
 							echo "<tr>";
 								echo "<td><div id=\"lvl".$i."\">L".$i."</div></td>";
-								echoCell($row["R".$i], "R".$i, $i);
-								echoCell($row["X".$i], "X".$i, $i);
-								echoCell($row['U'.$i] , 'U'.$i, $i);
-								echoCell($row["P".$i], "P".$i, $i);
+								echoCell($row["R".$i], "R".$i, $i, $i);
+								echoCell($row["X".$i], "X".$i, $i, $i+8);
+								echoCell($row['U'.$i] , 'U'.$i, $i, $i+16);
+								echoCell($row["P".$i], "P".$i, $i, $i+24);
 								//echoCell($row['M'.$i] , 'M'.$i, $i);
 							echo "</tr>";
 						}
 					?>
 					<?php
+						$Tab = 8*4;
 						//ADA
 							echo "<tr><td>ADA</td>";
 							echo "<td></td>";
 							echo "<td></td>";
-							echoCellMod($row["VA"], "VA", 3);
+							echoCellMod($row["VA"], "VA", 3, ++$Tab);
 							echo "</tr>";
 						//Jarvis
 							echo "<tr><td>Jarvis</td>";
 							echo "<td></td>";
 							echo "<td></td>";
-							echoCellMod($row["VJ"], "VJ", 3);
+							echoCellMod($row["VJ"], "VJ", 3, ++$Tab);
 							echo "</tr>";
 						//Shields
 							echo "<tr><td>Shields</td>";
-							echoCellMod($row["S1"], "S1", 1);
-							echoCellMod($row["S2"], "S2", 2);
-							echoCellMod($row["S3"], "S3", 3);
+							echoCellMod($row["S1"], "S1", 1, ++$Tab);
+							echoCellMod($row["S2"], "S2", 2, ++$Tab);
+							echoCellMod($row["S3"], "S3", 3, ++$Tab);
 							echo "</tr>";
 						//Link Amp
 							echo "<tr><td>Link Amp</td>";
 							echo "<td></td>";
-							echoCellMod($row["RML"], "RML", 2);
+							echoCellMod($row["RML"], "RML", 2, ++$Tab);
 							echo "<td></td>";
 							echo "</tr>";
 						//Heat Sink
 							echo "<tr><td>Heat Sink</td>";
-							echoCellMod($row["CMH"], "CMH", 1);
-							echoCellMod($row["RMH"], "RMH", 2);
-							echoCellMod($row["VMH"], "VMH", 3);
+							echoCellMod($row["CMH"], "CMH", 1, ++$Tab);
+							echoCellMod($row["RMH"], "RMH", 2, ++$Tab);
+							echoCellMod($row["VMH"], "VMH", 3, ++$Tab);
 							echo "</tr>";
 						//Multi hack
 							echo "<tr><td>Multi hack</td>";
-							echoCellMod($row["CMM"], "CMM", 1);
-							echoCellMod($row["RMM"], "RMM", 2);
-							echoCellMod($row["VMM"], "VMM", 3);
+							echoCellMod($row["CMM"], "CMM", 1, ++$Tab);
+							echoCellMod($row["RMM"], "RMM", 2, ++$Tab);
+							echoCellMod($row["VMM"], "VMM", 3, ++$Tab);
 							echo "</tr>";
 						//Force Amp
 							echo "<tr><td>Force Amp</td>";
 							echo "<td></td>";
-							echoCellMod($row["RMF"], "RMF", 2);
+							echoCellMod($row["RMF"], "RMF", 2, ++$Tab);
 							echo "<td></td>";
 							echo "</tr>";
 						//Turret
 							echo "<tr><td>Turret</td>";
 							echo "<td></td>";
-							echoCellMod($row["RMT"], "RMT", 2);
+							echoCellMod($row["RMT"], "RMT", 2, ++$Tab);
 							echo "<td></td>";
 							echo "</tr>";
 						//Keys
 							echo "<tr><td>Keys</td>";
-							echoCellMod($row["K1"], "K1", 4);
+							echoCellMod($row["K1"], "K1", 4, ++$Tab);
 							echo "<td></td>";
 							echo "<td></td>";
 							echo "</tr>";
@@ -122,14 +123,14 @@
 							$User = mysqli_fetch_array($UserResult, MYSQL_ASSOC);
 							
 							echo "<tr><td>AP</td>";
-							echoCellMod($User['AP'], "AP", 0);
+							echoCellMod($User['AP'], "AP", 0, ++$Tab);
 							echo "<td></td>";
 							echo "<td></td>";
 							echo "</tr>";
 					?>
 				</table>
 				<br>
-				<div id="lineTall"><input class="button" type="submit" value="Update"></div>
+				<div id="lineTall"><input class="button" type="submit" value="Update" tabindex=<?php echo ++$Tab;?>></div>
 		</form></p>
 	</body>
 </html>
