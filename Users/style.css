@@ -21,7 +21,7 @@ form.short{height:18px;}
 
 form.inventory{
 	display: inline-block;
-	width:400px;
+	width:420px;
 }
 
 form.wide{
@@ -365,7 +365,7 @@ input.Cell{
 	padding: 0;
 }
 td{
-	width: 25%;
+	width: 20%;
 	padding: 0;
 	text-align: left;
 }

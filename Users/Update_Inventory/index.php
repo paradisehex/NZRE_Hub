@@ -22,7 +22,7 @@
 					if($Num!=0){
 						echo "<input class=\"Cell\" type=\"text\" name=\"".$ID."\" autocomplete=\"off\" style=\"color:".$colour.";\" value=\"".$Num."\">";
 					}else{
-						echo "<input class=\"Cell\" type=\"text\" name=\"".$ID."\" autocomplete=\"off\">";
+						echo "<input class=\"Cell\" type=\"text\" name=\"".$ID."\" autocomplete=\"off\" style=\"color:".$colour.";\">";
 					}
 					echo "</td>";
 				}
@@ -33,7 +33,7 @@
 					if($Num!=0){
 						echo "<input class=\"Cell\" type=\"text\" name=\"".$ID."\" autocomplete=\"off\" style=\"color:".$colour.";\" value=\"".$Num."\">";
 					}else{
-						echo "<input class=\"Cell\" type=\"text\" name=\"".$ID."\" autocomplete=\"off\" >";
+						echo "<input class=\"Cell\" type=\"text\" name=\"".$ID."\" autocomplete=\"off\" style=\"color:".$colour.";\">";
 					}
 					echo "</td>";
 				}
@@ -46,6 +46,7 @@
 						<td></td>
 						<td style="text-align: center;">Res</td>
 						<td style="text-align: center;">XMP</td>
+						<td style="text-align: center;">Ultra</td>
 						<td style="text-align: center;">Cube</td>
 					</tr>
 					<?php
@@ -54,7 +55,7 @@
 								echo "<td><div id=\"lvl".$i."\">L".$i."</div></td>";
 								echoCell($row["R".$i], "R".$i, $i);
 								echoCell($row["X".$i], "X".$i, $i);
-								//echoCell($row['U'.$i] , 'U'.$i, $i);
+								echoCell($row['U'.$i] , 'U'.$i, $i);
 								echoCell($row["P".$i], "P".$i, $i);
 								//echoCell($row['M'.$i] , 'M'.$i, $i);
 							echo "</tr>";

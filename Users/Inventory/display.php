@@ -5,6 +5,7 @@
 
 		$Res = 0;
 		$Xmp = 0;
+		$Ultra = 0;
 		$other = 0;
 
 		function itemLine($Num,$ID,$Des){
@@ -29,6 +30,15 @@
 			if(itemLine($row['X'.$i],"lvl$i","Level $i Xmp Bursters")){$boo = true;}
 			$ItemCount+=$row['X'.$i];
 			$Xmp+=$row['X'.$i];
+		}
+		if($boo){echo "<br>";$boo = false;}
+
+
+		//Ultra
+		for ($i = 1; $i <= 8; $i++) {
+			if(itemLine($row['U'.$i],"lvl$i","Level $i Ultra strike")){$boo = true;}
+			$ItemCount+=$row['U'.$i];
+			$Ultra+=$row['U'.$i];
 		}
 		if($boo){echo "<br>";$boo = false;}
 
@@ -111,11 +121,11 @@
 		if($ItemCount>2000){$OneP=$ItemCount/100;}
 		echo "<div id=\"Bar\">";
 		echo "<div id=\"RES\" style=\"width:".round($Res/$OneP)."%;\"></div>";
-		echo "<div id=\"XMP\" style=\"width:".round($Xmp/$OneP)."%;\"></div>";
+		echo "<div id=\"XMP\" style=\"width:".round(($Xmp+$Ultra)/$OneP)."%;\"></div>";
 		echo "<div id=\"KEYS\" style=\"width:".round($row['K1']/$OneP)."%;\"></div>";
 		echo "<div id=\"OTH\" style=\"width:".round($other/$OneP)."%;\"></div>";
 		echo "<div id=\"EMP\" style=\"width:0%;\"></div>";
-		echo "<div id=\"Key\"><div id=\"R\">Resonators</div><div id=\"X\">Xmps</div><div id=\"K\">Keys</div><div id=\"O\">Other</div></div>";
+		echo "<div id=\"Key\"><div id=\"R\">Resonators</div><div id=\"X\">Weapons</div><div id=\"K\">Keys</div><div id=\"O\">Other</div></div>";
 		echo "</div>";
 	}
 ?>
