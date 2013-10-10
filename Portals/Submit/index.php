@@ -10,6 +10,7 @@
 			<form action="submit.php" method="post" autocomplete="off">
 				Submit Portal<br>
 				<input class="field" type="text" name="Name" autocomplete="off" placeholder="Portal Name"autocomplete="off"><br>
+				<input class="field" type="text" name="Location" autocomplete="off" placeholder="Location ID (Northland is 1)" autocomplete="off"><br>
 				<input class="field" type="text" name="Latitude" placeholder="Latitude" autocomplete="off"><br>
 				<input class="field" type="text" name="Longitude" placeholder="Longitude" autocomplete="off"><br>
 				<input class="button" type="submit" value="Submit" >
