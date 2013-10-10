@@ -19,11 +19,9 @@
 		<?php include "/var/www/Ingress/Tools/menu.php";?>
 		<?php
 			echo "<div id=\"line\"><b>".$name."</b> Inventory</div>";
-			echo "<a href=\"../?Name=".$name."\">Back</a><br>";
 
 			include "/var/www/Ingress/Tools/userList.php";
 			include "display.php";
-			//initvar();
 
 
 			$sql="SELECT * FROM AgentTable WHERE Location=".$row['id'];
@@ -40,6 +38,8 @@
 			}
 
 			echoInv($i);
+			
+			echo "<br><br><a href=\"../?Name=".$name."\">Back</a>";
 		?>
 	</body>
 </html>

@@ -24,7 +24,6 @@
 
 	function echoInv($row,$Extra){
 		$ItemCount = 0;
-		$boo = false;
 
 		$Res = 0;
 		$Xmp = 0;
