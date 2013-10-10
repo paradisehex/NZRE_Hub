@@ -362,6 +362,11 @@ input.footer{
 }
 
 /*Table*/
+td.null{
+	color: #AAAAAA;
+	text-shadow: 0 0 2px;
+	text-align: center;
+}
 table{
 	border-spacing: 0;
 }

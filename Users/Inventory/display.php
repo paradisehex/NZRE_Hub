@@ -6,7 +6,7 @@
 		if($Num!=0){
 			echo "<div id=\"Lvl".$Lvl."\">".$Num."</div>";
 		}else{
-			echo "<div id=\"Lvl".$Lvl."\">-</div>";
+			echo "<div id=\"Lvl".$Lvl."\">0</div>";
 		}
 		echo "</td>";
 	}
@@ -17,7 +17,7 @@
 		if($Num!=0){
 			echo "<div style=\"color:".$colour.";text-shadow: 0 0 1px;\" >".$Num."</div>";
 		}else{
-			echo "<div style=\"color:".$colour.";text-shadow: 0 0 1px;\" >-</div>";
+			echo "<div style=\"color:".$colour.";text-shadow: 0 0 1px;\" >0</div>";
 		}
 		echo "</td>";
 	}
@@ -71,57 +71,66 @@
 			
 		//ADA
 			echo "<tr><td>ADA</td>";
-			echo "<td></td>";
-			echo "<td></td>";
+			echo "<td class=\"null\">-</td>";
+			echo "<td class=\"null\">-</td>";
 			echoCellMod($row["VA"], 3);
+			echo "<td class=\"null\">-</td>";
 			echo "</tr>";
 		//Jarvis
 			echo "<tr><td>Jarvis</td>";
-			echo "<td></td>";
-			echo "<td></td>";
+			echo "<td class=\"null\">-</td>";
+			echo "<td class=\"null\">-</td>";
 			echoCellMod($row["VJ"], 3);
+			echo "<td class=\"null\">-</td>";
 			echo "</tr>";
 		//Shields
 			echo "<tr><td>Shields</td>";
 			echoCellMod($row["S1"], 1);
 			echoCellMod($row["S2"], 2);
 			echoCellMod($row["S3"], 3);
+			echo "<td class=\"null\">-</td>";
 			echo "</tr>";
 		//Link Amp
 			echo "<tr><td>Link Amp</td>";
-			echo "<td></td>";
+			echo "<td class=\"null\">-</td>";
 			echoCellMod($row["RML"], 2);
-			echo "<td></td>";
+			echo "<td class=\"null\">-</td>";
+			echo "<td class=\"null\">-</td>";
 			echo "</tr>";
 		//Heat Sink
 			echo "<tr><td>Heat Sink</td>";
 			echoCellMod($row["CMH"], 1);
 			echoCellMod($row["RMH"], 2);
 			echoCellMod($row["VMH"], 3);
+			echo "<td class=\"null\">-</td>";
 			echo "</tr>";
 		//Multi hack
 			echo "<tr><td>Multi hack</td>";
 			echoCellMod($row["CMM"], 1);
 			echoCellMod($row["RMM"], 2);
 			echoCellMod($row["VMM"], 3);
+			echo "<td class=\"null\">-</td>";
 			echo "</tr>";
 		//Force Amp
 			echo "<tr><td>Force Amp</td>";
-			echo "<td></td>";
+			echo "<td class=\"null\">-</td>";
 			echoCellMod($row["RMF"], 2);
-			echo "<td></td>";
+			echo "<td class=\"null\">-</td>";
+			echo "<td class=\"null\">-</td>";
 			echo "</tr>";
 		//Turret
 			echo "<tr><td>Turret</td>";
-			echo "<td></td>";
+			echo "<td class=\"null\">-</td>";
 			echoCellMod($row["RMT"], 2);
-			echo "<td></td>";
+			echo "<td class=\"null\">-</td>";
+			echo "<td class=\"null\">-</td>";
 			echo "</tr>";
 		//Keys
 			echo "<tr><td>Keys</td>";
 			echoCellMod($row["K1"], 4);
-			echo "<td></td>";
-			echo "<td></td>";
+			echo "<td class=\"null\">-</td>";
+			echo "<td class=\"null\">-</td>";
+			echo "<td class=\"null\">-</td>";
 			echo "</tr>";
 			
 		echo "</table>";
