@@ -47,7 +47,7 @@
 			</form>
 		</p>
 
-		Officers please only use this for strategic portals<br><br>
+		Officers please only use this for important portals<br><br>
 
 		<div id="line"><a href="../">Cancel</a></div>
 	</body>
