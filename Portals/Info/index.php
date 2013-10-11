@@ -2,6 +2,7 @@
 	session_start();
 	include "/var/www/Ingress/Tools/database.php";
 	include "/var/www/Ingress/Tools/permission.php";
+	include "/var/www/Ingress/Tools/getPortalInfo.php";
 
 	$Name = strip_tags(stripslashes($_GET['Name']));
 
@@ -15,8 +16,11 @@
 		<p>
 			<?php
 				echo "<b>".$ThePortal['PortalName']."</b>";
-				echo "<div id=\"LineWideTall\"><div id=\"Left\"><b>Latitude</b></div><div id=\"Right\">".($ThePortal['Lat']/1000000)."</div></div><br>";
-				echo "<div id=\"LineWideTall\"><div id=\"Left\"><b>Longitude</b></div><div id=\"Right\">".($ThePortal['Lon']/1000000)."</div></div><br>";
+				echo "<div id=\"LineWideTall\"><div id=\"Left\"><b>Latitude</b></div><div id=\"Right\">".($ThePortal['Lat']/1000000)."</div></div>";
+				echo "<div id=\"LineWideTall\"><div id=\"Left\"><b>Longitude</b></div><div id=\"Right\">".($ThePortal['Lon']/1000000)."</div></div>";
+				echo "<div id=\"LineWideTall\"><div id=\"Left\"><b>Area</b></div><div id=\"Right\">".getLocationName($ThePortal['Location'])."</div></div>";
+				echo "<div id=\"LineWideTall\"><div id=\"Left\"><b>Status</b></div><div id=\"Right\">".getPortalStatus($ThePortal['Status'])."</div></div>";
+				echo "<br>";
 				echo "<a href=\"https://ingress.com/intel?latE6=".$ThePortal['Lat'].";lngE6=".$ThePortal['Lon'].";z=17;\">Intel Map</a>";
 				
 				echo "<br><br><div id=\"Line\">List of keys</div>";
