@@ -68,7 +68,7 @@ a{
 
 select,
 option{
-	font-size:16;
+	font-size:35;
 	font-family: coda_regular, arial, helvetica, sans-serif;
 	display:inline-block;
 	color:#59FBEA;
@@ -79,7 +79,12 @@ option{
 	border: 2px solid #59FBEA;
 	text-decoration:none;
 }
-select{width:100%;}
+select{
+	width:400px;
+	height:108px;	
+	margin-top: 2px;
+	margin-bottom: 2px;
+}
 input.buttonOfficer{color:#FF0000;}
 
 /*Menu*/
