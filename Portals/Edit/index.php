@@ -35,6 +35,7 @@
 						}
 					?>
 				</select><br>
+				<input type="hidden" name="Name"  <?php echo "value=\"".$Name."\"";?>>
 				<input class="field" type="text" name="Latitude" placeholder="Latitude" autocomplete="off" <?php echo "value=\"".($ThePortal["Lat"]/1000000)."\"";?>><br>
 				<input class="field" type="text" name="Longitude" placeholder="Longitude" autocomplete="off" <?php echo "value=\"".($ThePortal["Lon"]/1000000)."\"";?>><br>
 				<input class="button" type="submit" value="Save" >

@@ -10,17 +10,9 @@
 		$Longitude = doubleval(strip_tags($_POST['Longitude']))*1000000;
 
 		if(IsOfficer($con,$_SESSION['name'])){
-			$sql = "SELECT * FROM PortalTable WHERE portalName ='$Name'";
-			$result = mysqli_query($con,$sql);
-			$count = mysqli_num_rows($result);
-			echo $count;
-			if($count == 0){
-				mysqli_query($con,"insert into PortalTable values('$Name','$Location','$Status','$Latitude','$Longitude');");
-				$sql = "UPDATE PortalTable SET Location = '".$Location."' , Status = '".$Location."' , Lat = '".$Latitude."' , Lon = '".$Longitude."' WHERE PortalName = '".$Name."'";
-				header("location:../Info/?Name=".$Name);
-			}else{
-				echo "Portal already added";
-			}
+			$sql = "UPDATE PortalTable SET Location = '".$Location."' , Status = '".$Status."' , Lat = '".$Latitude."' , Lon = '".$Longitude."' WHERE PortalName = '".$Name."'";
+			mysqli_query($con, $sql);
+			header("location:../Info/?Name=".$Name);
 		}else{
 			header("location:/Ingress");
 		}
