@@ -59,6 +59,7 @@
 		$ItemCount += $Res+$Xmp+$Ultra+$Cube;
 		$other += $Cube;
 		
+		
 		//Totals
 			echo "<tr>";
 			echo "<td><div style=\"color: #FFFFFF;text-shadow: 0 0 1px;\" >Total</div></td>";
@@ -68,6 +69,15 @@
 			echoCellMod($Cube, 5);
 			echo "</tr>";
 			
+		//Space
+			echo "<tr style=\"color: #000000;text-shadow: 0 0 1px;\"><td >.</td></tr>";
+		//Mods
+			echo "<tr>";
+			echo "<td></td>";
+			echo "<td><div id=\"Com\" style=\"text-align: center;\">Common</div></td>";
+			echo "<td><div id=\"Rar\" style=\"text-align: center;\">Rare</div></td>";
+			echo "<td><div id=\"Ver\" style=\"text-align: center;\">Very Rare</div></td>";
+			echo "</tr>";
 		//ADA
 			echo "<tr><td>ADA</td>";
 			echo "<td></td>";
