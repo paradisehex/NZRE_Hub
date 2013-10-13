@@ -22,19 +22,19 @@
 				echo "<div id=\"LineWideTall\"><div id=\"Left\"><b>Status</b></div><div id=\"Right\">".getPortalStatus($ThePortal['Status'])."</div></div>";
 				echo "<br>";
 				echo "<a href=\"https://ingress.com/intel?latE6=".$ThePortal['Lat'].";lngE6=".$ThePortal['Lon'].";z=17;\">Intel Map</a>";
-				
-				echo "<br><br><div id=\"Line\">List of keys</div>";
-				
-				$Keys = mysqli_query($con,"SELECT * FROM KeyTable WHERE portalName = '".$ThePortal['PortalName']."'");
-				while ($row = mysqli_fetch_array($Keys, MYSQL_ASSOC)) {
-					echo "<div id=\"Line\"><div id=\"Left\">".$row['username']."</div><div id=\"Right\">".$row['NumKeys']."</div></div><br>";
-				}
-				
 				if(IsOfficer($con,$_SESSION['name'])){
+					echo "<br><a href=\"../Edit/?Name=$Name\">Edit</a>";
 					echo "<form action=\"delete.php\" method=\"post\" autocomplete=\"off\">";
 						echo "<input type=\"hidden\" name=\"Name\" value=\"".$Name."\">";
 						echo "<input class=\"button\" type=\"submit\" value=\"Delete\">";
 					echo "</form>";
+				}
+				
+				echo "<br><div id=\"Line\">List of keys</div>";
+				
+				$Keys = mysqli_query($con,"SELECT * FROM KeyTable WHERE portalName = '".$ThePortal['PortalName']."'");
+				while ($row = mysqli_fetch_array($Keys, MYSQL_ASSOC)) {
+					echo "<div id=\"Line\"><div id=\"Left\">".$row['username']."</div><div id=\"Right\">".$row['NumKeys']."</div></div><br>";
 				}
 			?>
 		</p>
