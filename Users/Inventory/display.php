@@ -29,6 +29,7 @@
 		$Xmp = 0;
 		$Ultra = 0;
 		$Cube = 0;
+		$Mod = 0;
 		$other = 0;
 
 		echo "<table style=\"margin-left: auto; margin-right: auto; border-spacing: 5;\">
@@ -144,21 +145,18 @@
 			
 		echo "</table>";
 
-		$ItemCount+=$row['CML']+$row['RML']+$row['VML']
+		$Mod +=$row['CML']+$row['RML']+$row['VML']
 					+$row['CMH']+$row['RMH']+$row['VMH']
 					+$row['CMM']+$row['RMM']+$row['VMM']
 					+$row['CMF']+$row['RMF']+$row['VMF']
-					+$row['CMT']+$row['RMT']+$row['VMT'];
-
-		$other+=$row['CML']+$row['RML']+$row['VML']
-					+$row['CMH']+$row['RMH']+$row['VMH']
-					+$row['CMM']+$row['RMM']+$row['VMM']
-					+$row['CMF']+$row['RMF']+$row['VMF']
-					+$row['CMT']+$row['RMT']+$row['VMT'];
+					+$row['CMT']+$row['RMT']+$row['VMT']
+					+$row['S1']+$row['S2']+$row['S3'];
+					
+		$ItemCount+= $Mod;
 
 		//Items
-		$ItemCount += $row['VA']+$row['VJ']+$row['S1']+$row['S2']+$row['S3']+$row['K1'];
-		$other += $row['VA']+$row['VJ']+$row['S1']+$row['S2']+$row['S3'];
+		$ItemCount += $row['VA']+$row['VJ']+$row['K1'];
+		$other += $row['VA']+$row['VJ'];
 		if($ItemCount!=0){
 			echo "<div id=\"LineLow\">Total ".$ItemCount."</div>";
 		}else{
@@ -171,10 +169,11 @@
 		echo "<div id=\"Bar\">";
 		echo "<div id=\"RES\" style=\"width:".round($Res/$OneP)."%;\"></div>";
 		echo "<div id=\"XMP\" style=\"width:".round(($Xmp+$Ultra)/$OneP)."%;\"></div>";
+		echo "<div id=\"MOD\" style=\"width:".round($Mod/$OneP)."%;\"></div>";
 		echo "<div id=\"KEYS\" style=\"width:".round($row['K1']/$OneP)."%;\"></div>";
 		echo "<div id=\"OTH\" style=\"width:".round($other/$OneP)."%;\"></div>";
 		echo "<div id=\"EMP\" style=\"width:0%;\"></div>";
-		echo "<div id=\"Key\"><div id=\"R\">Resonators</div><div id=\"X\">Weapons</div><div id=\"K\">Keys</div><div id=\"O\">Other</div></div>";
+		echo "<div id=\"Key\"><div id=\"R\">Resonators</div><div id=\"X\">Weapons</div><div id=\"M\">Mods</div><div id=\"K\">Keys</div><div id=\"O\">Other</div></div>";
 		echo "</div><br><br>";
 		
 

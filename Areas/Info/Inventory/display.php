@@ -23,7 +23,7 @@
 	}
 
 	function echoInv($numofplayers){
-		global $res, $xmp, $ult, $jv,$av,$s1,$s2,$s3,$l1,$l2,$l3,$h1,$h2,$h3,$m1,$m2,$m3,$f1,$f2,$f3,$t1,$t2,$t3,$p, $k, $ResTotal, $XmpTotal, $UltraTotal, $PowerTotal, $other, $total;
+		global $res, $xmp, $ult, $jv,$av,$s1,$s2,$s3,$l1,$l2,$l3,$h1,$h2,$h3,$m1,$m2,$m3,$f1,$f2,$f3,$t1,$t2,$t3,$p, $k, $ResTotal, $XmpTotal, $ModTotal, $UltraTotal, $PowerTotal, $other, $total;
 		
 		echo "<div id=\"LineLow\">Out of ".$numofplayers." players</div>";
 
@@ -68,69 +68,71 @@
 			echo "</tr>";
 		//ADA
 			echo "<tr><td>ADA</td>";
-			echo "<td class=\"null\">-</td>";
-			echo "<td class=\"null\">-</td>";
+			echo "  <td></td>";
+			echo "  <td></td>";
 			echoCellMod($av, 3);
-			echo "<td class=\"null\">-</td>";
+			echo "  <td></td>";
 			echo "</tr>";
 		//Jarvis
 			echo "<tr><td>Jarvis</td>";
-			echo "<td class=\"null\">-</td>";
-			echo "<td class=\"null\">-</td>";
+			echo "  <td></td>";
+			echo "  <td></td>";
 			echoCellMod($jv, 3);
-			echo "<td class=\"null\">-</td>";
+			echo "  <td></td>";
 			echo "</tr>";
 		//Shields
 			echo "<tr><td>Shields</td>";
 			echoCellMod($s1, 1);
 			echoCellMod($s2, 2);
 			echoCellMod($s3, 3);
-			echo "<td class=\"null\">-</td>";
+			echo "  <td></td>";
 			echo "</tr>";
 		//Link Amp
 			echo "<tr><td>Link Amp</td>";
-			echo "<td class=\"null\">-</td>";
+			echo "  <td></td>";
 			echoCellMod($l2, 2);
-			echo "<td class=\"null\">-</td>";
-			echo "<td class=\"null\">-</td>";
+			echo "  <td></td>";
+			echo "  <td></td>";
 			echo "</tr>";
 		//Heat Sink
 			echo "<tr><td>Heat Sink</td>";
 			echoCellMod($h1, 1);
 			echoCellMod($h2, 2);
 			echoCellMod($h3, 3);
-			echo "<td class=\"null\">-</td>";
+			echo "  <td></td>";
 			echo "</tr>";
 		//Multi hack
 			echo "<tr><td>Multi hack</td>";
 			echoCellMod($m1, 1);
 			echoCellMod($m2, 2);
 			echoCellMod($m3, 3);
-			echo "<td class=\"null\">-</td>";
+			echo "  <td></td>";
 			echo "</tr>";
 		//Force Amp
 			echo "<tr><td>Force Amp</td>";
-			echo "<td class=\"null\">-</td>";
+			echo "  <td></td>";
 			echoCellMod($f2, 2);
-			echo "<td class=\"null\">-</td>";
-			echo "<td class=\"null\">-</td>";
+			echo "  <td></td>";
+			echo "  <td></td>";
 			echo "</tr>";
 		//Turret
 			echo "<tr><td>Turret</td>";
-			echo "<td class=\"null\">-</td>";
+			echo "  <td></td>";
 			echoCellMod($t2, 2);
-			echo "<td class=\"null\">-</td>";
-			echo "<td class=\"null\">-</td>";
+			echo "  <td></td>";
+			echo "  <td></td>";
 			echo "</tr>";
 		//Keys
 			echo "<tr><td>Keys</td>";
 			echoCellMod($k, 4);
-			echo "<td class=\"null\">-</td>";
-			echo "<td class=\"null\">-</td>";
-			echo "<td class=\"null\">-</td>";
+			echo "  <td></td>";
+			echo "  <td></td>";
+			echo "  <td></td>";
 			echo "</tr>";
 			
 		echo "</table>";
+		
+		$total+= $ResTotal + $XmpTotal + $UltraTotal + $PowerTotal + $ModTotal;
 
 		//Items
 		if($total!=0){
@@ -144,15 +146,16 @@
 		echo "<div id=\"Bar\">";
 		echo "<div id=\"RES\" style=\"width:".($ResTotal/$OneP)."%;\"></div>";
 		echo "<div id=\"XMP\" style=\"width:".($XmpTotal/$OneP)."%;\"></div>";
+		echo "<div id=\"MOD\" style=\"width:".($ModTotal/$OneP)."%;\"></div>";
 		echo "<div id=\"KEYS\" style=\"width:".($k/$OneP)."%;\"></div>";
 		echo "<div id=\"OTH\" style=\"width:".($other/$OneP)."%;\"></div>";
 		echo "<div id=\"EMP\" style=\"width:".((2000-$other-$k-$XmpTotal-$ResTotal)/$OneP)."%;\"></div>";
-		echo "<div id=\"Key\"><div id=\"R\">Resonators</div><div id=\"X\">Xmps</div><div id=\"K\">Keys</div><div id=\"O\">Other</div></div>";
+		echo "<div id=\"Key\"><div id=\"R\">Resonators</div><div id=\"X\">Xmps</div><div id=\"M\">Mods</div><div id=\"K\">Keys</div><div id=\"O\">Other</div></div>";
 		echo "</div>";
 	}
 
 	function addInventory($row){
-		global $res, $xmp, $ult, $jv,$av,$s1,$s2,$s3,$l1,$l2,$l3,$h1,$h2,$h3,$m1,$m2,$m3,$f1,$f2,$f3,$t1,$t2,$t3,$p, $k,$ResTotal, $XmpTotal, $UltraTotal, $PowerTotal, $other,$total;
+		global $res, $xmp, $ult, $jv,$av,$s1,$s2,$s3,$l1,$l2,$l3,$h1,$h2,$h3,$m1,$m2,$m3,$f1,$f2,$f3,$t1,$t2,$t3,$p, $k,$ResTotal, $XmpTotal, $ModTotal, $UltraTotal, $PowerTotal, $other,$total;
 		
 
 		for ($i = 1; $i <= 8; $i++) {
@@ -171,7 +174,6 @@
 			
 		}
 		$other+= $PowerTotal;
-		$total+= $ResTotal + $XmpTotal + $UltraTotal + $PowerTotal;
 
 
 
@@ -181,16 +183,11 @@
 		$other +=$row['VJ']+$row['VA'];
 		$total +=$row['VJ']+$row['VA'];
 
-
-		//Sheilds
+		//Mods
 		$s1 +=$row['S1'];
 		$s2 +=$row['S2'];
 		$s3 +=$row['S3'];
-		$other +=$row['S1']+$row['S2']+$row['S3'];
-		$total +=$row['S1']+$row['S2']+$row['S3'];
-
-
-		//Mods
+		
 		$l1 +=$row['CML'];
 		$l2 +=$row['RML'];
 		$l3 +=$row['VML'];
@@ -210,8 +207,13 @@
 		$t1 +=$row['CMT'];
 		$t2 +=$row['RMT'];
 		$t3 +=$row['VMT'];
-		$other +=$row['CML']+$row['RML']+$row['VML']+$row['CMH']+$row['RMH']+$row['VMH']+$row['CMM']+$row['RMM']+$row['VMM']+$row['CMF']+$row['RMF']+$row['VMF'];
-		$total +=$row['CML']+$row['RML']+$row['VML']+$row['CMH']+$row['RMH']+$row['VMH']+$row['CMM']+$row['RMM']+$row['VMM']+$row['CMF']+$row['RMF']+$row['VMF'];
+		
+		$ModTotal += $row['CML']+$row['RML']+$row['VML']
+				+$row['CMH']+$row['RMH']+$row['VMH']
+				+$row['CMM']+$row['RMM']+$row['VMM']
+				+$row['CMF']+$row['RMF']+$row['VMF']
+				+$row['CMT']+$row['RMT']+$row['VMT']
+				+$row['S1']+$row['S2']+$row['S3'];
 
 		//Keys
 		$k +=$row['K1'];

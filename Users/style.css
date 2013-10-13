@@ -244,6 +244,7 @@ textarea{
 
 #EMP,
 #KEYS,
+#MOD,
 #RES,
 #OTH,
 #XMP{
@@ -255,23 +256,26 @@ textarea{
 #XMP{float: left;}
 #RES{background-color:#1021a9;float: left;}
 #OTH{background-color:#666666;float: left;}
+#MOD{background-color:#6040b0;float: left;}
 #KEYS{background-color:#ffcc00;float: left;}
 #EMP{background-color:#000000;}
 
 #K,
+#M,
 #R,
 #O,
 #X{
 	text-align:center;
 	position: relative;
 	display:inline-block;
-	width:25%;
+	width:22%;
 	color:#e40000;
 	text-shadow: 0 0 1px;
 }
-#O{color:#666666;}
-#R{color:#1021a9;}
-#K{color:#ffcc00;}
+#M{color: #6040b0;width:18%;}
+#O{color:#666666;width:20%;}
+#R{color:#1021a9;width:22%;}
+#K{color:#ffcc00;width:18%;}
 
 #Key{
 	background-color:#101010;
