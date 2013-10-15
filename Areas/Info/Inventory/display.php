@@ -6,7 +6,7 @@
 		if($Num!=0){
 			echo "<div id=\"Lvl".$Lvl."\">".$Num."</div>";
 		}else{
-			echo "<div id=\"Lvl".$Lvl."\">0</div>";
+			echo "<div id=\"Lvl".$Lvl."\">-</div>";
 		}
 		echo "</td>";
 	}
@@ -17,7 +17,7 @@
 		if($Num!=0){
 			echo "<div style=\"color:".$colour.";text-shadow: 0 0 1px;\" >".$Num."</div>";
 		}else{
-			echo "<div style=\"color:".$colour.";text-shadow: 0 0 1px;\" >0</div>";
+			echo "<div style=\"color:".$colour.";text-shadow: 0 0 1px;\" >-</div>";
 		}
 		echo "</td>";
 	}
@@ -25,133 +25,133 @@
 	function echoInv($numofplayers){
 		global $res, $xmp, $ult, $jv,$av,$s1,$s2,$s3,$l1,$l2,$l3,$h1,$h2,$h3,$m1,$m2,$m3,$f1,$f2,$f3,$t1,$t2,$t3,$p, $k, $ResTotal, $XmpTotal, $ModTotal, $UltraTotal, $PowerTotal, $other, $total;
 		
-		echo "<div id=\"LineLow\">Out of ".$numofplayers." players</div>";
-
-		echo "<table style=\"margin-left: auto; margin-right: auto; border-spacing: 5;\">
-			<tr>
-				<td></td>
-				<td style=\"text-align: center;\">Res</td>
-				<td style=\"text-align: center;\">XMP</td>
-				<td style=\"text-align: center;\">Ultra</td>
-				<td style=\"text-align: center;\">Cube</td>
-			</tr>";
-		
-		
-		for ($i = 1; $i <= 8; $i++) {
-			
-			echo "<tr>";
-			echo "<td><div id=\"lvl".$i."\">L".$i."</div></td>";
-				echoCell($res[$i], $i);
-				echoCell($xmp[$i], $i);
-				echoCell($ult[$i], $i);
-				echoCell($p[$i], $i);
-			echo "</tr>";
-		}
-		
-		//Totals
-			echo "<tr>";
-			echo "<td><div style=\"color: #FFFFFF;text-shadow: 0 0 1px;\" >Total</div></td>";
-			echoCellMod($ResTotal, 5);
-			echoCellMod($XmpTotal, 5);
-			echoCellMod($UltraTotal, 5);
-			echoCellMod($PowerTotal, 5);
-			echo "</tr>";
-			
-		//Space
-			echo "<tr style=\"color: #000000;text-shadow: 0 0 1px;\"><td >.</td></tr>";
-		//Mods
-			echo "<tr>";
-			echo "<td></td>";
-			echo "<td><div id=\"Com\" style=\"text-align: center;\">Common</div></td>";
-			echo "<td><div id=\"Rar\" style=\"text-align: center;\">Rare</div></td>";
-			echo "<td><div id=\"Ver\" style=\"text-align: center;\">Very Rare</div></td>";
-			echo "</tr>";
-		//ADA
-			echo "<tr><td>ADA</td>";
-			echo "  <td></td>";
-			echo "  <td></td>";
-			echoCellMod($av, 3);
-			echo "  <td></td>";
-			echo "</tr>";
-		//Jarvis
-			echo "<tr><td>Jarvis</td>";
-			echo "  <td></td>";
-			echo "  <td></td>";
-			echoCellMod($jv, 3);
-			echo "  <td></td>";
-			echo "</tr>";
-		//Shields
-			echo "<tr><td>Shields</td>";
-			echoCellMod($s1, 1);
-			echoCellMod($s2, 2);
-			echoCellMod($s3, 3);
-			echo "  <td></td>";
-			echo "</tr>";
-		//Link Amp
-			echo "<tr><td>Link Amp</td>";
-			echo "  <td></td>";
-			echoCellMod($l2, 2);
-			echo "  <td></td>";
-			echo "  <td></td>";
-			echo "</tr>";
-		//Heat Sink
-			echo "<tr><td>Heat Sink</td>";
-			echoCellMod($h1, 1);
-			echoCellMod($h2, 2);
-			echoCellMod($h3, 3);
-			echo "  <td></td>";
-			echo "</tr>";
-		//Multi hack
-			echo "<tr><td>Multi hack</td>";
-			echoCellMod($m1, 1);
-			echoCellMod($m2, 2);
-			echoCellMod($m3, 3);
-			echo "  <td></td>";
-			echo "</tr>";
-		//Force Amp
-			echo "<tr><td>Force Amp</td>";
-			echo "  <td></td>";
-			echoCellMod($f2, 2);
-			echo "  <td></td>";
-			echo "  <td></td>";
-			echo "</tr>";
-		//Turret
-			echo "<tr><td>Turret</td>";
-			echo "  <td></td>";
-			echoCellMod($t2, 2);
-			echo "  <td></td>";
-			echo "  <td></td>";
-			echo "</tr>";
-		//Keys
-			echo "<tr><td>Keys</td>";
-			echoCellMod($k, 4);
-			echo "  <td></td>";
-			echo "  <td></td>";
-			echo "  <td></td>";
-			echo "</tr>";
-			
-		echo "</table>";
 		
 		$total+= $ResTotal + $XmpTotal + $UltraTotal + $PowerTotal + $ModTotal;
+		
+		if($total != 0){
+			echo "<div id=\"LineLow\">Out of ".$numofplayers." players</div>";
 
-		//Items
-		if($total!=0){
+			echo "<table style=\"margin-left: auto; margin-right: auto; border-spacing: 5;\">
+				<tr>
+					<td></td>
+					<td style=\"text-align: center;\">Res</td>
+					<td style=\"text-align: center;\">XMP</td>
+					<td style=\"text-align: center;\">Ultra</td>
+					<td style=\"text-align: center;\">Cube</td>
+				</tr>";
+		
+		
+			for ($i = 1; $i <= 8; $i++) {
+			
+				echo "<tr>";
+				echo "<td><div id=\"lvl".$i."\">L".$i."</div></td>";
+					echoCell($res[$i], $i);
+					echoCell($xmp[$i], $i);
+					echoCell($ult[$i], $i);
+					echoCell($p[$i], $i);
+				echo "</tr>";
+			}
+		
+			//Totals
+				echo "<tr>";
+				echo "<td><div style=\"color: #FFFFFF;text-shadow: 0 0 1px;\" >Total</div></td>";
+				echoCellMod($ResTotal, 5);
+				echoCellMod($XmpTotal, 5);
+				echoCellMod($UltraTotal, 5);
+				echoCellMod($PowerTotal, 5);
+				echo "</tr>";
+			
+			//Space
+				echo "<tr style=\"color: #000000;text-shadow: 0 0 1px;\"><td >.</td></tr>";
+			//Mods
+				echo "<tr>";
+				echo "<td></td>";
+				echo "<td><div id=\"Com\" style=\"text-align: center;\">Common</div></td>";
+				echo "<td><div id=\"Rar\" style=\"text-align: center;\">Rare</div></td>";
+				echo "<td><div id=\"Ver\" style=\"text-align: center;\">Very Rare</div></td>";
+				echo "</tr>";
+			//ADA
+				echo "<tr><td>ADA</td>";
+				echo "  <td></td>";
+				echo "  <td></td>";
+				echoCellMod($av, 3);
+				echo "  <td></td>";
+				echo "</tr>";
+			//Jarvis
+				echo "<tr><td>Jarvis</td>";
+				echo "  <td></td>";
+				echo "  <td></td>";
+				echoCellMod($jv, 3);
+				echo "  <td></td>";
+				echo "</tr>";
+			//Shields
+				echo "<tr><td>Shields</td>";
+				echoCellMod($s1, 1);
+				echoCellMod($s2, 2);
+				echoCellMod($s3, 3);
+				echo "  <td></td>";
+				echo "</tr>";
+			//Link Amp
+				echo "<tr><td>Link Amp</td>";
+				echo "  <td></td>";
+				echoCellMod($l2, 2);
+				echo "  <td></td>";
+				echo "  <td></td>";
+				echo "</tr>";
+			//Heat Sink
+				echo "<tr><td>Heat Sink</td>";
+				echoCellMod($h1, 1);
+				echoCellMod($h2, 2);
+				echoCellMod($h3, 3);
+				echo "  <td></td>";
+				echo "</tr>";
+			//Multi hack
+				echo "<tr><td>Multi hack</td>";
+				echoCellMod($m1, 1);
+				echoCellMod($m2, 2);
+				echoCellMod($m3, 3);
+				echo "  <td></td>";
+				echo "</tr>";
+			//Force Amp
+				echo "<tr><td>Force Amp</td>";
+				echo "  <td></td>";
+				echoCellMod($f2, 2);
+				echo "  <td></td>";
+				echo "  <td></td>";
+				echo "</tr>";
+			//Turret
+				echo "<tr><td>Turret</td>";
+				echo "  <td></td>";
+				echoCellMod($t2, 2);
+				echo "  <td></td>";
+				echo "  <td></td>";
+				echo "</tr>";
+			//Keys
+				echo "<tr><td>Keys</td>";
+				echoCellMod($k, 4);
+				echo "  <td></td>";
+				echo "  <td></td>";
+				echo "  <td></td>";
+				echo "</tr>";
+			
+			echo "</table>";
+			
 			echo "<div id=\"LineLow\">Total ".$total."</div>";
+
+			//Graph
+			$OneP = 20*$numofplayers;
+			echo "<div id=\"Bar\">";
+			echo "<div id=\"RES\" style=\"width:".($ResTotal/$OneP)."%;\"></div>";
+			echo "<div id=\"XMP\" style=\"width:".($XmpTotal/$OneP)."%;\"></div>";
+			echo "<div id=\"MOD\" style=\"width:".($ModTotal/$OneP)."%;\"></div>";
+			echo "<div id=\"KEYS\" style=\"width:".($k/$OneP)."%;\"></div>";
+			echo "<div id=\"OTH\" style=\"width:".($other/$OneP)."%;\"></div>";
+			echo "<div id=\"EMP\" style=\"width:".((2000-$other-$k-$XmpTotal-$ResTotal)/$OneP)."%;\"></div>";
+			echo "<div id=\"Key\"><div id=\"R\">Resonators</div><div id=\"X\">Xmps</div><div id=\"M\">Mods</div><div id=\"K\">Keys</div><div id=\"O\">Other</div></div>";
+			echo "</div>";
 		}else{
 			echo "<div id=\"LineLow\">No inventory data</div>";
 		}
-
-		//Graph
-		$OneP = 20*$numofplayers;
-		echo "<div id=\"Bar\">";
-		echo "<div id=\"RES\" style=\"width:".($ResTotal/$OneP)."%;\"></div>";
-		echo "<div id=\"XMP\" style=\"width:".($XmpTotal/$OneP)."%;\"></div>";
-		echo "<div id=\"MOD\" style=\"width:".($ModTotal/$OneP)."%;\"></div>";
-		echo "<div id=\"KEYS\" style=\"width:".($k/$OneP)."%;\"></div>";
-		echo "<div id=\"OTH\" style=\"width:".($other/$OneP)."%;\"></div>";
-		echo "<div id=\"EMP\" style=\"width:".((2000-$other-$k-$XmpTotal-$ResTotal)/$OneP)."%;\"></div>";
-		echo "<div id=\"Key\"><div id=\"R\">Resonators</div><div id=\"X\">Xmps</div><div id=\"M\">Mods</div><div id=\"K\">Keys</div><div id=\"O\">Other</div></div>";
-		echo "</div>";
 	}
 
 	function addInventory($row){
