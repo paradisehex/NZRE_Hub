@@ -19,7 +19,7 @@
 				Editing <?php echo $Name;?> Portal<br>
 				<select name="Location">
 					<?php
-						for($i = 0; $i < $NumOfLocation; $i++){
+						for($i = 0; $i <= $NumOfLocation; $i++){
 							echo "<option value=\"".$i."\" ";
 							if($Location == $i){echo "selected=\"selected\"";}
 							echo ">".getLocationName($i)."</option>";
@@ -28,7 +28,7 @@
 				</select><br>
 				<select name="Status">
 					<?php
-						for($i = 0; $i < $NumOfStatus; $i++){
+						for($i = 0; $i <= $NumOfStatus; $i++){
 							echo "<option value=\"".$i."\" ";
 							if($Location == $i){echo "selected=\"selected\"";}
 							echo ">".getPortalStatus($i)."</option>";
