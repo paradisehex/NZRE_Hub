@@ -17,7 +17,6 @@
 					Only level 8 agents can change their own level.<br>If you need your level changed ask an area officer.<br>
 				</p>
 				<p>
-					This is how the permission system works.<br>
 					Captains can choose officers.<br>
 					Area officers and captains can: <br>
 					register players,<br>
