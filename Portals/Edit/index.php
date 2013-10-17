@@ -17,6 +17,7 @@
 		<p>
 			<form action="save.php" method="post" autocomplete="off">
 				Editing <?php echo $Name;?> Portal<br>
+				<input class="field" type="text" name="Name" autocomplete="off" <?php echo "value=\"".$Name."\"";?>><br>
 				<select name="Location">
 					<?php
 						for($i = 0; $i <= $NumOfLocation; $i++){
@@ -35,7 +36,7 @@
 						}
 					?>
 				</select><br>
-				<input type="hidden" name="Name"  <?php echo "value=\"".$Name."\"";?>>
+				<input type="hidden" name="ID"  <?php echo "value=\"".getPortalID($Name)."\"";?>>
 				<input class="field" type="text" name="Latitude" placeholder="Latitude" autocomplete="off" <?php echo "value=\"".($ThePortal["Lat"]/1000000)."\"";?>><br>
 				<input class="field" type="text" name="Longitude" placeholder="Longitude" autocomplete="off" <?php echo "value=\"".($ThePortal["Lon"]/1000000)."\"";?>><br>
 				<input class="button" type="submit" value="Save" >
