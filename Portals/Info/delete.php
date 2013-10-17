@@ -10,7 +10,7 @@
 		$Name = strip_tags(stripslashes($_POST['Name']));
 		
 		mysqli_query($con,"delete from PortalTable WHERE portalName = '".$Name."'");
-		mysqli_query($con,"delete from KeyTable WHERE portalName = '".getPortalID($Name)."'");
+		mysqli_query($con,"delete from KeyTable WHERE portalID = '".getPortalID($Name)."'");
 			
 		header("location:../");
 	}else{
