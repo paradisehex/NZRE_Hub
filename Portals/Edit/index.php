@@ -30,7 +30,7 @@
 					<?php
 						for($i = 0; $i <= $NumOfStatus; $i++){
 							echo "<option value=\"".$i."\" ";
-							if($Location == $i){echo "selected=\"selected\"";}
+							if($Status == $i){echo "selected=\"selected\"";}
 							echo ">".getPortalStatus($i)."</option>";
 						}
 					?>

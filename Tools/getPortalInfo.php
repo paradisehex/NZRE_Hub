@@ -38,4 +38,10 @@ function getPortalStatus($ID){
 		case 10:  return "Other";
 	}
 }
+
+function getPortalID($Name){
+	include "/var/www/Ingress/Tools/database.php";
+	$row = mysqli_fetch_array(mysqli_query($con,"SELECT * FROM PortalTable WHERE portalName='$Name'"));
+	return $row['ID'];
+}
 ?>

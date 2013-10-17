@@ -32,7 +32,7 @@
 				
 				echo "<br><div id=\"Line\">List of keys</div>";
 				
-				$Keys = mysqli_query($con,"SELECT * FROM KeyTable WHERE portalName = '".$ThePortal['PortalName']."'");
+				$Keys = mysqli_query($con,"SELECT * FROM KeyTable WHERE portalID = '".getPortalID($ThePortal['PortalName'])."'");
 				while ($row = mysqli_fetch_array($Keys, MYSQL_ASSOC)) {
 					echo "<div id=\"Line\"><div id=\"Left\">".$row['username']."</div><div id=\"Right\">".$row['NumKeys']."</div></div><br>";
 				}

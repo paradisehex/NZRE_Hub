@@ -13,9 +13,8 @@
 			$sql = "SELECT * FROM PortalTable WHERE portalName ='$Name'";
 			$result = mysqli_query($con,$sql);
 			$count = mysqli_num_rows($result);
-			echo $count;
 			if($count == 0){
-				mysqli_query($con,"insert into PortalTable values('$Name','$Location','$Status','$Latitude','$Longitude');");
+				mysqli_query($con,"insert into PortalTable (PortalName, Location, Status, Lat, Lon) values('$Name','$Location','$Status','$Latitude','$Longitude');");
 				header("location:../");
 			}else{
 				echo "Portal already added";
