@@ -26,7 +26,24 @@
 					}
 				}
 			}
-		$lastAP = $ap;
+			$lastAP = $ap;
+		}
+		foreach($AP as $i){
+			$sql="SELECT * FROM AgentTable WHERE AP = ".$i;
+			$result=mysqli_query($con,$sql);
+			
+			while ($row = mysqli_fetch_array($result, MYSQL_ASSOC)) {
+				if($lastAP != $row['AP']){
+					if(!$row['AP']){
+						$ap = $row['AP'];
+						echo "<div id=\"Line\"><div id=\"left\">";
+							echo "<a href=\"/Ingress/Users/Inventory/?Name=".$row['username']."\"><div id=\"Left\" style=\"padding-left:2px;\">".$count."</div>".$row['username']."</a>";
+						echo "</div></div>";
+						$count++;
+					}
+				}
+			}
+			$lastAP = $ap;
 		}
 	}
 
