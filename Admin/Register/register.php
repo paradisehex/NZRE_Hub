@@ -3,9 +3,9 @@ session_start();
 if(!$_SESSION['admin']){header("location:/Ingress");return;}
 
 // Connect to server and select databse.
-include "/var/www/Ingress/Tools/database.php";
-include "/var/www/Ingress/Tools/log.php";
-include "/var/www/Ingress/Tools/register.php";
+include $_SESSION['path']."/Tools/database.php";
+include $_SESSION['path']."/Tools/log.php";
+include $_SESSION['path']."/Tools/register.php";
 
 // Define $myusername and $mypassword  and protect againest MYSQL injection
 $myusername=stripslashes(str_replace ("&#65279","",$_POST['TheUserName']));

@@ -40,7 +40,7 @@ function getPortalStatus($ID){
 }
 
 function getPortalID($Name){
-	include "/var/www/Ingress/Tools/database.php";
+	include $_SESSION['path']."/Tools/database.php";
 	$row = mysqli_fetch_array(mysqli_query($con,"SELECT * FROM PortalTable WHERE portalName='$Name'"));
 	return $row['ID'];
 }

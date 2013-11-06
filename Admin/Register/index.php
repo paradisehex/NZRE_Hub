@@ -3,9 +3,9 @@
 	if(!$_SESSION['admin']){header("location:/Ingress");return;}
 ?>
 <html>
-	<?php include "/var/www/Ingress/Tools/head.php";?>
+	<?php include $_SESSION['path']."/Tools/head.php";?>
 	<body>
-		<?php include "/var/www/Ingress/Tools/menu.php";?>
+		<?php include $_SESSION['path']."/Tools/menu.php";?>
 		<p><form action="register.php" method="post" autocomplete="off">
 				Register User<br>
 				<input class="field" type="text" name="TheUserName" autocomplete="off" placeholder="User Name"><br>

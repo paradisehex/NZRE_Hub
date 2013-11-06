@@ -1,17 +1,17 @@
 <?php
 	session_start();
 	
-	include "/var/www/Ingress/Tools/database.php";
-	include "/var/www/Ingress/Tools/permission.php";
+	include $_SESSION['path']."/Tools/database.php";
+	include $_SESSION['path']."/Tools/permission.php";
 
 	$name = strip_tags(stripslashes($_POST['Name']));
 		
 	if(!OfficerAndLocation($con,$_SESSION['name'],$name)){header("location:/Ingress");}
 ?>
 <html>
-	<?php include "/var/www/Ingress/Tools/head.php";?>
+	<?php include $_SESSION['path']."/Tools/head.php";?>
 	<body>
-		<?php include "/var/www/Ingress/Tools/menu.php";?>
+		<?php include $_SESSION['path']."/Tools/menu.php";?>
 			<br>
 			<div id="Line"><?php echo "Editing ".$name." Description"; ?></div>
 			<div id="Block">

@@ -1,8 +1,8 @@
 <?php
 	session_start();
-		include "/var/www/Ingress/Tools/database.php";
-		include "/var/www/Ingress/Tools/bb.php";
-		include "/var/www/Ingress/Tools/permission.php";
+		include $_SESSION['path']."/Tools/database.php";
+		include $_SESSION['path']."/Tools/bb.php";
+		include $_SESSION['path']."/Tools/permission.php";
 
 		$name = strip_tags(stripslashes($_GET['Name']));
 
@@ -13,9 +13,9 @@
 		$AreaOfficers = mysqli_query($con,$OfficerQuery);
 ?>
 <html>
-	<?php include "/var/www/Ingress/Tools/head.php";?>
+	<?php include $_SESSION['path']."/Tools/head.php";?>
 	<body>
-		<?php include "/var/www/Ingress/Tools/menu.php";?>
+		<?php include $_SESSION['path']."/Tools/menu.php";?>
 		<?php
 			echo "<div id=\"line\"><b>".$name."</b> Infomation</div>";
 
@@ -29,7 +29,7 @@
 
 			echo "<br>";
 			echo "<div id=\"whiteSpace\">";
-			$text = file_get_contents('/var/www/Ingress/.data/Areas/'.$name.'.txt', FILE_USE_INCLUDE_PATH);
+			$text = file_get_contents($_SESSION['path'].'/.data/Areas/'.$name.'.txt', FILE_USE_INCLUDE_PATH);
 			$text  = format_comment($text);
 			echo $text;
 			
@@ -62,7 +62,7 @@
 		?>
 		<div id="line">Agents:</div>
 		<?php
-			include "/var/www/Ingress/Tools/userList.php";
+			include $_SESSION['path']."/Tools/userList.php";
 
 			$sql="SELECT * FROM AgentTable WHERE Location=".$row['id'];
 			$result = mysqli_query($con,$sql);

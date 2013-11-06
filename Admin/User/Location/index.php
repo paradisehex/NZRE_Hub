@@ -1,16 +1,16 @@
 <?php
 	session_start();
 	if(!$_SESSION['admin']){header("location:/Ingress");return;}
-		include "/var/www/Ingress/Tools/database.php";
+		include $_SESSION['path']."/Tools/database.php";
 		$sql="SELECT * FROM LocationTable";
 		$result=mysqli_query($con,$sql);
 
 		$name = strip_tags(stripslashes($_GET['Name']));
 ?>
 <html>
-	<?php include "/var/www/Ingress/Tools/head.php";?>
+	<?php include $_SESSION['path']."/Tools/head.php";?>
 	<body>
-		<?php include "/var/www/Ingress/Tools/menu.php";?>
+		<?php include $_SESSION['path']."/Tools/menu.php";?>
 		<?php
 			echo "Select a new location for <b>".$name."</b>";
 			echo "<form action=\"changeLocation.php\" method=\"post\">";

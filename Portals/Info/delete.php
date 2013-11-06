@@ -1,9 +1,9 @@
 <?php
 	session_start();
 	
-	include "/var/www/Ingress/Tools/database.php";
-	include "/var/www/Ingress/Tools/permission.php";
-	include "/var/www/Ingress/Tools/getPortalInfo.php";
+	include $_SESSION['path']."/Tools/database.php";
+	include $_SESSION['path']."/Tools/permission.php";
+	include $_SESSION['path']."/Tools/getPortalInfo.php";
 		
 	if(IsOfficer($con,$_SESSION['name'])){
 		

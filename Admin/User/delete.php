@@ -4,7 +4,7 @@
 
 
 		$username=strip_tags(stripslashes($_POST['Name']));
-		include "/var/www/Ingress/Tools/database.php";
+		include $_SESSION['path']."/Tools/database.php";
 
 		//Delete them
 			mysqli_query($con,"delete from AgentTable where username = '".$username."'");

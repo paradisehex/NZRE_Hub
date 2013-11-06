@@ -2,14 +2,14 @@
 	session_start();
 	if(!$_SESSION['admin']){header("location:/Ingress");return;}
 	
-		include "/var/www/Ingress/Tools/database.php";
+		include $_SESSION['path']."/Tools/database.php";
 		$sql="SELECT * FROM AgentTable";
 		$result=mysqli_query($con,$sql);
 ?>
 <html>
-	<?php include "/var/www/Ingress/Tools/head.php";?>
+	<?php include $_SESSION['path']."/Tools/head.php";?>
 	<body>
-		<?php include "/var/www/Ingress/Tools/menu.php";?>
+		<?php include $_SESSION['path']."/Tools/menu.php";?>
 		<div id="line"><a href="Register">Register User</a></div>
 		<div id="line"><a href="/Ingress/Admin/Location">Location</a></div>
 		<div id="line">Users:</div>

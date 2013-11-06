@@ -1,10 +1,10 @@
 <?php
 	session_start();
 	
-		include "/var/www/Ingress/Tools/database.php";
-		include "/var/www/Ingress/Tools/permission.php";
-		include "/var/www/Ingress/Tools/AP.php";		
-		include "/var/www/Ingress/Users/Inventory/display.php";
+		include $_SESSION['path']."/Tools/database.php";
+		include $_SESSION['path']."/Tools/permission.php";
+		include $_SESSION['path']."/Tools/AP.php";		
+		include $_SESSION['path']."/Users/Inventory/display.php";
 
 		$name = strip_tags(stripslashes($_GET['Name']));
 
@@ -16,9 +16,9 @@
 		$Location = mysqli_fetch_array(mysqli_query($con,"SELECT * FROM LocationTable WHERE id = ".$row2['Location']), MYSQL_ASSOC);
 ?>
 <html>
-	<?php include "/var/www/Ingress/Tools/head.php";?>
+	<?php include $_SESSION['path']."/Tools/head.php";?>
 	<body>
-		<?php include "/var/www/Ingress/Tools/menu.php";?>
+		<?php include $_SESSION['path']."/Tools/menu.php";?>
 			<div id="Line">
 				<?php 
 					echo "<strong>".$name."</strong>";

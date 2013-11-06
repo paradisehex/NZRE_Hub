@@ -1,12 +1,12 @@
 <?php
 	session_start();
-	include "/var/www/Ingress/Tools/database.php";
-	include "/var/www/Ingress/Tools/getPortalInfo.php";
+	include $_SESSION['path']."/Tools/database.php";
+	include $_SESSION['path']."/Tools/getPortalInfo.php";
 ?>
 <html>
-	<?php include "/var/www/Ingress/Tools/head.php";?>
+	<?php include $_SESSION['path']."/Tools/head.php";?>
 	<body>
-		<?php include "/var/www/Ingress/Tools/menu.php";?>
+		<?php include $_SESSION['path']."/Tools/menu.php";?>
 		<p>
 			<form action="update.php" method="post" autocomplete="off">
 				Update Keys<br>

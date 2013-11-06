@@ -2,7 +2,7 @@
 	session_start();
 	if(!$_SESSION['admin']){header("location:/Ingress");return;}
 	
-	include "/var/www/Ingress/Tools/database.php";
+	include $_SESSION['path']."/Tools/database.php";
 
 	$name = strip_tags(stripslashes($_GET['Name']));
 
@@ -10,9 +10,9 @@
 	$result= mysqli_query($con,$sql);
 ?>
 <html>
-	<?php include "/var/www/Ingress/Tools/head.php";?>
+	<?php include $_SESSION['path']."/Tools/head.php";?>
 	<body>
-		<?php include "/var/www/Ingress/Tools/menu.php";?>
+		<?php include $_SESSION['path']."/Tools/menu.php";?>
 		<?php
 			echo "<div id=\"line\">Select New Admin for <b>".$name."</b></div>";
 			echo "<form action=\"changeAdmin.php\" method=\"post\">";

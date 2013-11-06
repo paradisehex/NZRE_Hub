@@ -1,8 +1,8 @@
 <?php
 	session_start();
-	include "/var/www/Ingress/Tools/database.php";
-	include "/var/www/Ingress/Tools/permission.php";
-	include "/var/www/Ingress/Tools/getPortalInfo.php";
+	include $_SESSION['path']."/Tools/database.php";
+	include $_SESSION['path']."/Tools/permission.php";
+	include $_SESSION['path']."/Tools/getPortalInfo.php";
 
 	$Name = strip_tags(stripslashes($_GET['Name']));
 
@@ -10,9 +10,9 @@
 	$TheKeys = mysqli_query($con,"SELECT * FROM KeyTable WHERE portalName='$Name'");
 ?>
 <html>
-	<?php include "/var/www/Ingress/Tools/head.php";?>
+	<?php include $_SESSION['path']."/Tools/head.php";?>
 	<body>
-		<?php include "/var/www/Ingress/Tools/menu.php";?>
+		<?php include $_SESSION['path']."/Tools/menu.php";?>
 		<p>
 			<?php
 				echo "<b>".$ThePortal['PortalName']."</b>";

@@ -1,17 +1,17 @@
 <?php
 	session_start();
-		include "/var/www/Ingress/Tools/database.php";
+		include $_SESSION['path']."/Tools/database.php";
 
 		$sql="SELECT * FROM ItemTable WHERE username = \"".$_SESSION['name']."\"";
 		$result=mysqli_query($con,$sql);
 		$row = mysqli_fetch_array($result, MYSQL_ASSOC);
 		
-		include "/var/www/Ingress/Tools/getColour.php";
+		include $_SESSION['path']."/Tools/getColour.php";
 ?>
 <html>
-	<?php include "/var/www/Ingress/Tools/head.php";?>
+	<?php include $_SESSION['path']."/Tools/head.php";?>
 	<body>
-		<?php include "/var/www/Ingress/Tools/menu.php";?>
+		<?php include $_SESSION['path']."/Tools/menu.php";?>
 		<p><form name="LoginForm" action="updateinv.php" method="post" class="inventory">
 				Update Inventory<br><br>
 				<?php

@@ -1,8 +1,8 @@
 <?php
 	session_start();
-		include "/var/www/Ingress/Tools/database.php";
-		include "/var/www/Ingress/Tools/bb.php";
-		include "/var/www/Ingress/Tools/permission.php";
+		include $_SESSION['path']."/Tools/database.php";
+		include $_SESSION['path']."/Tools/bb.php";
+		include $_SESSION['path']."/Tools/permission.php";
 
 		$name = strip_tags(stripslashes($_GET['Name']));
 
@@ -10,9 +10,9 @@
 		$row = mysqli_fetch_array(mysqli_query($con,$sql));
 ?>
 <html>
-	<?php include "/var/www/Ingress/Tools/head.php";?>
+	<?php include $_SESSION['path']."/Tools/head.php";?>
 	<body>
-		<?php include "/var/www/Ingress/Tools/menu.php";?>
+		<?php include $_SESSION['path']."/Tools/menu.php";?>
 		<?php
 			echo "<div id=\"line\">".$name." Standing Orders</div>";
 

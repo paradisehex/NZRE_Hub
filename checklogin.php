@@ -2,10 +2,11 @@
 session_start();
 
 $_SESSION['name'] = "Not Null";
+$_SESSION['path'] = getcwd();
 
-include "/var/www/Ingress/Tools/database.php";
-include "/var/www/Ingress/Tools/log.php";
-include "/var/www/Ingress/Tools/password.php";
+include $_SESSION['path']."/Tools/database.php";
+include $_SESSION['path']."/Tools/log.php";
+include $_SESSION['path']."/Tools/password.php";
 
 
 $username = stripslashes($_POST['TheUserName']); 

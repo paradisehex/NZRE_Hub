@@ -1,5 +1,5 @@
 <?php
-	include "/var/www/Ingress/Tools/password.php";
+	include $_SESSION['path']."/Tools/password.php";
 
 	function register($con,$username,$password,$level){
 		$password = getHash($username,$password);

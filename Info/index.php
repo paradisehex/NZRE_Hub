@@ -3,9 +3,9 @@
 	if(!$_SESSION['name']){header("location:/Ingress");return;}
 ?>
 <html>
-	<?php include "/var/www/Ingress/Tools/head.php";?>
+	<?php include $_SESSION['path']."/Tools/head.php";?>
 	<body>
-		<?php include "/var/www/Ingress/Tools/menu.php";?>
+		<?php include $_SESSION['path']."/Tools/menu.php";?>
 		<br>
 		<div id="line">
 			<div id="left">
@@ -32,7 +32,7 @@
 				</p>
 				<p>
 					Active users: <?php
-						include "/var/www/Ingress/Tools/database.php";
+						include $_SESSION['path']."/Tools/database.php";
 
 						$sql="SELECT * FROM ItemTable";
 						$result=mysqli_query($con,$sql);

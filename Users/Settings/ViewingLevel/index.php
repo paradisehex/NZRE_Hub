@@ -1,14 +1,14 @@
 <?php
 	session_start();
-		include "/var/www/Ingress/Tools/database.php";
+		include $_SESSION['path']."/Tools/database.php";
 		$UserString = "SELECT * FROM AgentTable WHERE username = '".$_SESSION['name']."'";
 		$UserQuery = mysqli_query($con,$UserString);
 		$User = mysqli_fetch_array($UserQuery);
 ?>
 <html>
-	<?php include "/var/www/Ingress/Tools/head.php";?>
+	<?php include $_SESSION['path']."/Tools/head.php";?>
 	<body>
-		<?php include "/var/www/Ingress/Tools/menu.php";?>
+		<?php include $_SESSION['path']."/Tools/menu.php";?>
 		<br>
 			Set the required level for people to view your inventory
 		<br><br>

@@ -5,7 +5,7 @@
 	$locationName = strip_tags(stripslashes($_POST['LocationName']));
 	$Name = strip_tags(stripslashes($_POST['User']));
 
-	include "/var/www/Ingress/Tools/database.php";
+	include $_SESSION['path']."/Tools/database.php";
 
 	$sql = "UPDATE LocationTable SET admin = '".$Name."' WHERE name = '".$locationName."'";
 	echo $sql;

@@ -1,8 +1,8 @@
 <?php
 	session_start();
-		include "/var/www/Ingress/Tools/database.php";
-		include "/var/www/Ingress/Tools/AP.php";
-		include "/var/www/Ingress/Users/Inventory/display.php";
+		include $_SESSION['path']."/Tools/database.php";
+		include $_SESSION['path']."/Tools/AP.php";
+		include $_SESSION['path']."/Users/Inventory/display.php";
 
 		$sql="SELECT * FROM ItemTable WHERE username = \"".$_SESSION['name']."\"";
 		$result=mysqli_query($con,$sql);
@@ -14,9 +14,9 @@
 		$Location = mysqli_fetch_array(mysqli_query($con,"SELECT * FROM LocationTable WHERE id = ".$row2['Location']), MYSQL_ASSOC);
 ?>
 <html>
-	<?php include "/var/www/Ingress/Tools/head.php";?>
+	<?php include $_SESSION['path']."/Tools/head.php";?>
 	<body>
-		<?php include "/var/www/Ingress/Tools/menu.php";?>
+		<?php include $_SESSION['path']."/Tools/menu.php";?>
 			<div id="Line">
 				<?php echoCounter($lvl,$row2['AP']); ?>
 				<?php echo "<div id=\"Location\"><a href=\"/Ingress/Areas/Info/?Name=".$Location['name']."\">Area  ".$Location['name']."</a></div>"; ?>

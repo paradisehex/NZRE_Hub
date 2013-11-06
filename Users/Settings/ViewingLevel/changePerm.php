@@ -1,7 +1,7 @@
 <?php
 	session_start();
 	
-		include "/var/www/Ingress/Tools/database.php";
+		include $_SESSION['path']."/Tools/database.php";
 	
 		$AnyLvl=strip_tags(stripslashes($_POST['AnyOneLevel']));
 		$AreaLvl=strip_tags(stripslashes($_POST['AreaLevel']));

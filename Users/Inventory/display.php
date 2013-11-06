@@ -1,5 +1,5 @@
 <?php
-	include "/var/www/Ingress/Tools/getColour.php";
+	include $_SESSION['path']."/Tools/getColour.php";
 	
 	function echoCell($Num, $Lvl){
 		echo "<td style=\"text-align: center;\">";

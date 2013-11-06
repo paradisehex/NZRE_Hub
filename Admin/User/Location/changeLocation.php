@@ -5,7 +5,7 @@
 	$locationName = strip_tags(stripslashes($_POST['LocationName']));
 	$Name = strip_tags(stripslashes($_POST['Name']));
 
-	include "/var/www/Ingress/Tools/database.php";
+	include $_SESSION['path']."/Tools/database.php";
 
 	$sql = "SELECT * FROM LocationTable WHERE name = '".$locationName."'";
 	$LocationQuery = mysqli_query($con,$sql);

@@ -2,8 +2,8 @@
 	session_start();
 	if($_SESSION['lvl']<7){header("location:/Ingress");return;}
 		
-		include "/var/www/Ingress/Tools/database.php";
-		include "/var/www/Ingress/Tools/permission.php";
+		include $_SESSION['path']."/Tools/database.php";
+		include $_SESSION['path']."/Tools/permission.php";
 
 		$name = strip_tags(stripslashes($_GET['Name']));
 
@@ -14,13 +14,13 @@
 		$AreaOfficers = mysqli_query($con,$OfficerQuery);
 ?>
 <html>
-	<?php include "/var/www/Ingress/Tools/head.php";?>
+	<?php include $_SESSION['path']."/Tools/head.php";?>
 	<body>
-		<?php include "/var/www/Ingress/Tools/menu.php";?>
+		<?php include $_SESSION['path']."/Tools/menu.php";?>
 		<?php
 			echo "<div id=\"line\"><b>".$name."</b> Inventory</div>";
 
-			include "/var/www/Ingress/Tools/userList.php";
+			include $_SESSION['path']."/Tools/userList.php";
 			include "display.php";
 
 
