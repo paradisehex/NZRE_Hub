@@ -146,7 +146,7 @@
 			echo "<div id=\"MOD\" style=\"width:".($ModTotal/$OneP)."%;\"></div>";
 			echo "<div id=\"KEYS\" style=\"width:".($k/$OneP)."%;\"></div>";
 			echo "<div id=\"OTH\" style=\"width:".($other/$OneP)."%;\"></div>";
-			echo "<div id=\"EMP\" style=\"width:".((2000-$other-$k-$XmpTotal-$ResTotal)/$OneP)."%;\"></div>";
+			echo "<div id=\"EMP\" style=\"width:".((($OneP*100)-$other-$k-$XmpTotal-$ResTotal-$ModTotal)/$OneP)."%;\"></div>";
 			echo "<div id=\"Key\"><div id=\"R\">Resonators</div><div id=\"X\">Xmps</div><div id=\"M\">Mods</div><div id=\"K\">Keys</div><div id=\"O\">Other</div></div>";
 			echo "</div>";
 		}else{
@@ -170,10 +170,10 @@
 			$UltraTotal+= $row['U'.$i];
 			
 			$p[$i] += $row['P'.$i];
+			$other += $row['P'.$i];
 			$PowerTotal += $row['P'.$i];
 			
 		}
-		$other+= $PowerTotal;
 
 
 
