@@ -84,7 +84,7 @@
 							echo "<tr><td>Link Amp</td>";
 							echo "<td></td>";
 							echoCellMod($row["RML"], "RML", 2, ++$Tab);
-							echo "<td></td>";
+							echoCellMod($row["VML"], "VML", 3, ++$Tab);
 							echo "</tr>";
 						//Heat Sink
 							echo "<tr><td>Heat Sink</td>";

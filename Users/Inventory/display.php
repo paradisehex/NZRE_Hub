@@ -104,7 +104,7 @@
 			echo "<tr><td>Link Amp</td>";
 			echo "<td></td>";
 			echoCellMod($row["RML"], 2);
-			echo "<td></td>";
+			echoCellMod($row["VML"], 3);
 			echo "<td></td>";
 			echo "</tr>";
 		//Heat Sink

@@ -95,7 +95,7 @@
 				echo "<tr><td>Link Amp</td>";
 				echo "  <td></td>";
 				echoCellMod($l2, 2);
-				echo "  <td></td>";
+				echoCellMod($l3, 3);
 				echo "  <td></td>";
 				echo "</tr>";
 			//Heat Sink
