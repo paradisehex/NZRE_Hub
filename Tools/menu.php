@@ -1,7 +1,7 @@
 <?php	
 	echo "<div id=\"MenuL\">";
-	echo str_replace("\n" , "" , file_get_contents('/var/www/Ingress/menu.txt', FILE_USE_INCLUDE_PATH));
-	if($_SESSION['admin']){echo str_replace("\n" , "" , file_get_contents('/var/www/Ingress/Admin/menu.txt', FILE_USE_INCLUDE_PATH));}
+	echo str_replace("\n" , "" , file_get_contents($_SESSION['path'].'/menu.txt', FILE_USE_INCLUDE_PATH));
+	if($_SESSION['admin']){echo str_replace("\n" , "" , file_get_contents($_SESSION['path'].'/Admin/menu.txt', FILE_USE_INCLUDE_PATH));}
 	if($_SESSION['view']!="Desktop"){
 		echo "<div id=\"Item\"><a href=\"/Ingress\">Logout</a></div>";
 	}else{
