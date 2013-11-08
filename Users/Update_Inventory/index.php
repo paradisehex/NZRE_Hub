@@ -56,7 +56,7 @@
 								echoCell($row["R".$i], "R".$i, $i, $i);
 								echoCell($row["X".$i], "X".$i, $i, $i+8);
 								echoCell($row['U'.$i] , 'U'.$i, $i, $i+16);
-								echoCell($row["P".$i], "P".$i, $i, $i+38);
+								echoCell($row["P".$i], "P".$i, $i, $i+39);
 								//echoCell($row['M'.$i] , 'M'.$i, $i);
 							echo "</tr>";
 						}
