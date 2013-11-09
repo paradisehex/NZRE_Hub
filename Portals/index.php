@@ -18,7 +18,7 @@
 				echo "<div id=\"line\"><a href=\"Map\">Map</a></div><br>";
 				
 				$Names = array();
-				$result = mysqli_query($con,"SELECT * FROM PortalTable");
+				$result = selectFrom("PortalTable", null, null);
 				while ($row = mysqli_fetch_array($result, MYSQL_ASSOC)) {
 					array_push($Names,$row['PortalName']);
 				}

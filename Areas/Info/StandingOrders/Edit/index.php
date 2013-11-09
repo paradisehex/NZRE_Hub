@@ -3,8 +3,6 @@
 		include $_SESSION['path']."/Tools/database.php";
 
 		$name = strip_tags(stripslashes($_POST['Name']));
-
-		$sql="SELECT * FROM LocationTable WHERE name = \"".$name."\"";
 ?>
 <html>
 	<?php include $_SESSION['path']."/Tools/head.php";?>

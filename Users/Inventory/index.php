@@ -8,12 +8,12 @@
 
 		$name = strip_tags(stripslashes($_GET['Name']));
 
-		$result=mysqli_query($con,"SELECT * FROM ItemTable WHERE username = \"".$name."\"");
+		$result = selectFrom("ItemTable", array("username"), array($name));
 		$row = mysqli_fetch_array($result, MYSQL_ASSOC);
 
-		$row2 = mysqli_fetch_array(mysqli_query($con,"SELECT * FROM AgentTable WHERE username = \"".$name."\""), MYSQL_ASSOC);
+		$row2 = mysqli_fetch_array(selectFrom("AgentTable", array("username"), array($name)), MYSQL_ASSOC);
 
-		$Location = mysqli_fetch_array(mysqli_query($con,"SELECT * FROM LocationTable WHERE id = ".$row2['Location']), MYSQL_ASSOC);
+		$Location = mysqli_fetch_array(selectFrom("LocationTable", array("id"), array($row2['Location'])), MYSQL_ASSOC);
 ?>
 <html>
 	<?php include $_SESSION['path']."/Tools/head.php";?>

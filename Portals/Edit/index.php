@@ -6,7 +6,7 @@
 
 	$Name = strip_tags(stripslashes($_GET['Name']));
 
-	$ThePortal = mysqli_fetch_array(mysqli_query($con,"SELECT * FROM PortalTable WHERE portalName='$Name'"));
+	$ThePortal = mysqli_fetch_array(selectFrom("PortalTable", array("portalName"), array($Name)));
 	$Location = $ThePortal["Location"];
 	$Status = $ThePortal["Status"];
 ?>

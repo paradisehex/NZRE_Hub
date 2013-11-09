@@ -5,8 +5,7 @@
 		header("location:/Ingress");
 	}else{
 		include $_SESSION['path']."/Tools/database.php";
-		$sql="SELECT * FROM LocationTable";
-		$result=mysqli_query($con,$sql);
+		$result = selectFrom("LocationTable", null, null);
 	}
 ?>
 <html>

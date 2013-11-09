@@ -6,8 +6,7 @@
 
 	$name = strip_tags(stripslashes($_GET['Name']));
 
-	$sql="SELECT * FROM AgentTable";
-	$result= mysqli_query($con,$sql);
+	$result= selectFrom("AgentTable", null, null);
 ?>
 <html>
 	<?php include $_SESSION['path']."/Tools/head.php";?>

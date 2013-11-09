@@ -34,8 +34,7 @@
 					Active users: <?php
 						include $_SESSION['path']."/Tools/database.php";
 
-						$sql="SELECT * FROM ItemTable";
-						$result=mysqli_query($con,$sql);
+						selectFrom("ItemTable", null, null);
 
 						$count = 0;
 						$now = time();

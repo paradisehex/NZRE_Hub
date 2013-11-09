@@ -8,8 +8,7 @@
 		$ID = strip_tags(stripslashes($_POST['ID']));
 
 		if(IsOfficer($con,$_SESSION['name'])){
-			$sql="UPDATE AgentTable set Location =".$ID."  WHERE username = '".$name."'";
-			mysqli_query($con,$sql);
+			update("AgentTable", array("Location"), array($ID), "username", $name);
 			header("location:/Ingress/Areas/Info/Select/?Name=".$Location);
 		}else{
 			header("location:/Ingress");

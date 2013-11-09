@@ -7,11 +7,9 @@
 
 		$name = strip_tags(stripslashes($_GET['Name']));
 
-		$sql="SELECT * FROM LocationTable WHERE name='".$name."'";
-		$row = mysqli_fetch_array(mysqli_query($con,$sql));
+		$row = mysqli_fetch_array(selectFrom("LocationTable", array("name"), array($name)));
 		
-		$OfficerQuery="SELECT * FROM OfficerTable WHERE Location='".$row['id']."'";
-		$AreaOfficers = mysqli_query($con,$OfficerQuery);
+		$AreaOfficers = selectFrom("OfficerTable", array("Location"), array($row['id']));
 ?>
 <html>
 	<?php include $_SESSION['path']."/Tools/head.php";?>
@@ -24,13 +22,12 @@
 			include "display.php";
 
 
-			$sql="SELECT * FROM AgentTable WHERE Location=".$row['id'];
-			$result = mysqli_query($con,$sql);
+			$result = selectFrom("AgentTable", array("Location"), array($row['id']));
 
 			$i = 0;
 			while ($row = mysqli_fetch_array($result, MYSQL_ASSOC)) {
 				$ItemString = "SELECT * FROM ItemTable WHERE username='".$row['username']."'";
-				$ItemQuery = mysqli_query($con,$ItemString);
+				$ItemQuery = selectFrom("ItemTable", array("username"), array($row['username']));
 				$Items = mysqli_fetch_array($ItemQuery, MYSQL_ASSOC);
 
 				addInventory($Items);

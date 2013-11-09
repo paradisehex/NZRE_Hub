@@ -7,11 +7,9 @@
 
 	include $_SESSION['path']."/Tools/database.php";
 
-	$sql = "SELECT * FROM LocationTable WHERE name = '".$locationName."'";
-	$LocationQuery = mysqli_query($con,$sql);
+	$LocationQuery = selectFrom("LocationTable", array("name"), array($locationName));
 	$Location = mysqli_fetch_array($LocationQuery, MYSQL_ASSOC);
 
-	$sql = "UPDATE AgentTable SET Location = '".$Location['id']."' WHERE username = '".$Name."'";
-	mysqli_query($con,$sql);
+	update("AgentTable", array("Location"), array($Location['id']), "username", $Name);
 	header("location:/Ingress/Admin/Location");
 ?>

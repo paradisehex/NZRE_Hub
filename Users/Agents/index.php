@@ -3,9 +3,8 @@
 		include $_SESSION['path']."/Tools/database.php";
 		include $_SESSION['path']."/Tools/permission.php";
 		include $_SESSION['path']."/Tools/userList.php";
-
-		$sql="SELECT * FROM AgentTable";
-		$result=mysqli_query($con,$sql);
+		
+		$result = selectFrom("AgentTable", null, null);
 ?>
 <html>
 	<?php include $_SESSION['path']."/Tools/head.php";?>

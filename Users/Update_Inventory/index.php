@@ -2,8 +2,7 @@
 	session_start();
 		include $_SESSION['path']."/Tools/database.php";
 
-		$sql="SELECT * FROM ItemTable WHERE username = \"".$_SESSION['name']."\"";
-		$result=mysqli_query($con,$sql);
+		$result = selectFrom("ItemTable", array("username"), array($_SESSION['name']));
 		$row = mysqli_fetch_array($result, MYSQL_ASSOC);
 		
 		include $_SESSION['path']."/Tools/getColour.php";
@@ -119,9 +118,8 @@
 							echo "<td></td>";
 							echo "</tr>";
 						//Ap
-							$UserQuery="SELECT * FROM AgentTable WHERE username = '".$_SESSION['name']."'";
-							$UserResult=mysqli_query($con,$UserQuery);
-							$User = mysqli_fetch_array($UserResult, MYSQL_ASSOC);
+							$result = selectFrom("AgentTable", array("username"), array($_SESSION['name']));
+							$User = mysqli_fetch_array($result, MYSQL_ASSOC);
 							
 							echo "<tr><td>AP</td>";
 							echoCellMod($User['AP'], "AP", 0, ++$Tab);

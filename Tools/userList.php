@@ -10,8 +10,7 @@
 		$lastAP = -1;
 		$ap = -1;
 		foreach($AP as $i){
-			$sql="SELECT * FROM AgentTable WHERE AP = ".$i;
-			$result=mysqli_query($con,$sql);
+			$result = selectFrom("AgentTable", array("AP"), array($i));
 			while ($row = mysqli_fetch_array($result, MYSQL_ASSOC)) {
 				if($lastAP != $row['AP']){
 					if($row['AP']){
@@ -29,8 +28,7 @@
 			$lastAP = $ap;
 		}
 		foreach($AP as $i){
-			$sql="SELECT * FROM AgentTable WHERE AP = ".$i;
-			$result=mysqli_query($con,$sql);
+			$result = selectFrom("AgentTable", array("AP"), array($i));
 			
 			while ($row = mysqli_fetch_array($result, MYSQL_ASSOC)) {
 				if($lastAP != $row['AP']){
@@ -60,8 +58,7 @@
 		$lastAP = -1;
 		$ap = -1;
 		foreach($AP as $i){
-			$sql="SELECT * FROM AgentTable WHERE AP = ".$i." AND Location=".$L;
-			$result=mysqli_query($con,$sql);
+			$result = selectFrom("AgentTable", array("AP","Location"), array($i,$L));
 			while ($row = mysqli_fetch_array($result, MYSQL_ASSOC)) {
 				if($lastAP != $row['AP']){
 					$ap = $row['AP'];

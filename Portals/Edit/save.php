@@ -11,8 +11,7 @@
 		$Longitude = doubleval(strip_tags($_POST['Longitude']))*1000000;
 
 		if(IsOfficer($con,$_SESSION['name'])){
-			$sql = "UPDATE PortalTable SET Location = '".$Location."' , Status = '".$Status."' , Lat = '".$Latitude."' , Lon = '".$Longitude."' , PortalName = '".$Name."' WHERE ID = '".$ID."'";
-			mysqli_query($con, $sql);
+			update("PortalTable", array("Location","Status","Lat","Lon","PortalName"), array($Location,$Status,$Latitude,$Longitude,$Name), "ID", $ID);
 			header("location:../Info/?Name=".$Name);
 		}else{
 			header("location:/Ingress");

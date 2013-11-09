@@ -17,8 +17,7 @@ $level=stripslashes($_POST['Level']);
 if($mypassword==$mypassword2){
 
 	//See if user name is taken
-	$sql="SELECT * FROM AgentTable WHERE username='$myusername'";
-	$result=mysqli_query($con,$sql);
+	$result= selectFrom("AgentTable", array("username"), array($myusername));
 	$count=mysqli_num_rows($result);
 
 	// If count equals 0 the username isn't taken

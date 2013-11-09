@@ -3,8 +3,7 @@
 	if(!$_SESSION['admin']){header("location:/Ingress");return;}
 	
 	include $_SESSION['path']."/Tools/database.php";
-	$sql="SELECT * FROM LocationTable";
-	$result=mysqli_query($con,$sql);
+	$result=selectFrom("LocationTable", null, null);
 ?>
 <html>
 	<?php include $_SESSION['path']."/Tools/head.php";?>

@@ -1,13 +1,11 @@
 <?php
-	function checkPassword($Name, $Password, $con){
+	function checkPassword($Name, $Password){
 		$PasswordHash = getHash($Name, $Password);
-
-		$SQL = "SELECT * FROM AgentTable WHERE username='$Name' and passwordHash='$PasswordHash'";
-
-		$Result = mysqli_query($con,$SQL);
+		
+		$Result = selectFrom("AgentTable", array("username", "passwordHash"), array($Name, $PasswordHash));
 
 		$count = mysqli_num_rows($Result);
-
+		
 		if($count==1){
 			$row = mysqli_fetch_array($Result);
 			$_SESSION['name'] = $row['username'];

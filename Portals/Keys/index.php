@@ -12,7 +12,7 @@
 				Update Keys<br>
 				<?php
 					$Names = array();
-					$result = mysqli_query($con,"SELECT * FROM PortalTable");
+					$result = selectFrom("PortalTable", null, null);
 					while ($row = mysqli_fetch_array($result, MYSQL_ASSOC)) {
 						array_push($Names,$row['PortalName']);
 					}
@@ -20,7 +20,7 @@
 					natcasesort ($Names);
 				
 					foreach($Names as $Name){
-						$OldKeysQuerry = mysqli_query($con,"SELECT * FROM KeyTable WHERE username = '".$_SESSION['name']."' AND portalID = '".getPortalID($Name)."'");
+						$OldKeysQuerry = selectFrom("KeyTable", array("username", "portalID"), array($_SESSION['name'], getPortalID($Name)));
 						$OldKeysArray = mysqli_fetch_array($OldKeysQuerry);
 						$OldKeys = $OldKeysArray['NumKeys'];	
 						if($OldKeys==""){$OldKeys=0;}

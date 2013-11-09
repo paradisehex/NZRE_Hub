@@ -8,12 +8,7 @@
 		$username = strip_tags(stripslashes($_POST['Name']));
 		$password = getHash($username,$_POST['ThePassword']);
 
-		$sql = "UPDATE AgentTable SET password = '' WHERE username = '".$username."'";
-		mysqli_query($con,$sql);
-
-
-		$sql = "UPDATE AgentTable SET passwordHash = '".$password."' WHERE username = '".$username."'";
-		mysqli_query($con,$sql);
+		update("AgentTable", array("passwordHash"), array($password), "username", $username);
 
 		header("location:/Ingress/Admin");
 ?>

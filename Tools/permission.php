@@ -1,10 +1,9 @@
 <?php
 	function CanVeiwOther($con,$OtherName){
-		$ResultPlayer=mysqli_query($con,"SELECT * FROM AgentTable WHERE username = \"".$_SESSION['name']."\"");
+		$ResultPlayer = selectFrom("AgentTable",array("username"), array($_SESSION['name']));
 		$Player = mysqli_fetch_array($ResultPlayer, MYSQL_ASSOC);
 
-		$OtherString = "SELECT * FROM AgentTable WHERE username = '".$OtherName."'";
-		$OtherQuery = mysqli_query($con,$OtherString);
+		$OtherQuery = selectFrom("AgentTable",array("username"), array($OtherName));
 		$Other = mysqli_fetch_array($OtherQuery);
 
 		if($Player['Location']==$Other['Location']){
@@ -18,11 +17,10 @@
 
 	function OfficerAndLocation($con,$Name,$LocationName){
 		if($_SESSION['admin']){return true;}
-		$Locations = mysqli_query($con,"SELECT * FROM LocationTable WHERE name='".$LocationName."'");
+		$Locations = selectFrom("LocationTable",array("name"), array($LocationName));
 		$Location =mysqli_fetch_array($Locations, MYSQL_ASSOC);
 
-		$OfficerQuery="SELECT * FROM OfficerTable WHERE username='".$Name."' AND Location='".$Location['id']."'";
-		$Officer = mysqli_query($con,$OfficerQuery);
+		$Officer = selectFrom("OfficerTable", array("username", "Location"), array($Name, $Location['id']));
 
 		if(0<mysqli_num_rows($Officer)){
 			return true;
@@ -35,7 +33,7 @@
 
 	function CaptainAndLocation($con,$Name,$LocationName){
 		if($_SESSION['admin']){return true;}
-		$result = mysqli_query($con,"SELECT * FROM LocationTable WHERE name='".$LocationName."'");
+		$result = selectFrom("LocationTable",array("name"), array($LocationName));
 
 		$Location =mysqli_fetch_array($result);
 
@@ -47,7 +45,7 @@
 
 	function IsOfficer($con,$Name){
 		if($_SESSION['admin']){return true;}
-		$Location = mysqli_query($con,"SELECT * FROM LocationTable WHERE admin='".$Name."'");
+		$Location = selectFrom("LocationTable",array("admin"), array($Name));
 
 		$OfficerQuery="SELECT * FROM OfficerTable WHERE username='".$Name."'";
 		$Officer = mysqli_query($con,$OfficerQuery);

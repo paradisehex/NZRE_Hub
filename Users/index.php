@@ -3,15 +3,14 @@
 		include $_SESSION['path']."/Tools/database.php";
 		include $_SESSION['path']."/Tools/AP.php";
 		include $_SESSION['path']."/Users/Inventory/display.php";
-
-		$sql="SELECT * FROM ItemTable WHERE username = \"".$_SESSION['name']."\"";
-		$result=mysqli_query($con,$sql);
+		
+		$result= selectFrom("ItemTable", array("username"), array($_SESSION['name']));
 		$row = mysqli_fetch_array($result, MYSQL_ASSOC);
 
-		$row2 = mysqli_fetch_array(mysqli_query($con,"SELECT * FROM AgentTable WHERE username = \"".$_SESSION['name']."\""), MYSQL_ASSOC);
+		$row2 = mysqli_fetch_array(selectFrom("AgentTable", array("username"), array($_SESSION['name'])), MYSQL_ASSOC);
 		$lvl = $row2['lvl'];
-
-		$Location = mysqli_fetch_array(mysqli_query($con,"SELECT * FROM LocationTable WHERE id = ".$row2['Location']), MYSQL_ASSOC);
+		
+		$Location = mysqli_fetch_array(selectFrom("LocationTable", array("id"), array($row2['Location'])), MYSQL_ASSOC);
 ?>
 <html>
 	<?php include $_SESSION['path']."/Tools/head.php";?>

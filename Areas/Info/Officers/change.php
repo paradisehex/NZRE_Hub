@@ -8,11 +8,10 @@
 		$ID = strip_tags(stripslashes($_POST['ID']));
 
 		if(CaptainAndLocation($con,$_SESSION['name'],$Location)){
-			$OfficerQuery = "SELECT * FROM OfficerTable WHERE username = '".$name."'";
-			if(0<mysqli_num_rows(mysqli_query($con,$OfficerQuery))){
-				mysqli_query($con,"delete from OfficerTable where username = '".$name."'");
+			if(0<mysqli_num_rows(selectFrom("OfficerTable", array("username"), array($name)))){
+				deleteFrom("OfficerTable", array("username"), array($name));
 			}else{
-				mysqli_query($con,"insert into OfficerTable values('".$name."','".$ID."')");
+				insert("OfficerTable", array($name,$ID));
 			}
 			header("location:/Ingress/Areas/Info/Officers/?Name=".$Location);
 		}else{

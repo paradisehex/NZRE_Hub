@@ -40,8 +40,7 @@ function getPortalStatus($ID){
 }
 
 function getPortalID($Name){
-	include $_SESSION['path']."/Tools/database.php";
-	$row = mysqli_fetch_array(mysqli_query($con,"SELECT * FROM PortalTable WHERE portalName='$Name'"));
+	$row = mysqli_fetch_array(selectFrom("PortalTable", array("portalName"), array($Name)));
 	return $row['ID'];
 }
 ?>

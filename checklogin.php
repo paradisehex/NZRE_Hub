@@ -13,7 +13,7 @@ $username = stripslashes($_POST['TheUserName']);
 $password = $_POST['ThePassword']; 
 
 
-if(checkPassword($username,$password,$con)){
+if(checkPassword($username,$password)){
 
 	if(check_user_agent('mobile')) {
 		$_SESSION['view'] = "Mobile";

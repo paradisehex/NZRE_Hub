@@ -6,8 +6,8 @@
 
 	$Name = strip_tags(stripslashes($_GET['Name']));
 
-	$ThePortal = mysqli_fetch_array(mysqli_query($con,"SELECT * FROM PortalTable WHERE portalName='$Name'"));
-	$TheKeys = mysqli_query($con,"SELECT * FROM KeyTable WHERE portalName='$Name'");
+	$ThePortal = mysqli_fetch_array(selectFrom("PortalTable", array("portalName"), array($Name)));
+	$TheKeys = selectFrom("KeyTable", array("portalName"), array($Name));
 ?>
 <html>
 	<?php include $_SESSION['path']."/Tools/head.php";?>
@@ -32,7 +32,7 @@
 				
 				echo "<br><div id=\"Line\">List of keys</div>";
 				
-				$Keys = mysqli_query($con,"SELECT * FROM KeyTable WHERE portalID = '".getPortalID($ThePortal['PortalName'])."'");
+				$Keys = selectFrom("KeyTable", array("portalID"), array(getPortalID($ThePortal['PortalName'])));
 				while ($row = mysqli_fetch_array($Keys, MYSQL_ASSOC)) {
 					echo "<div id=\"Line\"><div id=\"Left\">".$row['username']."</div><div id=\"Right\">".$row['NumKeys']."</div></div><br>";
 				}

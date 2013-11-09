@@ -68,24 +68,28 @@
 	$P8 = stripslashes($_POST['P8']);
 	//Key
 	$K1 = stripslashes($_POST['K1']);
-
-	$Res = "R1 = '".$R1."',R2 = '".$R2."',R3 = '".$R3."',R4 = '".$R4."',R5 = '".$R5."',R6 = '".$R6."',R7 = '".$R7."',R8 = '".$R8."',";
-	$Xmp = "X1 = '".$X1."',X2 = '".$X2."',X3 = '".$X3."',X4 = '".$X4."',X5 = '".$X5."',X6 = '".$X6."',X7 = '".$X7."',X8 = '".$X8."',";
-	$Ult = "U1 = '".$U1."',U2 = '".$U2."',U3 = '".$U3."',U4 = '".$U4."',U5 = '".$U5."',U6 = '".$U6."',U7 = '".$U7."',U8 = '".$U8."',";
-	$Vir = "VA = '".$VA."',VJ = '".$VJ."',";
-	$She = "S1 = '".$S1."',S2 = '".$S2."',S3 = '".$S3."',";
-	$Mod = "CML = '".$CML."',RML = '".$RML."',VML = '".$VML."',CMH = '".$CMH."',RMH = '".$RMH."',VMH = '".$VMH."',CMM = '".$CMM."',RMM = '".$RMM."',VMM = '".$VMM."',CMF = '".	$CMF."',RMF = '".$RMF."',VMF = '".$VMF."',CMT = '".$CMT."',RMT = '".$RMT."',VMT = '".$VMT."',";
-	$Pow = "P1 = '".$P1."',P2 = '".$P2."',P3 = '".$P3."',P4 = '".$P4."',P5 = '".$P5."',P6 = '".$P6."',P7 = '".$P7."',P8 = '".$P8."',";
-	$Key = "K1 = '".$K1."',";
-
-	$sql = "UPDATE ItemTable SET ".$Res.$Xmp.$Ult.$Vir.$She.$Mod.$Pow.$Key."day=".date('d',time()).",month='".date('M',time())."',year=".date('y',time())." WHERE username = '".$username."'";
-	mysqli_query($con,$sql);
+	
+	
+	$Fields = array(
+		"R1","R2","R3","R4","R5","R6","R7","R8","X1","X2","X3","X4","X5","X6","X7","X8","U1","U2","U3","U4","U5","U6","U7","U8",
+		"VA","VJ","S1","S2","S3","CML","RML","VML","CMH","RMH","VMH","CMM","RMM","VMM","CMF","RMF","VMF","CMT","RMT","VMT",
+		"P1","P2","P3","P4","P5","P6","P7","P8","K1",
+		"day","month","year"
+	);
+	
+	$Vaules = array(
+		$R1,$R2,$R3,$R4,$R5,$R6,$R7,$R8,$X1,$X2,$X3,$X4,$X5,$X6,$X7,$X8,$U1,$U2,$U3,$U4,$U5,$U6,$U7,$U8,
+		$VA,$VJ,$S1,$S2,$S3,$CML,$RML,$VML,$CMH,$RMH,$VMH,$CMM,$RMM,$VMM,$CMF,$RMF,$VMF,$CMT,$RMT,$VMT,
+		$P1,$P2,$P3,$P4,$P5,$P6,$P7,$P8,$K1,
+		date('d',time()),date('M',time()),date('y',time())
+	);
+	
+	update("ItemTable", $Fields, $Vaules, "username", $username);
 
 	$ap=stripslashes($_POST['AP']);
 	$maxAP = 20000*pow(2,($_SESSION['lvl']-1));
 	if($ap<$maxAP){
-		$sql = "UPDATE AgentTable SET AP = '".$ap."' WHERE username = '".$username."'";
-		mysqli_query($con,$sql);
+		update("AgentTable", array("AP"), array($ap), "username", $username);
 	}
 
 	header("location:/Ingress/Users");

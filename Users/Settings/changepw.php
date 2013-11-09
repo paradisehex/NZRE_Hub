@@ -9,14 +9,11 @@
 		$newpassword2 = $_POST['NewPassword2'];
 
 		
-		if(checkPassword($username,$oldpassword,$con)){
+		if(checkPassword($username,$oldpassword)){
 			if($newpassword==$newpassword2){
 				$HashedPW = getHash($username,$newpassword);
-				$sql2 = "UPDATE AgentTable SET password = '' WHERE username = '".$username."'";
-				mysqli_query($con,$sql2);
 
-				$sql2 = "UPDATE AgentTable SET passwordHash = '".$HashedPW."' WHERE username = '".$username."'";
-				mysqli_query($con,$sql2);
+				update("AgentTable", array("passwordHash"), array($HashedPW), "username", $username);
 
 				header("location:/Ingress/Users");
 			}else{

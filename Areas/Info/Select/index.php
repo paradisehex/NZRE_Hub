@@ -5,9 +5,7 @@
 
 		$name = strip_tags($_GET['Name']);
 
-		$sql="SELECT * FROM LocationTable WHERE name = \"".$name."\"";
-
-		$result=mysqli_query($con,$sql);
+		$result = selectFrom("LocationTable", array("name"), array($name));
 		$row = mysqli_fetch_array($result, MYSQL_ASSOC);
 
 		$ID = $row['id'];
@@ -15,11 +13,9 @@
 		if(!IsOfficer($con,$_SESSION['name'])){
 			header("location:/Ingress");
 		}else{
-			$sql="SELECT * FROM AgentTable WHERE Location = ".$row['id'];
-			$InLocation=mysqli_query($con,$sql);
+			$InLocation= selectFrom("AgentTable", array("Location"), array($row['id']));
 
-			$sql="SELECT * FROM AgentTable";
-			$EveryOne =mysqli_query($con,$sql);
+			$EveryOne = selectFrom("AgentTable", null, null);
 		}
 ?>
 <html>

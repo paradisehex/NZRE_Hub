@@ -5,8 +5,7 @@
 		$username=$_SESSION['name'];
 		$ap=stripslashes($_POST['AP']);
 
-		$sql = "UPDATE AgentTable SET AP = '".$ap."' WHERE username = '".$username."'";
-		mysqli_query($con,$sql);
+		update("AgentTable", array("AP"), array($ap), "username", $username);
 
 		header("location:/Ingress/Users");
 ?>

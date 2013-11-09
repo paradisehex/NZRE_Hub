@@ -7,8 +7,7 @@
 
 	include $_SESSION['path']."/Tools/database.php";
 
-	$sql = "UPDATE LocationTable SET admin = '".$Name."' WHERE name = '".$locationName."'";
-	echo $sql;
-	mysqli_query($con,$sql);
+	update("LocationTable", array("admin"), array($Name), "name", $locationName);
+	
 	header("location:/Ingress/Admin/Location");
 ?>

@@ -7,8 +7,7 @@
 
 		$name = strip_tags(stripslashes($_GET['Name']));
 
-		$sql="SELECT * FROM AgentTable WHERE username = \"".$name."\"";
-		$row=mysqli_fetch_array(mysqli_query($con,$sql));
+		$row=mysqli_fetch_array(selectFrom("AgentTable", array("username"), array($name)));
 ?>
 <html>
 	<?php include $_SESSION['path']."/Tools/head.php";?>

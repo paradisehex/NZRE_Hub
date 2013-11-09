@@ -7,10 +7,10 @@
 		include $_SESSION['path']."/Tools/database.php";
 
 		//Delete them
-			mysqli_query($con,"delete from AgentTable where username = '".$username."'");
-			mysqli_query($con,"delete from ItemTable where username = '".$username."'");
-			mysqli_query($con,"delete from OfficerTable where username = '".$username."'");
-			mysqli_query($con,"delete from KeyTable where username = '".$username."'");
+			deleteFrom("AgentTable", array("username"), array($username));
+			deleteFrom("ItemTable", array("username"), array($username));
+			deleteFrom("OfficerTable", array("username"), array($username));
+			deleteFrom("KeyTable", array("username"), array($username));
 
 
 		//Go back to tools
