@@ -9,6 +9,8 @@
 	function cleanData($String){
 		$String = strip_tags($String);
 		$String = mysql_real_escape_string($String);
+		
+		return $String;
 	}
 	
 	
