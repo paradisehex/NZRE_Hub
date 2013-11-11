@@ -6,9 +6,9 @@
 		return;
 	}
 	
-	function cleanData($String){
+	function cleanData($Con, $String){
 		$String = strip_tags($String);
-		$String = mysql_real_escape_string($String);
+		$String = mysqli_real_escape_string($Con, $String);
 		
 		return $String;
 	}
@@ -23,11 +23,11 @@
 		if($Fields != null){
 			$SQL .= " WHERE ";
 		
-			$SQL .= $Fields[0]."='".cleanData($Vaules[0])."'";
+			$SQL .= $Fields[0]."='".cleanData($Con, $Vaules[0])."'";
 		
 			$length = count($Fields);
 			for ($i = 1; $i < $length; $i++) {
-				$SQL .= " and ".$Fields[$i]."='".cleanData($Vaules[$i])."'";
+				$SQL .= " and ".$Fields[$i]."='".cleanData($Con, $Vaules[$i])."'";
 			}
 		}
 		return mysqli_query($Con, $SQL);
@@ -38,14 +38,14 @@
 		include $_SESSION['path']."/.data/DB_PASSWORD.php";
 		$Con = mysqli_connect($HOST,$USER,$PSWD,$DB);
 		
-		$SQL = "UPDATE $Table SET ".$SetFields[0]." = '".cleanData($SetVaules[0])."' ";
+		$SQL = "UPDATE $Table SET ".$SetFields[0]." = '".cleanData($Con, $SetVaules[0])."' ";
 		
 		$length = count($SetFields);
 		for ($i = 1; $i < $length; $i++) {
-			$SQL .= " , ".$SetFields[$i]."='".cleanData($SetVaules[$i])."'";
+			$SQL .= " , ".$SetFields[$i]."='".cleanData($Con, $SetVaules[$i])."'";
 		}
 		
-		$SQL .= " WHERE $WhereField = '".cleanData($WhereVaule)."'";
+		$SQL .= " WHERE $WhereField = '".cleanData($Con, $WhereVaule)."'";
 		
 		mysqli_query($Con, $SQL);
 	}
@@ -55,11 +55,11 @@
 		include $_SESSION['path']."/.data/DB_PASSWORD.php";
 		$Con = mysqli_connect($HOST,$USER,$PSWD,$DB);
 		
-		$SQL = "insert into $Table values('".cleanData($Vaules[0])."'";
+		$SQL = "insert into $Table values('".cleanData($Con, $Vaules[0])."'";
 		
 		$length = count($Vaules);
 		for ($i = 1; $i < $length; $i++) {
-			$SQL .= ",'".cleanData($Vaules[$i])."'";
+			$SQL .= ",'".cleanData($Con, $Vaules[$i])."'";
 		}
 		
 		$SQL .= ");";
@@ -81,11 +81,11 @@
 			$SQL .= ",".$Fields[$i];
 		}
 		
-		$SQL .= ") values('".cleanData($Vaules[0])."'";
+		$SQL .= ") values('".cleanData($Con, $Vaules[0])."'";
 		
 		$length = count($Vaules);
 		for ($i = 1; $i < $length; $i++) {
-			$SQL .= ",'".cleanData($Vaules[$i])."'";
+			$SQL .= ",'".cleanData($Con, $Vaules[$i])."'";
 		}
 		
 		$SQL .= ");";
@@ -98,11 +98,11 @@
 		
 		$SQL = "delete FROM ".$Table." WHERE ";
 		
-		$SQL .= $Fields[0]."='".cleanData($Vaules[0])."'";
+		$SQL .= $Fields[0]."='".cleanData($Con, $Vaules[0])."'";
 		
 		$length = count($Fields);
 		for ($i = 1; $i < $length; $i++) {
-			$SQL .= " and ".$Fields[$i]."='".cleanData($Vaules[$i])."'";
+			$SQL .= " and ".$Fields[$i]."='".cleanData($Con, $Vaules[$i])."'";
 		}
 		
 		mysqli_query($Con, $SQL);
