@@ -15,6 +15,7 @@ The mobile version has been tested on screen sizes down to 480x800
 This is the MYSQL database layout:
 
 ```sql
+create table LogTable (Time VARCHAR(11), Message VARCHAR(50));
 AgentTable (username VARCHAR(30), passwordHash VARCHAR(128), Admin tinyint(1), lvl INT(3), AP  INT(9), Location INT(2), InLvl INT(3), outLvl INT(3));
 LocationTable (id INT(2),name VARCHAR(60),admin VARCHAR(60));
 OfficerTable (username VARCHAR(30),Location INT(2));
