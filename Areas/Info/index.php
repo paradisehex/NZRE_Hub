@@ -27,10 +27,7 @@
 
 			echo "<br>";
 			echo "<div id=\"whiteSpace\">";
-			$text = file_get_contents($_SESSION['path'].'/.data/Areas/'.$name.'.txt', FILE_USE_INCLUDE_PATH);
-			$text  = format_comment($text);
-			echo $text;
-			
+				echo $row['Description'];
 			echo "</div><br>";
 
 
