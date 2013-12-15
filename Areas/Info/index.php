@@ -26,18 +26,9 @@
 			}
 
 			echo "<br>";
-			echo "<div id=\"whiteSpace\">";
-				echo $row['Description'];
-			echo "</div><br>";
 
 
 			if(OfficerAndLocation($con,$_SESSION['name'],$name)){
-				//Edit decsription
-				echo "<form class=\"short\" action=\"Edit/\" method=\"post\">";
-				echo "<input type=\"hidden\" name=\"Name\" value=\"".$name."\">";
-				echo "<input class=\"button\" type=\"submit\" value=\"Edit\" >";
-				echo "</form>";
-
 				//Set people location
 				echo "<form  class=\"short\" action=\"Select/\" method=\"get\">";
 				echo "<input type=\"hidden\" name=\"Name\" value=\"".$name."\">";
@@ -52,7 +43,7 @@
 				echo "</form>";
 			}
 
-			echo "<a href=\"StandingOrders/?Name=".$name."\">Standing Orders</a><br>";
+			echo "<a href=\"Description/?Name=".$name."\">Description</a><br>";
 			if($_SESSION['lvl']>=7){echo "<a href=\"Inventory/?Name=".$name."\">Inventory</a>";}
 		?>
 		<div id="line">Agents:</div>
