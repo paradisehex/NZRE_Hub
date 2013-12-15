@@ -34,7 +34,7 @@
 					Active users: <?php
 						include $_SESSION['path']."/Tools/database.php";
 
-						selectFrom("ItemTable", null, null);
+						$result = selectFrom("ItemTable", null, null);
 
 						$count = 0;
 						$now = time();
@@ -65,7 +65,7 @@
 						echo $count;
 
 					?><br>
-					(Users who update their inventory at least once a week)
+					(Users who updated their inventory in the last week)
 				</p>
 			</div>
 		</div>
