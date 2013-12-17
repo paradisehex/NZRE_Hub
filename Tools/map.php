@@ -67,7 +67,7 @@ function initialize() {
 	
 var Portals = [
 	<?php
-		$result = selectFrom("AgentTable", null, null);
+		$result = selectFrom("PortalTable", null, null);
 		while ($Portal = mysqli_fetch_array($result, MYSQL_ASSOC)) {
 			echo "['".$Portal['PortalName']."',".($Portal['Lat']/1000000).",".($Portal['Lon']/1000000).",1,'/Ingress/Portals/Info/?Name=".$Portal['PortalName']."'],";
 		}
