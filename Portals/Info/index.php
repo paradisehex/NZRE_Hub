@@ -20,6 +20,21 @@
 				echo "<div id=\"LineWideTall\"><div id=\"Left\"><b>Longitude</b></div><div id=\"Right\">".($ThePortal['Lon']/1000000)."</div></div>";
 				echo "<div id=\"LineWideTall\"><div id=\"Left\"><b>Area</b></div><div id=\"Right\">".getLocationName($ThePortal['Location'])."</div></div>";
 				echo "<div id=\"LineWideTall\"><div id=\"Left\"><b>Status</b></div><div id=\"Right\">".getPortalStatus($ThePortal['Status'])."</div></div>";
+				
+				$First = true;
+				
+				$Tags = selectFrom("PortalTagTable", array('portalID'), array($ThePortal['ID']));
+				while ($row = mysqli_fetch_array($Tags, MYSQL_ASSOC)) {
+					$Tag = mysqli_fetch_array(selectFrom("TagTable", array('ID'), array($row['tagID'])));
+					if($First){
+						echo "<div id=\"LineWideTall\"><div id=\"Left\"><b>Tags</b></div><div id=\"Right\">".$Tag['Name']."</div></div>";
+						$First = false;
+					}else{
+						echo "<div id=\"LineWideTall\"><div id=\"Right\">".$Tag['Name']."</div></div>";
+					}
+				}
+				
+				
 				echo "<br>";
 				echo "<a href=\"https://ingress.com/intel?latE6=".$ThePortal['Lat'].";lngE6=".$ThePortal['Lon'].";z=17;\">Intel Map</a>";
 				if(IsOfficer($con,$_SESSION['name'])){

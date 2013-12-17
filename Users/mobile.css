@@ -46,6 +46,7 @@ input.field{
 input.fieldShort{width:250px;}
 
 
+input.buttonShort,
 input.buttonOfficer,
 input.button,
 a{
@@ -64,6 +65,11 @@ a{
 	margin-bottom: 2px;
 	box-shadow: inset 0 0 20px rgba(89, 251, 234, 1);
 	-webkit-box-shadow: inset 0 0 20px rgba(89, 251, 234, 1);
+}
+
+input.buttonShort{
+	display:inline;
+	width:200px;
 }
 
 select,

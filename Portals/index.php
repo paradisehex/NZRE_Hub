@@ -14,6 +14,10 @@
 					echo "<div id=\"line\"><a href=\"Submit\">Submit Portal</a></div>";
 				}
 				
+				if(IsOfficer($con,$_SESSION['name'])){
+					echo "<div id=\"line\"><a href=\"Tags\">Edit Tags</a></div>";
+				}
+				
 				echo "<div id=\"line\"><a href=\"Keys\">Update Keys</a></div>";
 				echo "<div id=\"line\"><a href=\"Map\">Map</a></div><br>";
 				

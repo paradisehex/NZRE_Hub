@@ -14,9 +14,9 @@
 	<?php include $_SESSION['path']."/Tools/head.php";?>
 	<body>
 		<?php include $_SESSION['path']."/Tools/menu.php";?>
+		<div id="Line">Editing <?php echo $Name;?> Portal<br></div>
 		<p>
 			<form action="save.php" method="post" autocomplete="off">
-				Editing <?php echo $Name;?> Portal<br>
 				<input class="field" type="text" name="Name" autocomplete="off" <?php echo "value=\"".$Name."\"";?>><br>
 				<select name="Location">
 					<?php
@@ -41,10 +41,11 @@
 				<input class="field" type="text" name="Longitude" placeholder="Longitude" autocomplete="off" <?php echo "value=\"".($ThePortal["Lon"]/1000000)."\"";?>><br>
 				<input class="button" type="submit" value="Save" >
 			</form>
+			
+			<a <?php echo "href=\"./Tags/?Name=".$Name."&ID=".$ThePortal['ID']."\"";?>>Tags</a>
+			<div id="line"><a <?php echo "href=\"../Info/?Name=".$Name."\"";?>>Back</a></div>
 		</p>
 
 		Officers please only use this for important portals<br><br>
-
-		<div id="line"><a <?php echo "href=\"../Info/?Name=".$Name."\"";?>>Cancel</a></div>
 	</body>
 </html>

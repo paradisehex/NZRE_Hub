@@ -7,11 +7,10 @@
 		
 	if(IsOfficer($con,$_SESSION['name'])){
 		
-		$Name = strip_tags(stripslashes($_POST['Name']));
+		$ID = strip_tags(stripslashes($_POST['ID']));
 		
-		deleteFrom("KeyTable", array("portalID"), array(getPortalID($Name)));
-		deleteFrom("PortalTagTable", array("portalID"), array(getPortalID($Name)));
-		deleteFrom("PortalTable", array("portalName"), array($Name));
+		deleteFrom("PortalTagTable", array("taglID"), array($ID));
+		deleteFrom("TagTable", array("ID"), array($ID));
 			
 		header("location:../");
 	}else{
