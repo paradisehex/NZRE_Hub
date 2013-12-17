@@ -27,15 +27,6 @@
 						}
 					?>
 				</select><br>
-				<select name="Status">
-					<?php
-						for($i = 0; $i <= $NumOfStatus; $i++){
-							echo "<option value=\"".$i."\" ";
-							if($Status == $i){echo "selected=\"selected\"";}
-							echo ">".getPortalStatus($i)."</option>";
-						}
-					?>
-				</select><br>
 				<input type="hidden" name="ID"  <?php echo "value=\"".getPortalID($Name)."\"";?>>
 				<input class="field" type="text" name="Latitude" placeholder="Latitude" autocomplete="off" <?php echo "value=\"".($ThePortal["Lat"]/1000000)."\"";?>><br>
 				<input class="field" type="text" name="Longitude" placeholder="Longitude" autocomplete="off" <?php echo "value=\"".($ThePortal["Lon"]/1000000)."\"";?>><br>

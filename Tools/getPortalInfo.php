@@ -23,22 +23,6 @@ function getLocationName($ID){
 	}
 }
 
-function getPortalStatus($ID){
-	switch ($ID){
-		case 0:  return "No Status";
-		case 1:  return "Farm for keys";
-		case 2:  return "Protect";
-		case 3:  return "Destroy";
-		case 4:  return "Agreed shared farm";
-		case 5:  return "Agreed RE farm";
-		case 6:  return "Agreed EN farm";
-		case 7:  return "Keep green";
-		case 8:  return "Don't touch";
-		case 9:  return "Low level only";
-		case 10:  return "Other";
-	}
-}
-
 function getPortalID($Name){
 	$row = mysqli_fetch_array(selectFrom("PortalTable", array("portalName"), array($Name)));
 	return $row['ID'];

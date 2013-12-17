@@ -19,7 +19,6 @@
 				echo "<div id=\"LineWideTall\"><div id=\"Left\"><b>Latitude</b></div><div id=\"Right\">".($ThePortal['Lat']/1000000)."</div></div>";
 				echo "<div id=\"LineWideTall\"><div id=\"Left\"><b>Longitude</b></div><div id=\"Right\">".($ThePortal['Lon']/1000000)."</div></div>";
 				echo "<div id=\"LineWideTall\"><div id=\"Left\"><b>Area</b></div><div id=\"Right\">".getLocationName($ThePortal['Location'])."</div></div>";
-				echo "<div id=\"LineWideTall\"><div id=\"Left\"><b>Status</b></div><div id=\"Right\">".getPortalStatus($ThePortal['Status'])."</div></div>";
 				
 				$First = true;
 				

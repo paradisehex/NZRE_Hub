@@ -13,7 +13,7 @@
 			$result = selectFrom("PortalTable", array("portalName"), array($Name));
 			$count = mysqli_num_rows($result);
 			if($count == 0){
-				insertCertainVaules("PortalTable", array("PortalName", "Location", "Status", "Lat", "Lon"), array($Name, $Location, $Status, $Latitude, $Longitude));
+				insertCertainVaules("PortalTable", array("PortalName", "Location","Lat", "Lon"), array($Name, $Location, $Latitude, $Longitude));
 				header("location:../");
 			}else{
 				echo "Portal already added";
