@@ -20,6 +20,8 @@ AgentTable (username VARCHAR(30), passwordHash VARCHAR(128), Admin tinyint(1), l
 LocationTable (id INT(2),name VARCHAR(60),admin VARCHAR(60),Description VARCHAR(10000));
 OfficerTable (username VARCHAR(30),Location INT(2));
 PortalTable (ID int NOT NULL AUTO_INCREMENT PRIMARY KEY, PortalName VARCHAR(60), Location int(2), Lat int(10), Lon int(10));
+PortalTagTable (portalID INT(5), tagID INT(4));
+TagTable (Name VARCHAR(30), ID int NOT NULL AUTO_INCREMENT PRIMARY KEY);
 KeyTable (username VARCHAR(30), portalID INT(5), NumKeys INT(4));
 ItemTable (username VARCHAR(30),
 R1  INT(4),R2  INT(4),R3  INT(4),R4  INT(4),R5  INT(4),R6  INT(4),R7  INT(4),R8  INT(4),
