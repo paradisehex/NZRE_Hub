@@ -35,7 +35,7 @@
 					if(!$row['AP']){
 						$ap = $row['AP'];
 						echo "<div id=\"Line\"><div id=\"left\">";
-							echo "<a href=\"/Ingress/Users/Inventory/?Name=".$row['username']."\"><div id=\"Left\" style=\"padding-left:2px;\">".$count."</div>".$row['username']."</a>";
+							echo "<a href=\"/Ingress/Users/Inventory/?Name=".$row['username']."\">".$row['username']."</a>";
 						echo "</div></div>";
 						$count++;
 					}
