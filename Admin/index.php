@@ -9,8 +9,9 @@
 	<?php include $_SESSION['path']."/Tools/head.php";?>
 	<body>
 		<?php include $_SESSION['path']."/Tools/menu.php";?>
+		<div id="line"><a href="Log">Log</a></div>
 		<div id="line"><a href="Register">Register User</a></div>
-		<div id="line"><a href="/Ingress/Admin/Location">Location</a></div>
+		<div id="line"><a href="Location">Location</a></div>
 		<div id="line">Users:</div>
 		<?php
 			while ($row = mysqli_fetch_array($result, MYSQL_ASSOC)) {
