@@ -53,25 +53,6 @@
 			$result = selectFrom("AgentTable", array("Location"), array($row['id']));
 
 			echoAgentsLocation($result,$con,$row['id']);
-			
-		?>
-		<?php
-			$Damage = 0;
-			$result = selectFrom("AgentTable", array("Location"), array($row['id']));
-			while ($row = mysqli_fetch_array($result, MYSQL_ASSOC)) {
-				$ItemQuery = selectFrom("ItemTable", array("username"), array($row['username']));
-				$Items = mysqli_fetch_array($ItemQuery, MYSQL_ASSOC);
-
-				$Damage += ($Items['X1']*150);
-				$Damage += ($Items['X2']*300);
-				$Damage += ($Items['X3']*500);
-				$Damage += ($Items['X4']*900);
-				$Damage += ($Items['X5']*1200);
-				$Damage += ($Items['X6']*1500);
-				$Damage += ($Items['X7']*1800);
-				$Damage += ($Items['X8']*2700);
-			}
-			echo "<div id=\"lineWide\"><div id=\"left\">Potential damage:</div><div id=\"right\">".$Damage."</div></div>";
 		?>
 	</body>
 </html>
