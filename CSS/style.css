@@ -105,11 +105,15 @@ input.buttonOfficer{color:#FF0000;}
 
 /*Menu*/
 #MenuL{
-	float:left;
 	z-index: 1;
+	position: fixed;
+	top:0px;
+	left:0px;
 }
 #MenuR{
-	float:right;
+	position: fixed;
+	top:0px;
+	right:0px;
 	z-index: 1;
 }
 #Info{
@@ -130,6 +134,9 @@ input.buttonOfficer{color:#FF0000;}
 	
 	border:0;
 	border-top: 3px solid #006d60;
+	
+	background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+	background: -webkit-linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
 }
 #Item a:hover{
 	text-decoration:underline;
