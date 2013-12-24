@@ -8,6 +8,7 @@
 	<?php include $_SESSION['path']."/Tools/head.php";?>
 	<body>
 		<?php include $_SESSION['path']."/Tools/menu.php";?>
+		<div id="line">Portal</div>
 		<p>
 			<?php
 				if(IsOfficer($con,$_SESSION['name'])){
@@ -19,7 +20,8 @@
 				}
 				
 				echo "<div id=\"line\"><a href=\"Keys\">Update Keys</a></div>";
-				echo "<div id=\"line\"><a href=\"Map\">Map</a></div><br>";
+				echo "<div id=\"line\"><a href=\"Map\">Map</a></div>";
+				echo "<div id=\"line\"><a href=\"Filter/Select\">Filter</a></div><br>";
 				
 				$Names = array();
 				$result = selectFrom("PortalTable", null, null);
