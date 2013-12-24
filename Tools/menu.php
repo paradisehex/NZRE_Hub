@@ -1,13 +1,48 @@
 <?php	
 	echo "<div id=\"MenuL\">";
-	echo str_replace("\n" , "" , file_get_contents($_SESSION['path'].'/menu.txt', FILE_USE_INCLUDE_PATH));
-	if($_SESSION['admin']){echo str_replace("\n" , "" , file_get_contents($_SESSION['path'].'/Admin/menu.txt', FILE_USE_INCLUDE_PATH));}
+	$MenuNames = array("Home","Agents","Areas","Portals","Info","Settings");
+	$MenuLinks = array("Users","Users/Agents","Areas","Portals","Info","Users/Settings");
+	
+	$SplitURL = explode("/",  $_SERVER["REQUEST_URI"]);
+	$URL_Length = count($SplitURL);
+	
+	//This helps match the menu options that are in sub folders
+	if(($SplitURL[3] == "Agents") | ($SplitURL[3] == "Settings")){
+		$SplitURL[2] = $SplitURL[3];
+	}else{//Also users is called home
+		if($SplitURL[2] == "Users"){
+			$SplitURL[2] = "Home";
+		}
+	}
+	
+	
+	$length = count($MenuNames);
+	for ($i = 0; $i < $length; $i++) {
+
+		echo "<div id=\"Item\"><a ";
+		
+		if($SplitURL[2] == $MenuNames[$i]){
+			echo "class=\"active\"";
+		}
+		echo "href=\"/Ingress/".$MenuLinks[$i]."\">".$MenuNames[$i]."</a></div>";
+	}
+	
+	if($_SESSION['admin']){
+		echo "<div id=\"Item\"><a ";
+		
+		if($SplitURL[2] == "Admin"){
+			echo "class=\"active\"";
+		}
+		echo "href=\"/Ingress/Admin\">Admin</a></div>";
+	}
+	
+	
 	if($_SESSION['view']!="Desktop"){
 		echo "<div id=\"Item\"><a href=\"/Ingress\">Logout</a></div>";
 	}else{
 		echo "</div><div id=\"MenuR\">";
 		echo "<div id=\"Item\"><a href=\"/Ingress\">";
-		echo "<strong>Logout</strong> of <strong>".$_SESSION['name']." <div id=\"lvl".$_SESSION['lvl']."\" style=\"display:inline;\">".$_SESSION['lvl']."</div></strong></a></div>";
+		echo "Logout ".$_SESSION['name']." <div id=\"lvl".$_SESSION['lvl']."\" style=\"display:inline;\">".$_SESSION['lvl']."</div></a></div>";
 	}
 	echo "</div><br><br>";
 	

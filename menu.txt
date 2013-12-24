@@ -1,6 +1,0 @@
-<div id="Item"><a href="/Ingress/Users/">Home</a></div>
-<div id="Item"><a href="/Ingress/Users/Agents">Agents</a></div>
-<div id="Item"><a href="/Ingress/Areas">Areas</a></div>
-<div id="Item"><a href="/Ingress/Portals">Portals</a></div>
-<div id="Item"><a href="/Ingress/Info">Info</a></div>
-<div id="Item"><a href="/Ingress/Users/Settings">Settings</a></div>

@@ -105,9 +105,26 @@ input.buttonOfficer{color:#FF0000;}
 #Item{ display: inline-block; }
 #Item a{
 	width:200px;
-	color:#59FBEA;
+	color:#006d60;
 	margin: 0px;
-	background-color:#183c42;
+	
+	border-top: 3px solid #006d60;
+	border-bottom: 0px;
+	border-left: 0px;
+	border-right: 0px;
+	
+	background-color: #000000;
+	
+	box-shadow: none;
+	-webkit-box-shadow: none;
+}
+
+#Item a.active{
+	color:#59FBEA;
+	border-top: 3px solid #59FBEA;
+	
+	background: linear-gradient(to bottom, rgba(89, 251, 234, 0.2), rgba(0, 0, 0, 0));
+	background: -webkit-linear-gradient(to bottom, rgba(89, 251, 234, 0.2), rgba(0, 0, 0, 0));
 }
 
 
