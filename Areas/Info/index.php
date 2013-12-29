@@ -1,7 +1,6 @@
 <?php
 	session_start();
 		include $_SESSION['path']."/Tools/database.php";
-		include $_SESSION['path']."/Tools/bb.php";
 		include $_SESSION['path']."/Tools/permission.php";
 
 		$name = strip_tags(stripslashes($_GET['Name']));
