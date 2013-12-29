@@ -1,4 +1,4 @@
-<?
+<?php
 	$smilies = array(
 	  ":)"		=> "smile1.gif",
 	  ":D"		=> "grin.gif",
