@@ -306,6 +306,39 @@ td{
 	padding: 0;
 	text-align: left;
 }
+/*Plus One*/
+input.minusOne,
+input.plusOne{
+	font-size: 40;
+	font-family: coda_regular, arial, helvetica, sans-serif;
+	display: inline-block;
+	color: #00C2FF;
+	text-align: center;
+	background-color: initial;
+	border: none;
+	text-decoration: underline;
+	text-shadow: 0 0 1px;
+}
+input.minusOne{
+	color:#e40000;
+}
+input.Hide{
+	display: none;
+}
+
+
+a.Agent{
+	color: #00C2FF;
+	background-color: initial;	
+	box-shadow: none;
+	border: none;
+	display: inline-block;
+	text-decoration: underline;
+}
+a.Agent:hover{
+	box-shadow: none;
+	-webkit-box-shadow: none;
+}
 
 
 

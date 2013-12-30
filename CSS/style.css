@@ -68,6 +68,19 @@ a{
 	box-shadow: 0px 0px 1px #59FBEA, 0px 0px 1px #59FBEA inset;
 }
 
+a.Agent{
+	color: #00C2FF;
+	background-color: initial;	
+	box-shadow: none;
+	border: none;
+	display: inline-block;
+	text-decoration: underline;
+}
+a.Agent:hover{
+	box-shadow: none;
+	-webkit-box-shadow: none;
+}
+
 input.buttonShort{
 	display:inline;
 	width:60px;
@@ -212,8 +225,8 @@ textarea{
 }
 #Right{
 	text-align:right;
-	display:inline;
 	float:right;
+	display:inline;
 }
 #WideBlock{
 	display:block;
@@ -446,6 +459,25 @@ td{
 	width: 290px;
 	height: 511px;
 	box-shadow: 0px 0px 1px #59FBEA, 0px 0px 1px #59FBEA inset;
+}
+/*Plus One*/
+input.minusOne,
+input.plusOne{
+	font-size: 22;
+	font-family: coda_regular, arial, helvetica, sans-serif;
+	display: inline-block;
+	color: #00C2FF;
+	text-align: center;
+	background-color: initial;
+	border: none;
+	text-decoration: underline;
+	text-shadow: 0 0 1px;
+}
+input.minusOne{
+	color:#e40000;
+}
+input.Hide{
+	display: none;
 }
 
 /*Colours*/
