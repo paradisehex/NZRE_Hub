@@ -25,7 +25,7 @@
 			// If count equals 0 the username isn't taken
 			if($count==0){
 				if($level!=null){
-					register($con,$myusername,$mypassword,$level);
+					register($myusername,$mypassword,$level);
 					header("location:/Ingress/Users/Agents");
 				}else{
 					echo "Requies lvl";
