@@ -11,6 +11,8 @@
 			deleteFrom("ItemTable", array("username"), array($username));
 			deleteFrom("OfficerTable", array("username"), array($username));
 			deleteFrom("KeyTable", array("username"), array($username));
+			deleteFrom("VerifyTable", array("Truster"), array($username));
+			deleteFrom("VerifyTable", array("Trustee"), array($username));
 
 
 		//Go back to tools
