@@ -28,7 +28,7 @@
 									echo $row['username'];
 								echo "</a>";
 							
-								echo "<form style=\"display: inline;\" action=\"/Ingress/Tools/plusOne.php\" method=\"post\">";
+								echo "<form style=\"display: inline;\" action=\"/Ingress/Users/Agents/plusOne.php\" method=\"post\">";
 									$Class = isPlused($row['username']) ? "minusOne" : "plusOne";
 									if($row['username'] == $_SESSION['name']){$Class = "Hide";}
 									echo "<input class=\"".$Class."\" type=\"submit\" value=\"+1\"><input type=\"hidden\" name=\"Name\" value=\"".$row['username']."\">";
@@ -61,7 +61,7 @@
 									echo $row['username'];
 								echo "</a>";
 								
-								echo "<form style=\"display: inline;\" action=\"/Ingress/Tools/plusOne.php\" method=\"post\">";
+								echo "<form style=\"display: inline;\" action=\"/Ingress/Users/Agents/plusOne.php\" method=\"post\">";
 									$Class = isPlused($row['username']) ? "minusOne" : "plusOne";
 									if($row['username'] == $_SESSION['name']){$Class = "Hide";}
 									echo "<input class=\"".$Class."\" type=\"submit\" value=\"+1\"><input type=\"hidden\" name=\"Name\" value=\"".$row['username']."\">";
