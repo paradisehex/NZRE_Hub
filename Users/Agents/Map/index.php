@@ -60,16 +60,11 @@
 				}
 				
 				//Echo all the other agents
-				echo "<div id=\"line\"><div id=\"left\">Not Trusted</div>";
+				echo "<div id=\"line\"><div id=\"left\">NA</div>";
 					$Result = selectFrom("AgentTable", array(), array());
 					
 					$First = true;
 					while ($Agent = mysqli_fetch_array($Result, MYSQL_ASSOC)) {
-						if(!$First){
-							echo "<div style=\"width: 20px; display: inline-block;\"></div>";
-						}else{
-							$First = false;
-						}
 						
 						$IsUsed = false;
 						foreach($NamesUsed as $UsedName){
@@ -78,6 +73,11 @@
 							}
 						}
 						if(!$IsUsed){
+							if(!$First){
+								echo "<div style=\"width: 20px; display: inline-block;\"></div>";
+							}else{
+								$First = false;
+							}
 							echo "<a class=\"Agent\" style=\"display: inline;\" href=\"/Ingress/Users/Inventory/?Name=".$Agent['username']."\">".$Agent['username']."</a>";
 						}
 					}
