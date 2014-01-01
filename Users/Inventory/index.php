@@ -45,7 +45,7 @@
 			<br>
 			<br>
 			<?php
-				if(CanVeiwOther($con,$name)){
+				if(CanVeiwOther($name)){
 					if($row['month']!='Neve'){
 						echo "<div id=\"Line\">";
 						echo "Last updated on the ".$row['day']." of ".$row['month']." 20".$row['year'];
@@ -58,17 +58,6 @@
 
 				}else{
 					echo "Restricted content<br>Insufficient access level";
-				}
-
-
-
-				if(IsOfficer($con,$_SESSION['name'])){
-					$ChLvl =  "<br><br><form action=\"changelvl.php\" method=\"post\">";
-						$ChLvl .= "Change players level<br><input class=\"field\" type=\"text\" name=\"Level\" autocomplete=\"off\" placeholder=\"New Level\"><br>";
-						$ChLvl .= "<input type=\"hidden\" value=\"".$name."\" name=\"Name\">";
-						$ChLvl .= "<input class=\"button\" type=\"submit\" value=\"Update\">";
-					$ChLvl .= "</form>";
-					echo $ChLvl;
 				}
 			?>
 	</body>
