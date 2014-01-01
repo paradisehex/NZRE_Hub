@@ -36,10 +36,14 @@
 				?>
 			</div>
 			<div id="Line">
-				<?php echo "<div id=\"Location\"><a href=\"/Ingress/Users/Inventory/Verification/?Name=".$name."\">View verification</a></div>"; ?>
-				<?php echo "<div id=\"Location\"><a href=\"/Ingress/Areas/Info/?Name=".$Location['name']."\">Area  ".$Location['name']."</a></div>"; ?>
+				<div id="Location">
+					<?php echo "<a href=\"/Ingress/Users/Inventory/Verification/?Name=".$name."\">View verification</a>"; ?>
+				<br>
+					<?php echo "<a href=\"/Ingress/Areas/Info/?Name=".$Location['name']."\">Area  ".$Location['name']."</a>"; ?>
+				</div>
 			</div>
-			<br style="line-height:6px;"/>
+			<br>
+			<br>
 			<?php
 				if(CanVeiwOther($con,$name)){
 					if($row['month']!='Neve'){
