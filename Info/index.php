@@ -14,17 +14,17 @@
 					It's purpose is to allow the New Zealand Resistance<br> to be more organised.
 				</p>
 				<p>
-					Only level 8 agents can change their own level.<br>If you need your level changed ask an area officer.<br>
-				</p>
-				<p>
 					Captains can choose officers.<br>
 					Area officers and captains can: <br>
-					register players,<br>
-					set player's areas,<br>
-					and set player's levels.<br>
-					By default level 7 and up can view other agents inventorys.
-					Anyone can choose the required level to view their inventory.
+					register players<br>
+					and set player's areas.<br>
 				</p>
+					The +1 buttons are part of a verification system.<br>
+					If you know and trust an agent please +1 them.<br>
+					This data is used for two things:<br>
+					1) There is a map of who trusts who to help us identify dodgy agents<br>
+					2) You can control who can view your inventory by setting your "Viewing Degree" in settings.<br>
+					For example a Viewing Degree of 2 means your +1's +1's can view your Inventory.
 				<p>
 					Any suggestions are welcome.<br>
 					You can find me on G+ or email me<br>
