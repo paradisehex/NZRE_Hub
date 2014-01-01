@@ -8,7 +8,7 @@
 	<?php include $_SESSION['path']."/Tools/head.php";?>
 	<body>
 		<?php include $_SESSION['path']."/Tools/menu.php";?>
-		<div id="line">Map of Trust</div>
+		<div id="line">Verification Map</div>
 		<p>
 			<?php
 				$NamesUsed = array();
