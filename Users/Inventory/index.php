@@ -51,10 +51,8 @@
 						echo "Last updated on the ".$row['day']." of ".$row['month']." 20".$row['year'];
 						echo "</div><br style=\"line-height:6px;\"/>";
 					}
-
-
-					$ChLvl = "";//TODO This Needs fixing I left it here in a rush
-					echoInv($row,$ChLvl);
+					
+					echoInv($row);
 
 				}else{
 					echo "Restricted content<br>Insufficient Verification";

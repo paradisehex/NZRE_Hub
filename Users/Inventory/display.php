@@ -22,7 +22,7 @@
 		echo "</td>";
 	}
 
-	function echoInv($row,$Extra){
+	function echoInv($row){
 		$ItemCount = 0;
 
 		$Res = 0;
@@ -175,9 +175,5 @@
 		echo "<div id=\"EMP\" style=\"width:0%;\"></div>";
 		echo "<div id=\"Key\"><div id=\"R\">Resonators</div><div id=\"X\">Weapons</div><div id=\"M\">Mods</div><div id=\"K\">Keys</div><div id=\"O\">Other</div></div>";
 		echo "</div><br><br>";
-		
-
-		//This is the button
-		echo $Extra;
 	}
 ?>

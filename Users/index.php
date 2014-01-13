@@ -30,7 +30,9 @@
 			?>
 			<br style="line-height:6px;"/>
 			<?php
-				echoInv($row,"<div id=\"Line\"><a href=\"/Ingress/Users/Update_Inventory\">Update Inventory</a></div><br>");
+				echoInv($row);
+				
 			?>
+			<div id="Line"><a href="/Ingress/Users/Update_Inventory">Update Inventory</a></div>
 	</body>
 </html>
