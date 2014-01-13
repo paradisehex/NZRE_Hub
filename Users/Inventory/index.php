@@ -57,7 +57,7 @@
 					echoInv($row,$ChLvl);
 
 				}else{
-					echo "Restricted content<br>Insufficient access level";
+					echo "Restricted content<br>Insufficient Verification";
 				}
 			?>
 	</body>
