@@ -17,7 +17,7 @@
 
 
 			echo "<div id=\"whiteSpaceWide\">";
-				echo $row['Description'];
+				echo format_comment($row['Description']);
 			echo "</div><br><br>";
 
 
