@@ -54,8 +54,10 @@
 				<div id="line">
 					<input class="field" type="password" name="ThePassword" placeholder="Password">
 				</div>
-
-				<input class="button" type="submit" value="Login">
+				
+				<div id="line">
+					<input class="button" type="submit" value="Login">
+				</div>
 		</form>
 		<br>
 		<div id="line">
