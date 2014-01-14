@@ -92,5 +92,5 @@
 		update("AgentTable", array("AP"), array($ap), "username", $username);
 	}
 
-	header("location:/Ingress/Users");
+	header("location:/Ingress/Agents/?Name=".$username);
 ?>

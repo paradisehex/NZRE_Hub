@@ -16,5 +16,5 @@
 		insertCertainVaules("VerifyTable", array("Truster", "Trustee"), array($Truster, $Trustee));
 	}
 	
-	header("location:/Ingress/Users/Agents");
+	header("location:/Ingress/Agents/List");
 ?>

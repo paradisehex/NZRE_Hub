@@ -27,7 +27,7 @@ if(checkPassword($username,$password)){
 		LogText("User ".$username." Logged in");	
 	}
 
-	header("location:/Ingress/Users");
+	header("location:/Ingress/Agents");
 }
 else {
 	$_SESSION['name'] = null;

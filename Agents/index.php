@@ -4,9 +4,13 @@
 		include $_SESSION['path']."/Tools/database.php";
 		include $_SESSION['path']."/Tools/permission.php";
 		include $_SESSION['path']."/Tools/AP.php";		
-		include $_SESSION['path']."/Users/Inventory/display.php";
+		include $_SESSION['path']."/Agents/display.php";
 
 		$name = strip_tags(stripslashes($_GET['Name']));
+		
+		if($name == ""){
+			$name = $_SESSION['name'];
+		}
 
 		$result = selectFrom("ItemTable", array("username"), array($name));
 		$row = mysqli_fetch_array($result, MYSQL_ASSOC);
@@ -27,7 +31,7 @@
 			<div id="Line">
 				<?php 
 					echo "<strong>".$name."</strong>";
-					echo "<form style=\"display: inline;\" action=\"/Ingress/Users/Inventory/plusOne.php\" method=\"post\">";
+					echo "<form style=\"display: inline;\" action=\"/Ingress/Agents/plusOne.php\" method=\"post\">";
 						$Class = isPlused($row['username']) ? "minusOne" : "plusOne";
 						if($row['username'] == $_SESSION['name']){$Class = "Hide";}
 						echo "<input class=\"".$Class."\" type=\"submit\" value=\"+1\"><input type=\"hidden\" name=\"Name\" value=\"".$row['username']."\">";
@@ -37,13 +41,11 @@
 			</div>
 			<div id="Line">
 				<div id="Location">
-					<?php echo "<a href=\"/Ingress/Users/Inventory/Verification/?Name=".$name."\">View verification</a>"; ?>
+					<?php echo "<a href=\"/Ingress/Agents/Verification/?Name=".$name."\">View verification</a>"; ?>
 				<br>
 					<?php echo "<a href=\"/Ingress/Areas/Info/?Name=".$Location['name']."\">Area  ".$Location['name']."</a>"; ?>
 				</div>
 			</div>
-			<br>
-			<br>
 			<?php
 				if(CanVeiwOther($name)){
 					if($row['month']!='Neve'){
@@ -56,6 +58,9 @@
 
 				}else{
 					echo "Restricted content<br>Insufficient Verification";
+				}
+				if($_SESSION['name'] == $name){
+					echo "<div id=\"Line\"><a href=\"/Ingress/Agents/Update_Inventory\">Update Inventory</a></div>";
 				}
 			?>
 	</body>

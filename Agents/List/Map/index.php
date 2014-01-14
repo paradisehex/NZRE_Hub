@@ -31,7 +31,7 @@
 							}else{
 								$First = false;
 							}
-							echo "<a class=\"Agent\" style=\"display: inline;\" href=\"/Ingress/Users/Inventory/?Name=".$Name."\">".$Name."</a>";
+							echo "<a class=\"Agent\" style=\"display: inline;\" href=\"/Ingress/Agents/?Name=".$Name."\">".$Name."</a>";
 						
 						
 							//Add Names to next row
@@ -78,7 +78,7 @@
 							}else{
 								$First = false;
 							}
-							echo "<a class=\"Agent\" style=\"display: inline;\" href=\"/Ingress/Users/Inventory/?Name=".$Agent['username']."\">".$Agent['username']."</a>";
+							echo "<a class=\"Agent\" style=\"display: inline;\" href=\"/Ingress/Agents/?Name=".$Agent['username']."\">".$Agent['username']."</a>";
 						}
 					}
 				echo "</div>";

@@ -21,13 +21,13 @@
 
 			//See if user name is taken
 			$result = selectFrom("AgentTable", array("username"), array($myusername));
-			$count=mysqli_num_rows($result);
+			$count = mysqli_num_rows($result);
 
 			// If count equals 0 the username isn't taken
 			if($count==0){
 				if($level!=null){
 					register($myusername,$mypassword,$level);
-					header("location:/Ingress/Users/Agents");
+					header("location:/Ingress/Agents/List");
 				}else{
 					errorMsg("Requies level","./");
 				}

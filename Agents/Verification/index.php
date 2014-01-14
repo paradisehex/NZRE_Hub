@@ -15,7 +15,7 @@
 				?>
 			</div>
 			<div id="Line">
-				<?php echo "<div id=\"Location\"><a href=\"/Ingress/Users/Inventory/?Name=".$name."\">Back</a></div>"; ?>
+				<?php echo "<div id=\"Location\"><a href=\"/Ingress/Agents/?Name=".$name."\">Back</a></div>"; ?>
 			</div>
 			<br>
 			<div id="Line">
@@ -48,8 +48,8 @@
 						$i = 0;
 						while($i < $i1){	
 							echo "<tr>";
-								echo "<td><a class=\"Agent\" style=\"display: inline;\" href=\"/Ingress/Users/Inventory/?Name=".$Verified[$i]."\">".$Verified[$i]."</a></td>";
-								echo "<td><a class=\"Agent\" style=\"display: inline;\" href=\"/Ingress/Users/Inventory/?Name=".$Verifies[$i]."\">".$Verifies[$i++]."</a></td>";
+								echo "<td><a class=\"Agent\" style=\"display: inline;\" href=\"/Ingress/Agents/?Name=".$Verified[$i]."\">".$Verified[$i]."</a></td>";
+								echo "<td><a class=\"Agent\" style=\"display: inline;\" href=\"/Ingress/Agents/?Name=".$Verifies[$i]."\">".$Verifies[$i++]."</a></td>";
 							echo "</tr>";
 						}
 					?>

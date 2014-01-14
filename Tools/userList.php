@@ -24,7 +24,7 @@
 							echo "<div id=\"Left\">";
 								echo $count;
 							
-								echo "<a class=\"Agent\" href=\"/Ingress/Users/Inventory/?Name=".$row['username']."\">";
+								echo "<a class=\"Agent\" href=\"/Ingress/Agents/?Name=".$row['username']."\">";
 									echo $row['username'];
 								echo "</a>";
 							
