@@ -57,11 +57,11 @@
 							echo "<div id=\"Left\">";
 								echo "<lu style=\"color:#000000; text-shadow: none;\">0</lu>";
 							
-								echo "<a class=\"Agent\" href=\"/Ingress/Users/Inventory/?Name=".$row['username']."\">";
+								echo "<a class=\"Agent\" href=\"/Ingress/Agents/?Name=".$row['username']."\">";
 									echo $row['username'];
 								echo "</a>";
 								
-								echo "<form style=\"display: inline;\" action=\"/Ingress/Users/Agents/plusOne.php\" method=\"post\">";
+								echo "<form style=\"display: inline;\" action=\"./plusOne.php\" method=\"post\">";
 									$Class = isPlused($row['username']) ? "minusOne" : "plusOne";
 									if($row['username'] == $_SESSION['name']){$Class = "Hide";}
 									echo "<input class=\"".$Class."\" type=\"submit\" value=\"+1\"><input type=\"hidden\" name=\"Name\" value=\"".$row['username']."\">";
@@ -96,7 +96,7 @@
 				if($lastAP != $row['AP']){
 					$ap = $row['AP'];
 					echo "<div id=\"Line\">";
-						echo "<a href=\"/Ingress/Users/Inventory/?Name=".$row['username']."\">";
+						echo "<a href=\"/Ingress/Agents/?Name=".$row['username']."\">";
 							echo "<div id=\"Left\"><div id=\"lvl".$row['lvl']."\" style=\"padding-left:2px;\">".$row['lvl']."</div></div>".$row['username'];
 						echo "</a>";
 					echo "</div>";
