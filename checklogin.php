@@ -36,8 +36,17 @@ else {
 			<title>Resistance</title>
 			<link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\">
 			<link rel=\"shortcut icon\" href=\"icon.png\" />
-			</head><body>You made a mistake or you're a frog.
-		</body></html>";
+			</head>
+				<body>
+					<div id=\"Line\" style=\"color:#FF0000;text-shadow: 0 0 5px; font-weight:bold;\">ERROR</div>
+					<br>
+					Someone made a mistake or you're a frog.
+					<br><br>
+					<div id=\"Line\">
+						<a href=\"./\">Back</a>
+					</div>
+				</body>
+			</html>";
 }
 
 
