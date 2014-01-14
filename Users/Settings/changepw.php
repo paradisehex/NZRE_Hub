@@ -16,7 +16,7 @@
 
 				update("AgentTable", array("passwordHash"), array($HashedPW), "username", $username);
 
-				header("location:/Ingress/Users");
+				notifyMsg("Password changed to </div><div style=\"color: #FFFFFF;\">".$HashedPW."</div><div id=\"Line\">(that's the hash not the actual password)", "./");
 			}else{
 				errorMsg("Passwords don't match","./");
 			}

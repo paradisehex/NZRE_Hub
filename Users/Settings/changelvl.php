@@ -4,10 +4,11 @@
 		$lvl=strip_tags(stripslashes($_POST['Level']));
 		
 		include $_SESSION['path']."/Tools/database.php";
+		include $_SESSION['path']."/Tools/alert.php";
 
 		update("AgentTable", array("lvl"), array($lvl), "username", $_SESSION['name']);
 
 		$_SESSION['lvl'] = $lvl;
 
-		header("location:./");
+		notifyMsg("Level changed to ".$lvl, "./");
 ?>

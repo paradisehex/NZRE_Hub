@@ -25,4 +25,28 @@
 			echo "</body>";
 		echo "</html>";
 	}
+	
+	
+	function notifyMsg($Msg, $Page){
+		echo "<html>";
+			include $_SESSION['path']."/Tools/head.php";
+			echo "<body>";
+				include $_SESSION['path']."/Tools/menu.php";
+				
+				echo "<br>";
+				
+				echo "<div id=\"Line\">";
+					echo $Msg;
+				echo "</div>";
+				
+				if($Page != ""){
+					echo "<br>";
+					echo "<div id=\"Line\">";
+						echo "<a href=\"".$Page."\">Back</a>";
+					echo "</div>";
+				}
+				
+			echo "</body>";
+		echo "</html>";
+	}
 ?>
