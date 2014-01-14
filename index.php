@@ -37,7 +37,7 @@
 	<head>
 		<title>Login</title>
 		<meta http-equiv="Content-Language" content="en"/>
-		<link rel="stylesheet" type="text/css" href="/Ingress/<?php echo check_user_agent("mobile")?"mobile.css":"style.css"; ?>">
+		<link rel="stylesheet" type="text/css" href="/Ingress/CSS/Login/<?php echo check_user_agent("mobile")?"mobile.css":"style.css"; ?>">
 		<link rel="shortcut icon" href="/Ingress/icon.png" />
 	</head>
 	<body>

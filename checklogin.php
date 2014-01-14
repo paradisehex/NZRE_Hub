@@ -34,7 +34,7 @@ else {
 	LogText("User ".$username." Failed to login");
 	echo "<html><head>
 			<title>Resistance</title>
-			<link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\">
+			<link rel=\"stylesheet\" type=\"text/css\" href=\"/Ingress/CSS/Login/style.css\">
 			<link rel=\"shortcut icon\" href=\"icon.png\" />
 			</head>
 				<body>

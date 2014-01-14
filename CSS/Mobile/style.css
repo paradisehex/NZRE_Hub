@@ -1,6 +1,6 @@
 @font-face {
   font-family: coda_regular;
-  src: url('/Ingress/coda_regular.ttf');
+  src: url('/Ingress/CSS/coda_regular.ttf');
 }
 body {
 	font-family: coda_regular, arial, helvetica, sans-serif;
