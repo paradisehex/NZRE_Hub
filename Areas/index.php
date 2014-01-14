@@ -17,7 +17,9 @@
 		<div id="line">
 			Areas
 		</div>
-
+		
+		<br>
+		
 		<div id="line">
 			<a href="/Ingress/Areas/Info/?Name=New Zealand">New Zealand</a>
 		</div>
