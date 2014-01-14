@@ -6,6 +6,7 @@ if(!$_SESSION['admin']){header("location:/Ingress");return;}
 include $_SESSION['path']."/Tools/database.php";
 include $_SESSION['path']."/Tools/log.php";
 include $_SESSION['path']."/Tools/register.php";
+include $_SESSION['path']."/Tools/alert.php";
 
 // Define $myusername and $mypassword  and protect againest MYSQL injection
 $myusername=stripslashes(str_replace ("&#65279","",$_POST['TheUserName']));
@@ -26,14 +27,14 @@ if($mypassword==$mypassword2){
 			register($myusername,$mypassword,$level);
 			header("location:/Ingress/Admin");
 		}else{
-			echo "Requies lvl";
+			errorMsg("Requies level","./");
 		}
 	}
 	else {
-		echo "User name taken";
+		errorMsg("User name taken","./");
 	}
 }
 else{
-	echo "Passwords don't match";
+	errorMsg("Passwords don't match","./");
 }
 ?>

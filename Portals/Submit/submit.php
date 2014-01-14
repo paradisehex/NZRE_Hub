@@ -2,6 +2,7 @@
 	session_start();
 		include $_SESSION['path']."/Tools/database.php";
 		include $_SESSION['path']."/Tools/permission.php";
+		include $_SESSION['path']."/Tools/alert.php";
 
 		$Name = strip_tags(stripslashes($_POST['Name']));
 		$Location = strip_tags(stripslashes($_POST['Location']));
@@ -16,7 +17,7 @@
 				insertCertainVaules("PortalTable", array("PortalName", "Location","Lat", "Lon"), array($Name, $Location, $Latitude, $Longitude));
 				header("location:../");
 			}else{
-				echo "Portal already added";
+				errorMsg("Portal already added","./");
 			}
 		}else{
 			header("location:/Ingress");

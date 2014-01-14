@@ -2,6 +2,7 @@
 	session_start();
 		include $_SESSION['path']."/Tools/database.php";
 		include $_SESSION['path']."/Tools/permission.php";
+		include $_SESSION['path']."/Tools/alert.php";
 		
 		$Name = strip_tags(stripslashes($_POST['TagName']));
 		
@@ -12,7 +13,7 @@
 				insertCertainVaules("TagTable", array("Name"), array($Name));
 				header("location:./");
 			}else{
-				echo "Name Taken";
+				errorMsg("Tag Name Taken","./");
 			}
 		}else{
 			header("location:/Ingress");

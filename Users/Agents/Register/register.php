@@ -6,6 +6,7 @@
 	include $_SESSION['path']."/Tools/permission.php";
 	include $_SESSION['path']."/Tools/log.php";
 	include $_SESSION['path']."/Tools/register.php";
+	include $_SESSION['path']."/Tools/alert.php";
 		
 	if(IsOfficer($con,$_SESSION['name'])){
 
@@ -28,15 +29,15 @@
 					register($myusername,$mypassword,$level);
 					header("location:/Ingress/Users/Agents");
 				}else{
-					echo "Requies lvl";
+					errorMsg("Requies level","./");
 				}
 			}
 			else {
-				echo "User name taken";
+				errorMsg("User name taken","./");
 			}
 		}
 		else{
-			echo "Passwords don't match";
+			errorMsg("Passwords don't match","./");
 		}
 	}else{
 		header("location:/Ingress");

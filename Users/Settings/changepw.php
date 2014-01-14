@@ -2,6 +2,7 @@
 	session_start();
 		include $_SESSION['path']."/Tools/database.php";
 		include $_SESSION['path']."/Tools/password.php";
+		include $_SESSION['path']."/Tools/alert.php";
 
 		$username = $_SESSION['name'];
 		$oldpassword= $_POST['OldPassword'];
@@ -17,9 +18,9 @@
 
 				header("location:/Ingress/Users");
 			}else{
-				echo "Passwords don't match";
+				errorMsg("Passwords don't match","./");
 			}
 		}else{
-			echo "Wrong Password";
+			errorMsg("Wrong Old Password","./");
 		}
 ?>
