@@ -1,20 +1,10 @@
 <?php	
 	echo "<div id=\"MenuL\">";
 	$MenuNames = array("Agents","Areas","Portals","Info","Settings");
-	$MenuLinks = array("Agents/List","Areas","Portals","Info","Agents/Settings");
+	$MenuLinks = array("Agents/List","Areas","Portals","Info","Settings");
 	
 	$SplitURL = explode("/",  $_SERVER["REQUEST_URI"]);
 	$URL_Length = count($SplitURL);
-	
-	//This helps match the menu options that are in sub folders
-	if(($SplitURL[3] == "Agents") | ($SplitURL[3] == "Settings")){
-		$SplitURL[2] = $SplitURL[3];
-	}else{//Also users is called home
-		if($SplitURL[2] == "Users"){
-			$SplitURL[2] = "Home";
-		}
-	}
-	
 	
 	$length = count($MenuNames);
 	for ($i = 0; $i < $length; $i++) {
