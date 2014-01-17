@@ -2,8 +2,9 @@
 	session_start();
 
 	include $_SESSION['path']."/Tools/database.php";
+	include $_SESSION['path']."/Tools/changeAP.php";
 
-	$username=$_SESSION['name'];
+	$username = $_SESSION['name'];
 	
 	//Res
 	$R1 = stripslashes($_POST['R1']);
@@ -86,11 +87,8 @@
 	
 	update("ItemTable", $Fields, $Vaules, "username", $username);
 
-	$ap=stripslashes($_POST['AP']);
-	$maxAP = 20000*pow(2,($_SESSION['lvl']-1));
-	if($ap<$maxAP){
-		update("AgentTable", array("AP"), array($ap), "username", $username);
-	}
-
+	$ap = stripslashes($_POST['AP']);
+	//changeAP($ap);
+	
 	header("location:/Ingress/Agents/?Name=".$username);
 ?>

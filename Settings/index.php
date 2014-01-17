@@ -20,14 +20,6 @@
 			<div id="line"><input class="field" type="text" name="AP" placeholder="Action points" value=<?php echo "\"".$User['AP']."\""?>></div>
 			<div id="line"><input class="button" type="submit" value="Change" ></div>
 		</form>
-
-
-		
-		<form action="changelvl.php" method="post">
-			<div id="line">Change level</div>
-			<div id="line"><input class="field" type="text" name="Level" autocomplete="off" placeholder="New Level" value=<?php echo "\"".$User['lvl']."\""?>></div>
-			<div id="line"><input class="button" type="submit" value="Change"></div>
-		</form>
 		
 
 		<form action="changePerm.php" method="post">
