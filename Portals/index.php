@@ -10,11 +10,8 @@
 		<?php include $_SESSION['path']."/Tools/menu.php";?>
 		<div id="line">Portal</div>
 		<p>
+			<div id="line"><a href="Submit">Submit Portal</a></div>
 			<?php
-				if(IsOfficer($con,$_SESSION['name'])){
-					echo "<div id=\"line\"><a href=\"Submit\">Submit Portal</a></div>";
-				}
-				
 				if(IsOfficer($con,$_SESSION['name'])){
 					echo "<div id=\"line\"><a href=\"Tags\">Edit Tags</a></div>";
 				}

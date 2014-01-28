@@ -10,16 +10,12 @@
 		$Latitude = doubleval(strip_tags($_POST['Latitude']))*1000000;
 		$Longitude = doubleval(strip_tags($_POST['Longitude']))*1000000;
 
-		if(IsOfficer($con,$_SESSION['name'])){
-			$result = selectFrom("PortalTable", array("portalName"), array($Name));
-			$count = mysqli_num_rows($result);
-			if($count == 0){
-				insertCertainVaules("PortalTable", array("PortalName", "Location","Lat", "Lon"), array($Name, $Location, $Latitude, $Longitude));
-				header("location:../");
-			}else{
-				errorMsg("Portal already added","./");
-			}
+		$result = selectFrom("PortalTable", array("portalName"), array($Name));
+		$count = mysqli_num_rows($result);
+		if($count == 0){
+			insertCertainVaules("PortalTable", array("PortalName", "Location","Lat", "Lon"), array($Name, $Location, $Latitude, $Longitude));
+			header("location:../");
 		}else{
-			header("location:/Ingress");
+			errorMsg("Portal already added","./");
 		}
 ?>
