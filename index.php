@@ -61,7 +61,7 @@
 		</form>
 		<br>
 		<div id="line">
-			<img src="image.png" width="160" height="250" alt="No frogs allowed">
+			<img src="image.png" width="480" height="618" alt="No frogs allowed">
 		</div>
 	</body>
 </html>
