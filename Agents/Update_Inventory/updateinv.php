@@ -88,7 +88,7 @@
 	update("ItemTable", $Fields, $Vaules, "username", $username);
 
 	$ap = stripslashes($_POST['AP']);
-	//changeAP($ap);
+	changeAP($ap);
 	
 	header("location:/Ingress/Agents/?Name=".$username);
 ?>
