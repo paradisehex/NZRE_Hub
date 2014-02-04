@@ -31,6 +31,9 @@
 		$Cube = 0;
 		$Mod = 0;
 		$other = 0;
+		
+		$lvls = array(0,0,0,0,0,0,0,0);
+		$raritys = array (0,0,0);
 
 		echo "<table style=\"margin-left: auto; margin-right: auto; border-spacing: 5;\">
 					<tr>
@@ -47,6 +50,8 @@
 			$Xmp += $row['X'.$i];
 			$Ultra += $row['U'.$i];
 			$Cube += $row['P'.$i];
+			
+			$lvls[$i-1] += $row['R'.$i] + $row['X'.$i] + $row['U'.$i] + $row['P'.$i];
 			
 			echo "<tr>";
 			echo "<td><div id=\"lvl".$i."\">L".$i."</div></td>";
@@ -152,6 +157,10 @@
 					+$row['CMT']+$row['RMT']+$row['VMT']
 					+$row['S1']+$row['S2']+$row['S3'];
 					
+		$raritys[0] += $row['CML'] + $row['CMH'] + $row['CMM'] + $row['CMF'] + $row['CMT'] + $row['S1'];
+		$raritys[1] += $row['RML'] + $row['RMH'] + $row['RMM'] + $row['RMF'] + $row['RMT'] + $row['S2'];
+		$raritys[2] += $row['VML'] + $row['VMH'] + $row['VMM'] + $row['VMF'] + $row['VMT'] + $row['S3'] + $row['VA'] + $row['VJ'];
+					
 		$ItemCount+= $Mod;
 
 		//Items
@@ -174,6 +183,36 @@
 		echo "<div id=\"OTH\" style=\"width:".($other/$OneP)."%;\"></div>";
 		echo "<div id=\"EMP\" style=\"width:0%;\"></div>";
 		echo "<div id=\"Key\"><div id=\"R\">Resonators</div><div id=\"X\">Weapons</div><div id=\"M\">Mods</div><div id=\"K\">Keys</div><div id=\"O\">Other</div></div>";
+		echo "</div><br><br>";
+		
+		echo "<div id=\"Bar\">";
+			echo "<div id=\"BAR_1\" style=\"width:".($lvls[0]/$OneP)."%;\"></div>";
+			echo "<div id=\"BAR_2\" style=\"width:".($lvls[1]/$OneP)."%;\"></div>";
+			echo "<div id=\"BAR_3\" style=\"width:".($lvls[2]/$OneP)."%;\"></div>";
+			echo "<div id=\"BAR_4\" style=\"width:".($lvls[3]/$OneP)."%;\"></div>";
+			echo "<div id=\"BAR_5\" style=\"width:".($lvls[4]/$OneP)."%;\"></div>";
+			echo "<div id=\"BAR_6\" style=\"width:".($lvls[5]/$OneP)."%;\"></div>";
+			echo "<div id=\"BAR_7\" style=\"width:".($lvls[6]/$OneP)."%;\"></div>";
+			echo "<div id=\"BAR_8\" style=\"width:".($lvls[7]/$OneP)."%;\"></div>";
+			echo "<div id=\"BAR_C\" style=\"width:".($raritys[0]/$OneP)."%;\"></div>";
+			echo "<div id=\"BAR_R\" style=\"width:".($raritys[1]/$OneP)."%;\"></div>";
+			echo "<div id=\"BAR_V\" style=\"width:".($raritys[2]/$OneP)."%;\"></div>";
+			echo "<div id=\"KEYS\" style=\"width:".($row['K1']/$OneP)."%;\"></div>";
+			echo "<div id=\"EMP\" style=\"width:0%;\"></div>";
+			echo "<div id=\"Key\">
+				<div id=\"R\" style=\"width: 6%;\"><div id=\"lvl1\">L 1</div></div>
+				<div id=\"R\" style=\"width: 6%;\"><div id=\"lvl2\">L 2</div></div>
+				<div id=\"R\" style=\"width: 6%;\"><div id=\"lvl3\">L 3</div></div>
+				<div id=\"R\" style=\"width: 6%;\"><div id=\"lvl4\">L 4</div></div>
+				<div id=\"R\" style=\"width: 6%;\"><div id=\"lvl5\">L 5</div></div>
+				<div id=\"R\" style=\"width: 6%;\"><div id=\"lvl6\">L 6</div></div>
+				<div id=\"R\" style=\"width: 6%;\"><div id=\"lvl7\">L 7</div></div>
+				<div id=\"R\" style=\"width: 6%;\"><div id=\"lvl8\">L 8</div></div>
+				<div id=\"R\" style=\"width: 9%;\"><div id=\"Com\">Com</div></div>
+				<div id=\"R\" style=\"width: 10%;\"><div id=\"Rar\">Rare</div></div>
+				<div id=\"R\" style=\"width: 10%;\"><div id=\"Ver\">V.Rare</div></div>
+				<div id=\"R\" style=\"width: 14%;\"><div id=\"Ke\">Keys</div></div>
+			</div>";
 		echo "</div><br><br>";
 	}
 ?>

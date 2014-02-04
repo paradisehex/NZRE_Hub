@@ -278,6 +278,8 @@ textarea{
 	display:block;
 }
 
+#BAR_1,#BAR_2,#BAR_3,#BAR_4,#BAR_5,#BAR_6,#BAR_7,#BAR_8,
+#BAR_C,#BAR_R,#BAR_V,
 #EMP,
 #KEYS,
 #MOD,
@@ -295,6 +297,18 @@ textarea{
 #MOD{background-color:#6040b0;float: left;}
 #KEYS{background-color:#ffcc00;float: left;}
 #EMP{background-color:#000000;}
+
+#BAR_1{background-color:#fece5a;float: left;}
+#BAR_2{background-color:#ffa630;float: left;}
+#BAR_3{background-color:#ff7315;float: left;}
+#BAR_4{background-color:#e40000;float: left;}
+#BAR_5{background-color:#fd2992;float: left;}
+#BAR_6{background-color:#eb26cd;float: left;}
+#BAR_7{background-color:#c124e0;float: left;}
+#BAR_8{background-color:#9627f4;float: left;}
+#BAR_C{background-color:#8dffc3;float: left;}
+#BAR_R{background-color:#ab8afd;float: left;}
+#BAR_V{background-color:#fe8bf5;float: left;}
 
 #K,
 #M,
