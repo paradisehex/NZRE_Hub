@@ -1,10 +1,4 @@
 <?php
-	$smilies = array(
-	  ":)"		=> "smile1.gif",
-	  ":D"		=> "grin.gif",
-	  ":P"		=> "tongue.gif",
-	  ":wink:"	=> "wink.gif",
-	);
 
 
 	//////////////////////////////////////////////////////////////////////////////////////////
@@ -175,16 +169,8 @@
 	}
 
 	function format_comment($text, $strip_html = true) {
-		global $smilies;
 
 		$s = $text;
-
-		// This fixes the extraneous ;) smilies problem. When there was an html escaped
-		// char before a closing bracket - like >), "), ... - this would be encoded
-		// to &xxx;), hence all the extra smilies. I created a new :wink: label, removed
-		// the ;) one, and replace all genuine ;) by :wink: before escaping the body.
-		// (What took us so long? :blush:)- wyz
-		$s = str_replace(";)", ":wink:", $s);
 
 		if ($strip_html)
 			$s = htmlspecialchars($s);
@@ -212,10 +198,6 @@
 
 		// Maintain spacing
 		$s = str_replace("  ", " &nbsp;", $s);
-
-		reset($smilies);
-		while (list($code, $url) = each($smilies))
-			$s = str_replace($code, "<img border=\"0\" src=\"/pic/smilies/$url\" alt=\"" . htmlspecialchars($code) . "\" />", $s);
 
 		return $s;
 	}
