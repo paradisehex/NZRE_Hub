@@ -55,7 +55,7 @@
 								echoCell($row["R".$i], "R".$i, $i, $i);
 								echoCell($row["X".$i], "X".$i, $i, $i+8);
 								echoCell($row['U'.$i] , 'U'.$i, $i, $i+16);
-								echoCell($row["P".$i], "P".$i, $i, $i+39);
+								echoCell($row["P".$i], "P".$i, $i, $i+40);
 								//echoCell($row['M'.$i] , 'M'.$i, $i);
 							echo "</tr>";
 						}
@@ -107,7 +107,7 @@
 							echo "<tr><td>Turret</td>";
 							echo "<td></td>";
 							echoCellMod($row["RMT"], "RMT", 2, ++$Tab);
-							echo "<td></td>";
+							echoCellMod($row["VMT"], "VMT", 3, ++$Tab);
 							echo "</tr>";
 						//Power cubes fit in here in tab order
 							$Tab +=8;

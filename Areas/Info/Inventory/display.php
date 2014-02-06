@@ -123,7 +123,7 @@
 				echo "<tr><td>Turret</td>";
 				echo "  <td></td>";
 				echoCellMod($t2, 2);
-				echo "  <td></td>";
+				echoCellMod($t3, 3);
 				echo "  <td></td>";
 				echo "</tr>";
 			//Keys

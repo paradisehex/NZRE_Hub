@@ -137,7 +137,7 @@
 			echo "<tr><td>Turret</td>";
 			echo "<td></td>";
 			echoCellMod($row["RMT"], 2);
-			echo "<td></td>";
+			echoCellMod($row["VMT"], 3);
 			echo "<td></td>";
 			echo "</tr>";
 		//Keys
