@@ -1,7 +1,5 @@
 <?php
 	session_start();
-	if($_SESSION['lvl']<7){header("location:/Ingress");return;}
-		
 		include $_SESSION['path']."/Tools/database.php";
 		include $_SESSION['path']."/Tools/permission.php";
 

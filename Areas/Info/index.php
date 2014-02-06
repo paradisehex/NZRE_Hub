@@ -44,7 +44,7 @@
 
 			echo "<a href=\"Description/?Name=".$name."\">Description</a><br>";
 			echo "<a href=\"Portals/?Name=".$name."\">Area Portals</a><br>";
-			if($_SESSION['lvl']>=7){echo "<a href=\"Inventory/?Name=".$name."\">Inventory</a>";}
+			echo "<a href=\"Inventory/?Name=".$name."\">Inventory</a>";
 		?>
 		<div id="line">Agents:</div>
 		<?php
