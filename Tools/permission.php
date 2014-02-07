@@ -99,4 +99,56 @@
 		
 		return 99999;
 	}
+	
+	
+	
+	function IsCoordintor($OP_ID, $Name){
+		if($_SESSION['admin']){return true;}
+		
+		$Coordinators = selectFrom("CoordinatorTable", array("ID"), array($OP_ID));
+		
+		while ($Coordinator = mysqli_fetch_array($Coordinators, MYSQL_ASSOC)) {
+			if($Coordinator['Name'] == $Name){
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	function CanVeiwOP($OP_ID, $Name){
+		if($_SESSION['admin']){return true;}
+		
+		$Coordinators = selectFrom("CoordinatorTable", array("ID"), array($OP_ID));
+		
+		while ($Coordinator = mysqli_fetch_array($Coordinators, MYSQL_ASSOC)) {
+			if($Coordinator['Name'] == $Name){
+				return true;
+			}
+		}
+			
+		$Participants = selectFrom("ParticipantTable", array("ID"), array($OP_ID));
+		
+		while ($Participant = mysqli_fetch_array($Participants, MYSQL_ASSOC)) {
+			if($Participant['Name'] == $Name){
+				return true;
+			}
+		}
+		
+		return false;
+	}
+	
+	function canEditComment($CommentName, $OP_ID){
+		if($CommentName == $_SESSION['name'] || $_SESSION['admin']){
+			return true;
+		}
+		
+		
+		$Coordinators = selectFrom("CoordinatorTable", array("ID"), array($OP_ID));
+		
+		while ($Coordinator = mysqli_fetch_array($Coordinators, MYSQL_ASSOC)) {
+			if($Coordinator['Name'] == $_SESSION['name']){
+				return true;
+			}
+		}
+	}
 ?>

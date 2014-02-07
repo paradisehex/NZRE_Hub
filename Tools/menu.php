@@ -1,7 +1,7 @@
 <?php	
 	echo "<div id=\"MenuL\">";
-	$MenuNames = array("Agents","Areas","Portals","Info","Settings");
-	$MenuLinks = array("Agents/List","Areas","Portals","Info","Settings");
+	$MenuNames = array("Agents","Areas","Portals","OPS","Info","Settings");
+	$MenuLinks = array("Agents/List","Areas","Portals","OPS","Info","Settings");
 	
 	$SplitURL = explode("/",  $_SERVER["REQUEST_URI"]);
 	$URL_Length = count($SplitURL);
