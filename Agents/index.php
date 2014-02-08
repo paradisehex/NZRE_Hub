@@ -59,9 +59,6 @@
 				}else{
 					echo "Restricted content<br>Insufficient Verification";
 				}
-				if($_SESSION['name'] == $name){
-					echo "<div id=\"Line\"><a href=\"/Ingress/Agents/Update_Inventory\">Update Inventory</a></div>";
-				}
 			?>
 	</body>
 </html>

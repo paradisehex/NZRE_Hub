@@ -35,7 +35,7 @@
 ?>
 <html>
 	<head>
-		<title>Login</title>
+		<title>NZRE Hub</title>
 		<meta http-equiv="Content-Language" content="en"/>
 		<link rel="stylesheet" type="text/css" href="/Ingress/CSS/Login/<?php echo check_user_agent("mobile")?"mobile.css":"style.css"; ?>">
 		<link rel="shortcut icon" href="/Ingress/icon.png" />
@@ -43,7 +43,7 @@
 	<body>
 		<div id="line" >
 			<div id="Title">
-				Login
+				NZRE Hub
 			</div>
 		</div>
 		<form name="LoginForm" action="checklogin.php" method="post">

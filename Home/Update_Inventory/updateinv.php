@@ -90,5 +90,5 @@
 	$ap = stripslashes($_POST['AP']);
 	changeAP($ap);
 	
-	header("location:/Ingress/Agents/?Name=".$username);
+	header("location:/Ingress/Home");
 ?>
