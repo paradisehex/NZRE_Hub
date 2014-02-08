@@ -137,6 +137,7 @@
 							echo "<div id=\"Line\"><a href=\"./Delete/?Name=".$Name."\">Delete</a></div>";
 							echo "<div id=\"Line\"><a href=\"./Coordinators/?Name=".$Name."\">Coordinators</a></div>";
 							echo "<div id=\"Line\"><a href=\"./Archive/?Name=".$Name."\">Archive</a></div>";
+							echo "<div id=\"Line\"><a href=\"./Rename/?Name=".$Name."\">Rename</a></div>";
 							if($TheOP['Private']){	
 								echo "<div id=\"Line\"><a href=\"./Participants/?Name=".$Name."\">Participants</a></div>";
 							}
