@@ -1,4 +1,4 @@
-NZRE Inventory
+NZRE Hub
 ==============
 This website is make for and run by NZ Resistance but feel free to use the code as you want.
 
@@ -24,6 +24,11 @@ create table LogTable (Time VARCHAR(11), Message VARCHAR(50));
 create table PortalTagTable (portalID INT(5), tagID INT(4));
 create table TagTable (Name VARCHAR(30), ID int NOT NULL AUTO_INCREMENT PRIMARY KEY);
 create table VerifyTable (Truster VARCHAR(30), Trustee VARCHAR(30));
+create table OPSTable (ID int NOT NULL AUTO_INCREMENT PRIMARY KEY, Name VARCHAR(60), Description VARCHAR(10000), Private tinyint(1), Archived tinyint(1));
+create table CoordinatorTable	 (ID int(5), Name VARCHAR(30));
+create table ParticipantTable (ID int(5), Name VARCHAR(30));
+create table CommentsTable (ID int NOT NULL AUTO_INCREMENT PRIMARY KEY, OP_ID int(5), Msg VARCHAR(10000), Name VARCHAR(30), Time int(11));
+create table PortalOPTable (ID int NOT NULL AUTO_INCREMENT PRIMARY KEY, PortalName VARCHAR(60), Location int(2), Lat int(10), Lon int(10), Private tinyint(1), OP_ID int(5));
 create table ItemTable (username VARCHAR(30),
 R1  INT(4),R2  INT(4),R3  INT(4),R4  INT(4),R5  INT(4),R6  INT(4),R7  INT(4),R8  INT(4),
 X1  INT(4),X2  INT(4),X3  INT(4),X4  INT(4),X5  INT(4),X6  INT(4),X7  INT(4),X8  INT(4),
