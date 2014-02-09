@@ -6,7 +6,7 @@
 		$Name = strip_tags(stripslashes($_POST['Name']));
 		$The_OP = mysqli_fetch_array(selectFrom("OPSTable", array("Name"), array($Name)));
 
-		if(!IsCoordintor($TheOP['ID'], $_SESSION['name'])){
+		if(!IsCoordintor($The_OP['ID'], $_SESSION['name'])){
 			header("location:/Ingress");
 		}else{
 			$msg = strip_tags(stripslashes($_POST['message']));
