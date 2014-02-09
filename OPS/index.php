@@ -24,6 +24,10 @@
 			return " <a class='Agent' style='width: initial;' href='./Comment/?ID=".$Comment['ID']."'>edit</a> ";
 		}
 	}
+	
+	function Portal_Link($a_Name){
+		return "<div id=\"Right\"><a class=\"Agent\" style=\"display: inline;\" href=\"/Ingress/Portals/Info/?Name=".$a_Name."\">".$a_Name."</a></div>";
+	}
 ?>
 <html>
 	<?php include $_SESSION['path']."/Tools/head.php";?>
@@ -118,6 +122,7 @@
 								echo "<div id=\"LineWideTall\" style=\"width: 500px;\">".Agent_Link($Coordinator['Name'])."</div>";
 							}
 						}
+						
 						if($TheOP['Private']){
 							$First = true;
 							$Participants = selectFrom("ParticipantTable", array("ID"), array($TheOP['ID']));	
@@ -130,6 +135,17 @@
 								}
 							}
 						}
+						
+						$First = true;
+						$Portals = selectFrom("PortalOPTable", array("OP_ID"), array($TheOP['ID']));
+						while ($Portal = mysqli_fetch_array($Portals, MYSQL_ASSOC)) {
+							if($First){
+								echo "<br><div id=\"LineWideTall\" style=\"width: 500px;\"><div id=\"Left\"><b>Portals:</b></div>".Portal_Link($Portal['PortalName'])."</div>";
+								$First = false;
+							}else{
+								echo "<div id=\"LineWideTall\" style=\"width: 500px;\">".Portal_Link($Portal['PortalName'])."</div>";
+							}
+						}
 					
 					
 						if(IsCoordintor($TheOP['ID'], $_SESSION['name'])){
@@ -138,6 +154,7 @@
 							echo "<div id=\"Line\"><a href=\"./Coordinators/?Name=".$Name."\">Coordinators</a></div>";
 							echo "<div id=\"Line\"><a href=\"./Archive/?Name=".$Name."\">Archive</a></div>";
 							echo "<div id=\"Line\"><a href=\"./Rename/?Name=".$Name."\">Rename</a></div>";
+							echo "<div id=\"Line\"><a href=\"./Portals/?Name=".$Name."\">Portals</a></div>";
 							if($TheOP['Private']){	
 								echo "<div id=\"Line\"><a href=\"./Participants/?Name=".$Name."\">Participants</a></div>";
 							}
@@ -193,6 +210,17 @@
 								}else{
 									echo "<div id=\"LineWideTall\" style=\"width: 500px;\">".Agent_Link($Participant['Name'])."</div>";
 								}
+							}
+						}
+						
+						$First = true;
+						$Portals = selectFrom("PortalOPTable", array("OP_ID"), array($TheOP['ID']));
+						while ($Portal = mysqli_fetch_array($Portals, MYSQL_ASSOC)) {
+							if($First){
+								echo "<br><div id=\"LineWideTall\" style=\"width: 500px;\"><div id=\"Left\"><b>Portals:</b></div>".Portal_Link($Portal['PortalName'])."</div>";
+								$First = false;
+							}else{
+								echo "<div id=\"LineWideTall\" style=\"width: 500px;\">".Portal_Link($Portal['PortalName'])."</div>";
 							}
 						}
 					

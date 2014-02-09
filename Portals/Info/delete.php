@@ -11,6 +11,7 @@
 		
 		deleteFrom("KeyTable", array("portalID"), array(getPortalID($Name)));
 		deleteFrom("PortalTagTable", array("portalID"), array(getPortalID($Name)));
+		deleteFrom("PortalOPTable", array("PortalName"), array($Name));
 		deleteFrom("PortalTable", array("portalName"), array($Name));
 			
 		header("location:../");

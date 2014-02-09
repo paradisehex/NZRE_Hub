@@ -13,6 +13,7 @@
 			deleteFrom("CoordinatorTable", array("ID"), array($The_OP['ID']));
 			deleteFrom("ParticipantTable", array("ID"), array($The_OP['ID']));
 			deleteFrom("CommentsTable", array("ID"), array($The_OP['ID']));
+			deleteFrom("PortalOPTable", array("OP_ID"), array($The_OP['ID']));
 			
 			header("location:../");
 		}	
