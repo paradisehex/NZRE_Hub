@@ -9,7 +9,7 @@
 		
 		$The_OP = mysqli_fetch_array(selectFrom("OPSTable", array("Name"), array($Name)));
 
-		if(IsCoordintor($TheOP['ID'], $_SESSION['name'])){
+		if(IsCoordintor($The_OP['ID'], $_SESSION['name'])){
 		
 		$result = selectFrom("OPSTable", array("Name"), array($New_Name));
 		$count = mysqli_num_rows($result);
