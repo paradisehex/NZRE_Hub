@@ -8,7 +8,7 @@
 		
 		$The_OP = mysqli_fetch_array(selectFrom("OPSTable", array("Name"), array($Name)));
 
-		if(CanVeiwOP($TheOP['ID'], $_SESSION['name']) || !($The_OP['Private'])){
+		if(CanVeiwOP($The_OP['ID'], $_SESSION['name']) || !($The_OP['Private'])){
 			
 			insertCertainVaules("CommentsTable", array("OP_ID", "Msg", "Name", "Time"), array($The_OP['ID'], $Msg, $_SESSION['name'], time()));
 			
