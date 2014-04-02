@@ -19,6 +19,6 @@
 	}
 	
 	function getHash($Name, $Password){
-		return hash('whirlpool', md5($Name).$Password);
+		return hash('whirlpool', md5(strtolower($Name)).$Password);
 	}
 ?>

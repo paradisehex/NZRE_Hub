@@ -12,9 +12,17 @@ include $_SESSION['path']."/Tools/password.php";
 $username = stripslashes($_POST['TheUserName']); 
 $password = $_POST['ThePassword']; 
 
+//Update old password
+$hash = hash('whirlpool', md5($username).$password);
+$Result = selectFrom("AgentTable", array("username", "passwordHash"), array($username,$hash));
+if(mysqli_num_rows($Result) == 1){
+	LogText("Updated ".$username."'s password");
+	update("AgentTable", array("passwordHash"), array(getHash($username, $password)), "username", $username);
+}
+//End update
+
 
 if(checkPassword($username,$password)){
-
 	if(check_user_agent('mobile')) {
 		$_SESSION['view'] = "Mobile";
 	} else {
