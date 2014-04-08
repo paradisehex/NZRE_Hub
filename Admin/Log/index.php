@@ -11,7 +11,7 @@
 		<?php include $_SESSION['path']."/Tools/menu.php";?>
 		<div id="line"><a href="../">Back</a></div>
 		<?php
-			$data = [];
+			$data = array();
 			while ($row = mysqli_fetch_array($result, MYSQL_ASSOC)) {
 				$data[] = $row;
 			}
