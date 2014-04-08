@@ -1,6 +1,7 @@
 NZRE Hub
 ==============
 This website is make for and run by NZ Resistance but feel free to use the code as you want.
+If there is no admin user it will create new admin user called Ada with the password resistance.
 
 Any sugestions or bug reports are welcome.
 
@@ -22,7 +23,7 @@ The mobile version has been tested on screen sizes down to 480x800
 * Use at your own risk.
 
 ***
-This is the MYSQL database layout:
+MYSQL database layout:
 
 ```sql
 create table AgentTable (username VARCHAR(30), passwordHash VARCHAR(128), Admin tinyint(1), lvl INT(3), AP  INT(9), Location INT(2), ViewDegree INT(2));
@@ -54,12 +55,8 @@ P1  INT(4),P2  INT(4),P3  INT(4),P4  INT(4),P5  INT(4),P6  INT(4),P7  INT(4),P8 
 K1 INT(4),
 day INT(2),month VARCHAR(4),year INT(2));
 ```
-Then I insert these default vaules (test's password is qwerty)
+Then I insert these default vaules
 ```sql
-insert into AgentTable values('test','844e70e1e21c11450344d34103626a7fece6e9fb3a73cc5d5e1b308374c0122be566871642a775b8554295de777a35f42fa0dcdfa22207113ee5754088d06a51',true,8,0,0,2);
-insert into ItemTable values('test',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'Never',0);
-
-
 insert into LocationTable values(0,'New Zealand',NULL,NULL);
 insert into LocationTable values(1,'Northland',NULL,NULL);
 insert into LocationTable values(2,'Auckland',NULL,NULL);

@@ -10,7 +10,13 @@ include $_SESSION['path']."/Tools/password.php";
 
 
 $username = stripslashes($_POST['TheUserName']); 
-$password = $_POST['ThePassword']; 
+$password = $_POST['ThePassword'];
+
+//If there's no admin create Ada
+$Result = selectFrom("AgentTable", array("Admin"), array(true));
+if(mysqli_num_rows($Result) == 0){
+	insertCertainVaules("AgentTable",array("username","passwordHash","Admin"),array("Ada","dddb74c0532bf2886ee5cafab8f13d16798012d6f853d23aee5ec18be6152170e94286c42a4fceed50703e305376a91a35121035f0ba33c53ce8a71bff0f067b",true));
+}
 
 //Update old password
 $hash = hash('whirlpool', md5($username).$password);
@@ -32,7 +38,7 @@ if(checkPassword($username,$password)){
 	
 	//Don't log me (I log in a lot)
 	if($username!="GrayGhost"){
-		LogText("User ".$username." Logged in");	
+		LogText("User ".$username." Logged in");
 	}
 
 	header("location:/Ingress/Home");
