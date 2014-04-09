@@ -47,7 +47,7 @@
 		}
 		
 		$ItemCount += $Res+$Xmp+$Ultra+$Cube;
-		$other += $Cube;
+		$other += $Cube + $row['CC'] + $row['RC'] + $row['VC'];
 		
 
 		$Mod +=$row['CML']+$row['RML']+$row['VML']
@@ -57,9 +57,9 @@
 					+$row['CMT']+$row['RMT']+$row['VMT']
 					+$row['S1']+$row['S2']+$row['S3'];
 					
-		$raritys[0] += $row['CML'] + $row['CMH'] + $row['CMM'] + $row['CMF'] + $row['CMT'] + $row['S1'];
-		$raritys[1] += $row['RML'] + $row['RMH'] + $row['RMM'] + $row['RMF'] + $row['RMT'] + $row['S2'];
-		$raritys[2] += $row['VML'] + $row['VMH'] + $row['VMM'] + $row['VMF'] + $row['VMT'] + $row['S3'] + $row['VA'] + $row['VJ'];
+		$raritys[0] += $row['CML'] + $row['CMH'] + $row['CMM'] + $row['CMF'] + $row['CMT'] + $row['S1'] + $row['CC'];
+		$raritys[1] += $row['RML'] + $row['RMH'] + $row['RMM'] + $row['RMF'] + $row['RMT'] + $row['S2'] + $row['RC'];
+		$raritys[2] += $row['VML'] + $row['VMH'] + $row['VMM'] + $row['VMF'] + $row['VMT'] + $row['S3'] + $row['VC'] + $row['VA'] + $row['VJ'];
 					
 		$ItemCount+= $Mod;
 
@@ -214,6 +214,12 @@
 				echo "<td></td>";
 				echoCellMod($row["RMT"], 2);
 				echoCellMod($row["VMT"], 3);
+				echo "<td></td>";
+				echo "</tr>";
+			//Capsule
+				echo "<tr><td>Capsule</td>";
+				echo "<td></td>";
+				echoCellMod($row["RC"], 2);
 				echo "<td></td>";
 				echo "</tr>";
 			//Keys

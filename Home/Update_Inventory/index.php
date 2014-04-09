@@ -109,6 +109,13 @@
 							echoCellMod($row["RMT"], "RMT", 2, ++$Tab);
 							echoCellMod($row["VMT"], "VMT", 3, ++$Tab);
 							echo "</tr>";
+						//Capsule
+							echo "<tr><td>Capsule</td>";
+							echo "<td></td>";
+							//Comes after power cubes
+							echoCellMod($row["RC"], "RC", 2, $Tab+9);
+							echo "<td></td>";
+							echo "</tr>";
 						//Power cubes fit in here in tab order
 							$Tab +=8;
 						//Keys

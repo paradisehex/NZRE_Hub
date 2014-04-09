@@ -52,6 +52,7 @@ CMM  INT(4),RMM  INT(4),VMM  INT(4),
 CMF  INT(4),RMF  INT(4),VMF  INT(4),
 CMT  INT(4),RMT  INT(4),VMT  INT(4),
 P1  INT(4),P2  INT(4),P3  INT(4),P4  INT(4),P5  INT(4),P6  INT(4),P7  INT(4),P8  INT(4),
+CC  INT(4),RC  INT(4),VC  INT(4),
 K1 INT(4),
 day INT(2),month VARCHAR(4),year INT(2));
 ```

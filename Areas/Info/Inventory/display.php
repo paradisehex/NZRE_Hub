@@ -23,7 +23,7 @@
 	}
 
 	function echoInv($numofplayers){
-		global $res, $xmp, $ult, $jv,$av,$s1,$s2,$s3,$l1,$l2,$l3,$h1,$h2,$h3,$m1,$m2,$m3,$f1,$f2,$f3,$t1,$t2,$t3,$p, $k, $ResTotal, $XmpTotal, $ModTotal, $UltraTotal, $PowerTotal, $other, $total;
+		global $res, $xmp, $ult, $jv,$av,$s1,$s2,$s3,$l1,$l2,$l3,$h1,$h2,$h3,$m1,$m2,$m3,$f1,$f2,$f3,$t1,$t2,$t3,$c1,$c2,$c3,$p, $k, $ResTotal, $XmpTotal, $ModTotal, $UltraTotal, $PowerTotal, $other, $total;
 		
 		
 		$total+= $ResTotal + $XmpTotal + $UltraTotal + $PowerTotal + $ModTotal;
@@ -126,6 +126,13 @@
 				echoCellMod($t3, 3);
 				echo "  <td></td>";
 				echo "</tr>";
+			//Turret
+				echo "<tr><td>Turret</td>";
+				echo "  <td></td>";
+				echoCellMod($c2, 2);
+				echo "  <td></td>";
+				echo "  <td></td>";
+				echo "</tr>";
 			//Keys
 				echo "<tr><td>Keys</td>";
 				echoCellMod($k, 4);
@@ -155,7 +162,7 @@
 	}
 
 	function addInventory($row){
-		global $res, $xmp, $ult, $jv,$av,$s1,$s2,$s3,$l1,$l2,$l3,$h1,$h2,$h3,$m1,$m2,$m3,$f1,$f2,$f3,$t1,$t2,$t3,$p, $k,$ResTotal, $XmpTotal, $ModTotal, $UltraTotal, $PowerTotal, $other,$total;
+		global $res, $xmp, $ult, $jv,$av,$s1,$s2,$s3,$l1,$l2,$l3,$h1,$h2,$h3,$m1,$m2,$m3,$f1,$f2,$f3,$t1,$t2,$t3,$c1,$c2,$c3,$p, $k,$ResTotal, $XmpTotal, $ModTotal, $UltraTotal, $PowerTotal, $other,$total;
 		
 
 		for ($i = 1; $i <= 8; $i++) {
@@ -207,6 +214,10 @@
 		$t1 +=$row['CMT'];
 		$t2 +=$row['RMT'];
 		$t3 +=$row['VMT'];
+
+		$c1 +=$row['CC'];
+		$c2 +=$row['RC'];
+		$c3 +=$row['VC'];
 		
 		$ModTotal += $row['CML']+$row['RML']+$row['VML']
 				+$row['CMH']+$row['RMH']+$row['VMH']
@@ -214,6 +225,8 @@
 				+$row['CMF']+$row['RMF']+$row['VMF']
 				+$row['CMT']+$row['RMT']+$row['VMT']
 				+$row['S1']+$row['S2']+$row['S3'];
+		
+		$other += $row['CC']+$row['RC']+$row['VC'];
 
 		//Keys
 		$k +=$row['K1'];

@@ -58,6 +58,11 @@
 	$VMM = stripslashes($_POST['VMM']);
 	$VMF = stripslashes($_POST['VMF']);
 	$VMT = stripslashes($_POST['VMT']);
+	//Capsule
+	$CC = stripslashes($_POST['CC']);
+	$RC = stripslashes($_POST['RC']);
+	$VC = stripslashes($_POST['VC']);
+	
 	//Power Cubes
 	$P1 = stripslashes($_POST['P1']);
 	$P2 = stripslashes($_POST['P2']);
@@ -74,14 +79,14 @@
 	$Fields = array(
 		"R1","R2","R3","R4","R5","R6","R7","R8","X1","X2","X3","X4","X5","X6","X7","X8","U1","U2","U3","U4","U5","U6","U7","U8",
 		"VA","VJ","S1","S2","S3","CML","RML","VML","CMH","RMH","VMH","CMM","RMM","VMM","CMF","RMF","VMF","CMT","RMT","VMT",
-		"P1","P2","P3","P4","P5","P6","P7","P8","K1",
+		"P1","P2","P3","P4","P5","P6","P7","P8","CC","RC","VC","K1",
 		"day","month","year"
 	);
 	
 	$Vaules = array(
 		$R1,$R2,$R3,$R4,$R5,$R6,$R7,$R8,$X1,$X2,$X3,$X4,$X5,$X6,$X7,$X8,$U1,$U2,$U3,$U4,$U5,$U6,$U7,$U8,
 		$VA,$VJ,$S1,$S2,$S3,$CML,$RML,$VML,$CMH,$RMH,$VMH,$CMM,$RMM,$VMM,$CMF,$RMF,$VMF,$CMT,$RMT,$VMT,
-		$P1,$P2,$P3,$P4,$P5,$P6,$P7,$P8,$K1,
+		$P1,$P2,$P3,$P4,$P5,$P6,$P7,$P8,$CC,$RC,$VC,$K1,
 		date('d',time()),date('M',time()),date('y',time())
 	);
 	

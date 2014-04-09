@@ -140,6 +140,12 @@
 			echoCellMod($row["VMT"], 3);
 			echo "<td></td>";
 			echo "</tr>";
+		//Capsule
+			echo "<tr><td>Capsule</td>";
+			echo "<td></td>";
+			echoCellMod($row["RC"], 2);
+			echo "<td></td>";
+			echo "</tr>";
 		//Keys
 			echo "<tr><td>Keys</td>";
 			echoCellMod($row["K1"], 4);
