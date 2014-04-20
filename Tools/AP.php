@@ -14,7 +14,6 @@
 		echo "<div id=\"case\">";
 		echo "<div id=\"meter".$fraction."\">";
 			echo "<div id=\"Counter\">".$lvl. "</div>";
-			echo "<div id=\"AP\">".$ap." AP</div>";
 		echo "</div></div>";
 	}
 ?>
