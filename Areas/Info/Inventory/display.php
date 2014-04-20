@@ -26,7 +26,7 @@
 		global $res, $xmp, $ult, $jv,$av,$s1,$s2,$s3,$l1,$l2,$l3,$h1,$h2,$h3,$m1,$m2,$m3,$f1,$f2,$f3,$t1,$t2,$t3,$c1,$c2,$c3,$p, $k, $ResTotal, $XmpTotal, $ModTotal, $UltraTotal, $PowerTotal, $other, $total;
 		
 		
-		$total+= $ResTotal + $XmpTotal + $UltraTotal + $PowerTotal + $ModTotal;
+		$total+= $ResTotal + $XmpTotal + $UltraTotal + $PowerTotal + $ModTotal + $c1 + $c2 + $c3;
 		
 		if($total != 0){
 			echo "<div id=\"LineLow\">Out of ".$numofplayers." players</div>";
@@ -143,10 +143,12 @@
 			
 			echo "</table>";
 			
+			$total = $ResTotal+$XmpTotal+$ModTotal+$k+$other;
 			echo "<div id=\"LineLow\">Total ".$total."</div>";
 
 			//Graph
 			$OneP = 20*$numofplayers;
+			if($total > 20*$numofplayers){$OneP = $total/100;}
 			echo "<div id=\"Bar\">";
 			echo "<div id=\"RES\" style=\"width:".($ResTotal/$OneP)."%;\"></div>";
 			echo "<div id=\"XMP\" style=\"width:".($XmpTotal/$OneP)."%;\"></div>";
