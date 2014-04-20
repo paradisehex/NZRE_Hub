@@ -46,7 +46,7 @@
 			$lvls[$i-1] += $row['R'.$i] + $row['X'.$i] + $row['U'.$i] + $row['P'.$i];
 		}
 		
-		$ItemCount += $Res+$Xmp+$Ultra+$Cube;
+		$ItemCount += $Res+$Xmp+$Ultra+$Cube + $row['CC'] + $row['RC'] + $row['VC'];
 		$other += $Cube + $row['CC'] + $row['RC'] + $row['VC'];
 		
 
