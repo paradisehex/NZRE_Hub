@@ -1,0 +1,72 @@
+#Bar{
+	border: 1px solid #59FBEA;
+	display: inline-block;
+	width:400px;
+	height:30px;
+	box-shadow: 0px 0px 1px #59FBEA, 0px 0px 1px #59FBEA inset;
+}
+
+#Bar:hover #Key{
+	display:block;
+}
+
+#BAR_1,#BAR_2,#BAR_3,#BAR_4,#BAR_5,#BAR_6,#BAR_7,#BAR_8,
+#BAR_C,#BAR_R,#BAR_V,
+#EMP,
+#KEYS,
+#MOD,
+#RES,
+#OTH,
+#XMP{
+	width:0;
+	height:100%;
+	display: inline-block;
+	background-color:#e40000;
+}
+#XMP{float: left;}
+#RES{background-color:#1021a9;float: left;}
+#OTH{background-color:#666666;float: left;}
+#MOD{background-color:#6040b0;float: left;}
+#KEYS{background-color:#ffcc00;float: left;}
+#EMP{background-color:#000000;}
+
+#BAR_1{background-color:#fece5a;float: left;}
+#BAR_2{background-color:#ffa630;float: left;}
+#BAR_3{background-color:#ff7315;float: left;}
+#BAR_4{background-color:#e40000;float: left;}
+#BAR_5{background-color:#fd2992;float: left;}
+#BAR_6{background-color:#eb26cd;float: left;}
+#BAR_7{background-color:#c124e0;float: left;}
+#BAR_8{background-color:#9627f4;float: left;}
+#BAR_C{background-color:#8dffc3;float: left;}
+#BAR_R{background-color:#ab8afd;float: left;}
+#BAR_V{background-color:#fe8bf5;float: left;}
+
+#K,
+#M,
+#R,
+#O,
+#X{
+	text-align:center;
+	position: relative;
+	display:inline-block;
+	width:22%;
+	color:#e40000;
+	text-shadow: 0 0 1px;
+}
+#M{color: #6040b0;width:18%;}
+#O{color:#666666;width:20%;}
+#R{color:#1021a9;width:22%;}
+#K{color:#ffcc00;width:18%;}
+
+#Key{
+	background-color:#101010;
+	border: 1px solid #59FBEA;
+	position: relative;
+	display:none;
+	bottom: 65px;
+	right: 1px;
+	width:400px;
+	height:30px;
+	box-shadow: 0px 0px 1px #59FBEA, 0px 0px 1px #59FBEA inset;
+}
