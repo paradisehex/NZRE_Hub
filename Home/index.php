@@ -26,7 +26,7 @@
 					</div>
 					<div id="Left" stlye="margin-right: auto;">
 						<strong><?php echo $name?></strong><br>
-						<?php echo "<div id='Counter' style='font-size: 20px;line-height: 30px;'>".$row2['AP']."</div>";?>
+						<?php echo "<div id='Counter' style='font-size: 20px;line-height: 30px;'>".number_format($row2['AP'])." AP</div>";?>
 					</div>
 				</div>
 			</div>
