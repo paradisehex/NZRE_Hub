@@ -139,7 +139,7 @@
 					<div id=\"R\" style=\"width: 9%;\"><div id=\"Com\">Com</div></div>
 					<div id=\"R\" style=\"width: 10%;\"><div id=\"Rar\">Rare</div></div>
 					<div id=\"R\" style=\"width: 10%;\"><div id=\"Ver\">V.Rare</div></div>
-					<div id=\"R\" style=\"width: 14%;\"><div id=\"Ke\">Keys</div></div>
+					<div id=\"R\" style=\"width: 13%;\"><div id=\"Ke\">Keys</div></div>
 				</div>";
 			echo "</div><br><br>";
 		
