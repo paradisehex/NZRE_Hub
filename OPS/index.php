@@ -159,6 +159,8 @@
 								echo "<div id=\"Line\"><a href=\"./Participants/?Name=".$Name."\">Participants</a></div>";
 							}
 						}
+						
+						echo "<div id=\"Line\"><a href=\"./Inventory/?Name=".$Name."\">Inventory</a></div>";
 					
 						echo "<br>Coments";
 					
