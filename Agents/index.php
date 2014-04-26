@@ -4,7 +4,7 @@
 		include $_SESSION['path']."/Tools/database.php";
 		include $_SESSION['path']."/Tools/permission.php";
 		include $_SESSION['path']."/Tools/AP.php";		
-		include $_SESSION['path']."/Agents/display.php";
+		include $_SESSION['path']."/Tools/inventory.php";
 
 		$name = strip_tags(stripslashes($_GET['Name']));
 		
@@ -31,28 +31,23 @@
 			<div id="Line">
 				<?php 
 					echo "<strong>".$name."</strong>";
-					echo "<form style=\"display: inline;\" action=\"/Ingress/Agents/plusOne.php\" method=\"post\">";
-						$Class = isPlused($row['username']) ? "minusOne" : "plusOne";
-						if($row['username'] == $_SESSION['name']){$Class = "Hide";}
-						echo "<input class=\"".$Class."\" type=\"submit\" value=\"+1\"><input type=\"hidden\" name=\"Name\" value=\"".$row['username']."\">";
-					echo "</form>";
 					echoCounter($row2['lvl'],$row2['AP']); 
 				?>
 			</div>
 			<div id="Line">
-				<div id="Location">
-					<?php echo "<a href=\"/Ingress/Agents/Verification/?Name=".$name."\">View verification</a>"; ?>
-				<br>
-					<?php echo "<a href=\"/Ingress/Areas/Info/?Name=".$Location['name']."\">Area  ".$Location['name']."</a>"; ?>
-				</div>
-			</div>
+					<?php
+						echo "<a href=\"/Ingress/Agents/Verification/?Name=".$name."\" style=\"width:59%;\">View verification</a> ";
+						echo "<form style=\"display: inline-block; height: 32; margin: 0px; padding: 0px; width: 10%;\" action=\"/Ingress/Agents/plusOne.php\" method=\"post\">";
+							$Class = isPlused($row['username']) ? "minusOne" : "plusOne";
+							if($row['username'] == $_SESSION['name']){$Class = "Hide";}
+							echo "<input class=\"".$Class."\" type=\"submit\" value=\"+1\" style='width:100%; height: 100%; margin: 0; padding: 0;' display: block;><input type=\"hidden\" name=\"Name\" value=\"".$row['username']."\">";
+						echo "</form>";
+					?></div>
 			<?php
+					
+
+				echo "<div id=\"Line\"><a href=\"/Ingress/Areas/Info/?Name=".$Location['name']."\">Area  ".$Location['name']."</a></div>";
 				if(CanVeiwOther($name)){
-					if($row['month']!='Neve'){
-						echo "<div id=\"Line\">";
-						echo "Last updated on the ".$row['day']." of ".$row['month']." 20".$row['year'];
-						echo "</div><br style=\"line-height:6px;\"/>";
-					}
 					
 					echoInv($row);
 

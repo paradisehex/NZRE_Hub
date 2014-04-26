@@ -24,6 +24,35 @@
 	
 
 	function echoInv($row){
+		if($row['month']!='Neve'){	
+			$monthNum = 0;
+			switch($row['month']){
+				case "Jan"	:	$monthNum = 1;		break;
+				case "Feb"	:	$monthNum = 2;		break;
+				case "Mar"	:	$monthNum = 3;		break;
+				case "Apr"	:	$monthNum = 4;		break;
+				case "May"	:	$monthNum = 5;		break;
+				case "Jun"	:	$monthNum = 6;		break;
+				case "Jul"	:	$monthNum = 7;		break;
+				case "Aug"	:	$monthNum = 8;		break;
+				case "Sep"	:	$monthNum = 9;		break;
+				case "Oct"	:	$monthNum = 10;	break;
+				case "Nov"	:	$monthNum = 11;	break;
+				case "Dec"	:	$monthNum = 12;	break;
+			}
+				
+			$your_date = strtotime("20".$row['year']."/".$monthNum."/".$row['day']);
+			$datediff = time() - $your_date;
+			$Days = floor($datediff/(60*60*24));
+					
+			$pural = "'s";
+			if($Days == 1){$pural = "";}
+			
+			echo "<div id=\"Line\">";
+			echo "Last updated ".$Days." day".$pural." ago on the ".$row['day']." / ".$monthNum." / ".$row['year'];
+			echo "</div><br style=\"line-height:6px;\"/>";
+		}
+		
 		$ItemCount = 0;
 
 		$Res = 0;

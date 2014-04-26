@@ -127,24 +127,6 @@ textarea{
 }
 #whiteSpaceWide{width:500px;}
 
-
-
-/*Location*/
-#Location a{
-	font-weight:bold;
-	box-shadow:initial;
-	-webkit-box-shadow:initial;
-	height:initial;
-	width:initial;
-	border:0;
-	background-color:0;
-	color:#00C2FF;
-}
-
-#Location a:hover{
-	text-decoration:underline;
-}
-
 /*Footer*/
 #View{
 	position: fixed;

@@ -209,26 +209,6 @@ textarea{
 #whiteSpaceWide{width:100%;}
 
 
-
-/*Location*/
-#Location a{	
-	font-size:30px;
-	font-weight:bold;
-	box-shadow:initial;
-	-webkit-box-shadow:initial;
-	height:initial;
-	width:initial;
-	border:0;
-	background-color:0;
-	color:#00C2FF;
-}
-
-#Location a:hover{
-	text-decoration:underline;
-}
-
-
-
 /*Graph*/
 #Bar{display: none;}
 
