@@ -82,7 +82,7 @@
 							echo "<div id=\"Line\"><a href=\"./?Name=".$Name."\">".$Name."</a></div>";
 						}
 						
-					//Archived
+					/*/Archived
 						$Names = array();
 						$result = selectFrom("OPSTable", array("Archived"), array(true));
 						while ($row = mysqli_fetch_array($result, MYSQL_ASSOC)) {
@@ -95,7 +95,7 @@
 						foreach($Names as $Name){
 							if($First){echo "<br><div id=\"Line\">Archived OPS</div>";$First = false;}
 							echo "<div id=\"Line\"><a href=\"./?Name=".$Name."\">".$Name."</a></div>";
-						}
+						}*/
 					echo "</p>";
 				}
 				
@@ -152,7 +152,7 @@
 							echo "<div id=\"Line\"><a href=\"./Edit/?Name=".$Name."\">Edit</a></div>";
 							echo "<div id=\"Line\"><a href=\"./Delete/?Name=".$Name."\">Delete</a></div>";
 							echo "<div id=\"Line\"><a href=\"./Coordinators/?Name=".$Name."\">Coordinators</a></div>";
-							echo "<div id=\"Line\"><a href=\"./Archive/?Name=".$Name."\">Archive</a></div>";
+							//echo "<div id=\"Line\"><a href=\"./Archive/?Name=".$Name."\">Archive</a></div>";
 							echo "<div id=\"Line\"><a href=\"./Rename/?Name=".$Name."\">Rename</a></div>";
 							echo "<div id=\"Line\"><a href=\"./Portals/?Name=".$Name."\">Portals</a></div>";
 							if($TheOP['Private']){	
@@ -186,7 +186,7 @@
 					
 			/*
 				OP archived
-			*/	
+			*//*	
 						echo "<div id=\"line\">Operation <strong>".$Name."</strong></div><p>";
 					
 					
@@ -255,7 +255,7 @@
 							 			 	<div id='comment_time'>".date("H:i j/n/y", $Comment['Time'])."</div>
 										</div>";
 						}
-						echo "</div>";
+						echo "</div>";*/
 					}
 				}
 			?>
