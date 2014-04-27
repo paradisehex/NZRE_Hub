@@ -38,6 +38,20 @@ input.buttonShort{
 	width:60px;
 }
 
+a.plain{
+	color: #00C2FF;
+	background-color: initial;	
+	box-shadow: none;
+	border: none;
+	display: inline-block;
+	width: initial;
+}
+a.plain:hover{
+	text-decoration: underline;
+	box-shadow: none;
+	-webkit-box-shadow: none;
+}
+
 
 select:hover,
 option:hover,
