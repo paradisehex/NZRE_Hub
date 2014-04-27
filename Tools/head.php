@@ -12,6 +12,7 @@
 			echo CSS_link("menu");
 			echo CSS_link("ap");
 			echo CSS_link("button");
+			echo CSS_link("ops");
 		}else{
 			echo CSS_link("Mobile/style");
 		}

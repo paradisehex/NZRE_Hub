@@ -21,7 +21,7 @@
 	}
 	function canEdit($Comment){
 		if(canEditComment($Comment['Name'], $TheOP['ID'])){
-			return " <a class='Agent' style='width: initial;' href='./Comment/?ID=".$Comment['ID']."'>edit</a> ";
+			return " <a class='comment_edit_button' ' href='./Comment/?ID=".$Comment['ID']."'>[edit]</a> ";
 		}
 	}
 	
@@ -165,18 +165,21 @@
 						echo "<br>Coments";
 					
 					
-						echo	"<div style=\"width: 500px; margin:0 auto;\">";
+						echo	"<div style='width: 500px; margin:0 auto;'>";
+						echo "<div id='comments_container'>";
 						while ($Comment = mysqli_fetch_array($Comments, MYSQL_ASSOC)) {
-								echo "<div id='Left'><strong>".Agent_Link($Comment['Name'])."</strong></div>";
-								echo "<div id='Right'>".canEdit($Comment).date("H:i j/n/y", $Comment['Time'])."</div>";
-								echo "<div id='Left' style='margin-bottom: 20px;'><div id='whiteSpaceWide'>".format_comment($Comment['Msg'])."</div></div><br>";
+								echo "<div id='comment_body'>
+									<div id='comment_title'>".$Comment['Name']."</div>
+							  		<div id='comment_text'>".format_comment($Comment['Msg'])."</div>
+								 	<div id='comment_time'>".canEdit($Comment).date("H:i j/n/y", $Comment['Time'])."</div>
+								</div>";
 						}
-						echo "</div>";
+						echo "</div></div>";
 						
-						echo "<form  class=\"wide\" action=\"comment.php\" method=\"post\">";
-							echo "<textarea class=\"R\" name=\"Message\" style=\"height:60px;\"></textarea>";
-							echo "<input type=\"hidden\" name=\"Name\" value=\"".$Name."\">";
-							echo "<input class=\"button\" type=\"submit\" value=\"Post\" style=\"float:right;width:100px;\">";
+						echo "<form action='comment.php' method='post' style='width: 503px; margin-top: 10px;'>";
+							echo "<textarea class='comment' name='Message' style='height:60px; margin-left: 11px;'></textarea>";
+							echo "<input type='hidden' name='Name' value='".$Name."'>";
+							echo "<input class='comment_post_button' type='submit' value='Post'>";
 						echo "</form>";
 					}else{
 					
@@ -237,9 +240,20 @@
 					
 						echo	"<div style=\"width: 500px; margin:0 auto;\">";
 						while ($Comment = mysqli_fetch_array($Comments, MYSQL_ASSOC)) {
-								echo "<div id='Left'><strong>".Agent_Link($Comment['Name'])."</strong></div>";
-								echo "<div id='Right'>".date("H:i j/n/y", $Comment['Time'])."</div>";
-								echo "<div id='Left' style='margin-bottom: 20px;'><div id='whiteSpaceWide'>".format_comment($Comment['Msg'])."</div></div><br>";
+								//echo "<div id='Left'><strong>".Agent_Link($Comment['Name'])."</strong></div>";
+								//echo "<div id='Right'>".date("H:i j/n/y", $Comment['Time'])."</div>";
+								//echo "<div id='Left' style='margin-bottom: 20px;'><div id='whiteSpaceWide'>".format_comment($Comment['Msg'])."</div></div><br>";
+								
+
+								echo "<div id='comments_container'>
+											<div id='comment_body'>
+									  			<div id='comment_title'>".$Comment['Name']."</div>
+									  
+							  					<p>This is an example of how individual comments will appear on the NZRE Hub.</p>
+							 				 	<p>Usage for comments extends to Operations (OPS) and Situation Updates (Regions).</p>
+								 
+							 			 	<div id='comment_time'>".date("H:i j/n/y", $Comment['Time'])."</div>
+										</div>";
 						}
 						echo "</div>";
 					}

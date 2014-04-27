@@ -13,9 +13,9 @@
 			<br>
 			<div id="Line"><?php echo "Editing Comment"; ?></div>
 			<form  class="wide" action="save.php" method="post">
-				<textarea class="R" name="message" style="height:60px"><?php echo $The_Comment['Msg']?></textarea>
+				<textarea class="comment" name="message" style="height:60px"><?php echo $The_Comment['Msg']?></textarea>
 				<?php echo "<input type=\"hidden\" name=\"ID\" value=\"".$ID."\">";?>
-				<input class="button" type="submit" value="Save" style="float:right;width:100px;">
+				<input class="comment_post_button" type="submit" value="Save">
 			</form>
 			<br>
 			

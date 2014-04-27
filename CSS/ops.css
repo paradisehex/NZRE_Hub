@@ -1,0 +1,113 @@
+/*
+NZRE COMMENTS CSS
+Used to format comments displayed on Operation pages (OPS) and Situation Updates (Regions).
+*/
+
+
+#comments_container {   /*This wraps around ALL the comments*/
+	height: auto;
+	width:500px;
+	padding: 10px;
+}
+
+#comment_title {  /*For the heading of each individual comment*/
+	height: auto;
+	border: 1px solid #bd5521;
+	background-color: #4a2009;
+	font-family: Coda;
+	font-weight: bold;
+	color: #DB652D;
+	text-shadow: 0 0 1px;
+	margin-top: -40px;
+	padding-top: 5px;
+	padding-right: 10px;
+	padding-bottom: 5px;
+	padding-left: 10px;
+	margin-left: -25px;
+	float: left;
+	max-width:400px;
+	min-height:25px;
+}
+
+#comment_body {   /*This is where the main text of the body goes*/
+	height: auto;
+	width: 480px;
+	background-color: #200800;
+	color: white;
+	text-shadow: 0 0 1px;
+	font-family: Coda;
+	border: 1px solid #bd5521;
+	padding-top: 30px;
+	padding-right: 5px;
+	padding-bottom: 10px;
+	padding-left: 15px;
+	margin-top: 20px;
+}
+
+#comment_time {   /*The time the comment was made, formatted as: DAY DATE MONTH YEAR, TIME(12hr)*/
+	font-family: Coda;
+	color: #bd5521;
+	text-shadow: 0 0 1px;
+	font-size: 12px;
+	padding-top: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+	text-align: right;
+	width: auto;
+}
+
+#comment_text{
+	word-wrap: break-word;
+	text-align:left;
+	display:block;
+	margin: 0 auto;
+}
+
+a.comment_edit_button{
+	color: #bd5521;
+	text-shadow: 0 0 1px;
+	font-size: 15px;
+	background-color: initial;	
+	box-shadow: none;
+	border: none;
+	display: inline-block;
+	width: initial;
+}
+a.comment_edit_button:hover{
+	text-decoration: underline;
+	box-shadow: none;
+	-webkit-box-shadow: none;
+}
+
+textarea.comment{
+	display:inline-block;
+	font-family: coda_regular;
+	padding-top: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+	height:212px;
+	width:100%;
+	border: 1px solid #bd5521;
+	background-color: #200800;
+	color: white;
+	font-size:16;
+	resize:vertical;
+}
+
+input.comment_post_button{
+	font-size:16;
+	font-family: coda_regular, arial, helvetica, sans-serif;
+	display:inline-block;
+	color: #DB652D;
+	width:100px;
+	text-align:center;
+	border: 1px solid #bd5521;
+	background-color: #200800;
+	float:right;
+	text-decoration:none;
+	height:30px;
+	margin-top: 2px;
+	margin-bottom: 2px;
+	text-shadow: 0 0 1px;
+	box-shadow: 0px 0px 1px #bd5521, 0px 0px 1px #bd5521 inset;
+}
