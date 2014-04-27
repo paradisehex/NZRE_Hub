@@ -139,7 +139,7 @@
 				$url = '/redir.php?url=&quot;' . $url . '&quot;';
 			}
 
-			$html = '<a href="'.$url.'">'.$text.'</a>';
+			$html = '<a class="plain" style="text-decoration: underline;" href="'.$url.'">'.$text.'</a>';
 			if ($has_parens) $html = '(' . $html . ')';
 
 			// Replace with html!
