@@ -1,5 +1,8 @@
 NZRE Hub
 ==============
+
+I've currently stopped working on this, feel free to contact me for more info
+
 This website is make for and run by NZ Resistance but feel free to use the code as you want.
 If there is no admin user it will create new admin user called Ada with the password resistance.
 
